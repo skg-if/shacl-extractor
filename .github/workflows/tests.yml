@@ -32,19 +32,27 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          poetry run pytest --cov=src --cov-report=term-missing:skip-covered
+          poetry run pytest --cov=src --cov-report=html --cov-report=term-missing
           echo "=== Coverage Report ==="
           poetry run coverage report
           echo "COVERAGE=$(poetry run coverage report | grep TOTAL | awk '{print $4}')" >> $GITHUB_ENV
+
+      - name: Upload coverage report
+        if: github.ref == 'refs/heads/main' && matrix.python-version == '3.9'
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: htmlcov/
+          retention-days: 14
 
       - name: Generate coverage badge
         if: github.ref == 'refs/heads/main' && matrix.python-version == '3.9'
         uses: RubbaBoy/BYOB@v1.3.0
         with:
-          NAME: skg-if-shacl-extractor_coverage
-          LABEL: "Coverage"
-          STATUS: ${{ env.COVERAGE }}
-          COLOR: green
-          GITHUB_TOKEN: ${{ secrets.GIST_PAT }}
-          REPOSITORY: arcangelo7/badges
-          ACTOR: arcangelo7
+          name: skg-if-shacl-extractor_coverage
+          label: "Coverage"
+          status: ${{ env.COVERAGE }}
+          color: green
+          github_token: ${{ secrets.GIST_PAT }}
+          repository: arcangelo7/badges
+          actor: arcangelo7

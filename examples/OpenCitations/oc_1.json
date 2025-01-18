@@ -1,0 +1,28 @@
+[
+    {
+        "publisher": "Mit Press [crossref:281 omid:ra/0610116105]",
+        "author": "Peroni, Silvio [orcid:0000-0003-0530-4305 omid:ra/0614010840729]; Shotton, D M [orcid:0000-0001-5506-523X omid:ra/0621010775619]",
+        "volume": "1",
+        "type": "journal article",
+        "pub_date": "2020-02",
+        "page": "428-444",
+        "editor": "",
+        "id": "doi:10.1162/qss_a_00023 omid:br/062501777134",
+        "venue": "Quantitative Science Studies [issn:2641-3337 openalex:S4210195326 omid:br/062501778099]",
+        "issue": "1",
+        "title": "OpenCitations, An Infrastructure Organization For Open Scholarship"
+    },
+    {
+        "publisher": "Springer Science And Business Media Llc [crossref:297 omid:ra/0610116006]",
+        "author": "Colavizza, Giovanni [orcid:0000-0002-9806-084X omid:ra/0615045315]; Daquino, Marilena [orcid:0000-0002-1113-7550 omid:ra/0625011225133]; Ghavimi, Behnam [orcid:0000-0002-4627-5371 omid:ra/06180101627]; Lauscher, Anne [orcid:0000-0001-8590-9827 omid:ra/06210102697]; Mayr, Philipp [orcid:0000-0002-6656-1658 omid:ra/0615045339]; Peroni, Silvio [orcid:0000-0003-0530-4305 omid:ra/0614010840729]; Romanello, Matteo [orcid:0000-0002-7406-6286 omid:ra/0615010706460]; Shotton, D M [orcid:0000-0001-5506-523X omid:ra/0621010775619]; Zumstein, Philipp [orcid:0000-0002-6485-9434 omid:ra/065061926]",
+        "volume": "",
+        "type": "book chapter",
+        "pub_date": "2020",
+        "page": "447-463",
+        "editor": "",
+        "id": "doi:10.1007/978-3-030-62466-8_28 omid:br/061701903780",
+        "venue": "The Semantic Web – ISWC 2020 [doi:10.1007/978-3-030-62466-8 isbn:9783030624651 isbn:9783030624668 openalex:W4249810877 omid:br/069065407]",
+        "issue": "",
+        "title": "The OpenCitations Data Model"
+    }
+]

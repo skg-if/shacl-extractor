@@ -1,0 +1,68 @@
+{
+    "@context": [ 
+        "https://w3id.org/skg-if/context/1.0.0/skg-if.json",
+        { 
+            "@base": "https://w3id.org/skg-if/sandbox/skg-if-wg/",
+            "skg": "https://w3id.org/skg-if/sandbox/skg-if-wg/"
+        }
+    ],
+    "@graph": [
+        {
+            "local_identifier": "ds1",
+
+            "identifiers": [
+                {
+                    "scheme": "doi",
+                    "value": "10.1234/1234"
+                }
+            ],
+
+            "entity_type": "datasource",
+
+            "name": "Zenodo",
+
+            "policy": [
+                {
+                    "about": "submission",
+                    "target": [ "any" ],
+                    "documented_at": "http://www.example.com/submission"
+                }, 
+                {
+                    "about": "preservation",
+                    "target": [ "any" ],
+                    "documented_at": "http://www.example.com/preservation"
+                }, 
+                {
+                    "about": "open access",
+                    "target": [ "metadata", "literature" ],
+                    "documented_at": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+                    "description": "Creative Commons Attribution (CC-BY) 4.0"
+                }
+            ],
+
+            "persistent_identity_systems": [
+                {
+                    "pid_schemes": [ "doi", "arxiv" ],
+                    "for": [ "literature" ]
+                },
+                {
+                    "pid schemes": [ "doi" ],
+                    "for": [ "metadata" ]
+                }
+            ],
+
+            "audience": [
+                { "audience_type": "National" },
+                { "audience_type": "e-Infrastructure" }
+            ],
+
+            "data_source_classification": "repository",
+
+            "research_product_type": [ "metadata", "literature" ],
+
+            "discipline": [
+                "QC790.95-QC791.8"
+            ]
+        }
+    ]
+}

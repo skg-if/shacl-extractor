@@ -1,0 +1,58 @@
+{
+    "@context": [ 
+        "https://w3id.org/skg-if/context/1.0.0/skg-if.json",
+        { 
+            "@base": "https://w3id.org/skg-if/sandbox/skg-if-wg/",
+            "skg": "https://w3id.org/skg-if/sandbox/skg-if-wg/"
+        }
+    ],
+    "@graph": [
+        {
+            "local_identifier": "g1",
+
+            "identifiers": [
+                {
+                    "scheme": "doi",
+                    "value": "10.3030/101095129"
+                }
+            ],
+
+            "entity_type": "grant",
+
+            "title": "GraspOS: next Generation Research Assessment to Promote Open Science",
+
+            "grant_number": "101095129",
+
+            "abstract": "Open science (OS) has proven to provide several benefits to scientific research and collaboration. The EU-funded GraspOS project will further extend the reach and influence of OS. Specifically, it will develop a data infrastructure that will help policy reforms and bring about the adoption of a responsible research assessment system that embeds OS practices. Additionally, the project will create the necessary tools to expand the reach of the European Open Science Cloud ecosystem and improve monitoring services. These services will also allow for policy-level rewards that encourage OS practices and mindsets.",
+
+            "acronym": "GraspOS",
+
+            "funding_agency": "eu",
+
+            "funding_stream": "Horizon Europe",
+
+            "funded_amount": 2985441.00,
+            
+            "currency": "EUR",
+            
+            "keywords": ["open science", "mutual learning", "open research"],
+
+            "duration": {
+                "start": "2023-01-01T00:00:00",
+                "end": "2025-12-31T23:59:59"
+            },
+
+            "website": "https://graspos.eu/",
+
+            "beneficiaries": [ "org1", "org2" ],
+
+            "contributions": [
+                {
+                    "by": "person_123",
+                    "declared_affiliations": ["org_1", "org_3"],
+                    "role": [ "lead applicant", "project leader" ]
+                }
+            ]
+        }
+    ]
+}

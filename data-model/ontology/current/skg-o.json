@@ -1,0 +1,4148 @@
+[
+  {
+    "@id": "http://purl.org/dc/terms/relation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Organization"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Relevant Organisation identifiers associated with a Research product, in case the individual affiliations of an Agent are not available."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:relation (SKG-IF labels: relevant_organisations)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/ContributionSituation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* co:index -[0..1]-> xsd:positiveInteger\n* pro:isHeldBy -[1]-> foaf:Agent\n* pro:relatesToOrganization -[0..N]-> foaf:Organization\n* pro:withRole -[0..1]-> pro:Role\n* scoro:withContribution -[0..N]-> scoro:Contribution"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:ContributionSituation"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* skos:Concept\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* skos:ConceptScheme"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "skos:inScheme (SKG-IF labels: defined_in)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/issued",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date of formal issuance of a resource (e.g. a publication or a patent)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:issued (SKG-IF labels: publication)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasRequestDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which an agent is requested to do something, for example a reviewer is requested to write a review of a paper submitted to a journal for publication, or an author is requested to supply a revised version of the paper in response to the reviews received."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasRequestDate (SKG-IF labels: request)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/manages-project",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:manages-project (SKG-IF labels: project administration)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Dataset",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Dataset (SKG-IF labels: research data)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/bido/withBibliometricData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:BibliometricDataInTime\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:SubjectTerm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The identifier of a Topic relevant for the Research product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/bido/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "bido:withBibliometricData (SKG-IF labels: term)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* foaf:Organization\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Other names, perhaps in different languages, identifiying an Organisation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "skos:altLabel (SKG-IF labels: other_names)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/hasCountry",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* foaf:Organization\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The country code of an Organisation expressed as ISO 3166-1 alpha-2."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:hasCountry (SKG-IF labels: country)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/BibliometricDataInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* bido:withBibliometricData -[1]-> fabio:SubjectTerm\n* prov:wasGeneratedBy -[0..N]-> prov:Activity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:BibliometricDataInTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/coar/access_right/c_14cb",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This policy provides the possibility of having / handling metadata only access refers to the resources in the Data source (from COAR Access Rights 1.0)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/coar/access_right/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "coar:c_14cb (SKG-IF labels: metadata only access)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* datacite:Identifier\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The external identifier."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.essepuntato.it/2010/06/literalreification/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "literal:hasLiteralValue (SKG-IF labels: value)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Book",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Book (SKG-IF labels: book)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/created",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n* fabio:ExpressionCollection\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date of creation of a Venue. The string should be compliant with the ISO 8601 datetime string."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:created (SKG-IF labels: creation_date, creation)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/viaf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:viaf (SKG-IF labels: viaf)"
+      }
+    ]
+  },
+  {
+    "@id": "http://prismstandard.org/namespaces/basic/2.0/endingPage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Manifestation\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The ending page."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://prismstandard.org/namespaces/basic/2.0/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prism:endingPage (SKG-IF labels: last)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/under-review",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:under-review (SKG-IF labels: under review)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/holdsRoleInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* foaf:Person\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pro:RoleInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "All the affiliations of a Person (à la ORCID)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:holdsRoleInTime (SKG-IF labels: affiliations)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/creates-software",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:creates-software (SKG-IF labels: software)"
+      }
+    ]
+  },
+  {
+    "@id": "http://prismstandard.org/namespaces/basic/2.0/startingPage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Manifestation\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The starting page."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://prismstandard.org/namespaces/basic/2.0/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prism:startingPage (SKG-IF labels: first)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasDateReceived",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which some item is received, for example a document being received by a publisher."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasDateReceived (SKG-IF labels: received)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/PublicationStatus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:PublicationStatus"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/Person",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* foaf:familyName -[0..1]-> rdfs:Literal\n* foaf:givenName -[0..1]-> rdfs:Literal\n* pro:holdsRoleInTime -[0..N]-> pro:RoleInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "foaf:Person"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#supplement",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Work"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Research products identifiers that are supplement of a given Research product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frbr:supplement (SKG-IF labels: is_supplemented_by)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/writes-manuscript-draft",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:writes-manuscript-draft"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasDecisionDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which a particular endeavour, such as a grant application, has been or will be approved or rejected by somebody."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasDecisionDate (SKG-IF labels: decision)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/Repository",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:Repository (SKG-IF labels: archive)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/workpackage-leader",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:workpackage-leader (SKG-IF labels: workpackage leader)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/ResearchInformationSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A current research information system (CRIS) is an information system to store, manage and exchange contextual metadata for the research products funded by a research funder or conducted at a research-performing organisation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:ResearchInformationSystem (SKG-IF labels: cris system)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/unpublished",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:unpublished (SKG-IF labels: unavailable)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/co-applicant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:co-applicant (SKG-IF labels: co-applicant)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/embargoed",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:embargoed (SKG-IF labels: embargoed)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* ti:TimeInterval\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The start datetime of the Grant. The string should be compliant with the ISO 8601 datetime string."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ti:hasIntervalStartDate (SKG-IF labels: start)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Repository",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "services for the deposition, preservation, discovery, and access of research products metadata and files, e.g. PANGAEA, Zenodo, B2SHARE, EGI AppDB, BioTools"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Repository (SKG-IF labels: repository)"
+      }
+    ]
+  },
+  {
+    "@id": "http://prismstandard.org/namespaces/basic/2.0/volume",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Volume number (for journals, books, conferences)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://prismstandard.org/namespaces/basic/2.0/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prism:volume (SKG-IF labels: volume)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/affiliate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:affiliate (SKG-IF labels: affiliate)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/usesIdentifierScheme",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* datacite:Identifier\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* datacite:IdentifierScheme"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The scheme for the external identifier (e.g., a DOI)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:usesIdentifierScheme (SKG-IF labels: scheme)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/bido/holdsBibliometricDataInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:BibliometricDataInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Objects referring to Topic covered by the Research product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/bido/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "bido:holdsBibliometricDataInTime (SKG-IF labels: topics)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/provides-tools-equipment-or-facilities",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:provides-tools-equipment-or-facilities (SKG-IF labels: resources)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasDepositDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which an entity has been deposited, for example in a library, repository, supplementary information archive, database or similar place of document or information storage."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasDepositDate (SKG-IF labels: deposit)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Manifestation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* prism:endingPage -[1]-> xsd:string\n* prism:startingPage -[1]-> xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Manifestation"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/title",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:ExpressionCollection\n* fabio:Work\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The titles of a Research product (multiple for multilinguism)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:title (SKG-IF labels: titles, title)"
+      }
+    ]
+  },
+  {
+    "@id": "http://prismstandard.org/namespaces/basic/2.0/seriesTitle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:ExpressionCollection\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The name of the conference or book series."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://prismstandard.org/namespaces/basic/2.0/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prism:seriesTitle (SKG-IF labels: series)"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/skg-if/ontology/",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/elements/1.1/date": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-12-23"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@value": "The SKG-IF Ontology"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      {
+        "@value": "skg-o"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespaceUri": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://w3id.org/skg-if/ontology/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "SKG-O, the SKG-IF Ontology, is not yet another bibliographic ontology. Rather it is just a place where existing and complementary ontological entities from several other ontologies, all employed in the Scientific Knowledge Graph Interoperability Framework (SKG-IF), are grouped together for the purpose of providing descriptive metadata compliant with the SKG-IF Data Model."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "SKG-O"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://w3id.org/skg-if/ontology/1.0.0/"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "1.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/odrl/2/action",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* odrl:Policy\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* odrl:Action"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "the type of policy to consider."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/odrl/2/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "odrl:action (SKG-IF labels: about)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/editor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:editor (SKG-IF labels: editor)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/coar/access_right/c_16ec",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This policy provides the possibility of having / handling restricted access to the resources in the Data source (from COAR Access Rights 1.0)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/coar/access_right/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "coar:c_16ec (SKG-IF labels: restricted access)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/odrl/2/aggregate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This policy provides a comprehensive framework for the contribution of research products. Criteria for submitting content to the repository as well as product preparation guidelines can be stated. Concepts for quality assurance may be provided."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/odrl/2/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "odrl:aggregate (SKG-IF labels: submission)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/dateCopyrighted",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which an entity has been copyrighted."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:dateCopyrighted (SKG-IF labels: copyright)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/fairsharing",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:fairsharing (SKG-IF labels: fairsharing)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/handle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:handle (SKG-IF labels: handle)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/conceives-project",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:conceives-project (SKG-IF labels: conceptualization)"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/page",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* odrl:Policy\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "the URL of the document that describes the policy."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "foaf:page (SKG-IF labels: documented_at)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasAccessDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which a particular digital item, such as a PDF or an HTML file, has been accessed by somebody."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasAccessDate (SKG-IF labels: access)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/prepares-illustrations",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:prepares-illustrations (SKG-IF labels: visualization)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/supports",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Organization"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Organisations identifiers funded by the Grant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:supports (SKG-IF labels: beneficiaries)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/SubjectTerm",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* skos:prefLabel -[0..1]-> rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A Topic describes the scientific disciplines, subjects and keywords potentially relevant for a Research product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:SubjectTerm (SKG-IF labels: topic, Topic)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.essepuntato.it/2012/04/tvc/atTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* ti:TimeInterval"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The time period where the Person was affiliated with an Organisation. It includes the following information:"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.essepuntato.it/2012/04/tvc/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "tvc:atTime (SKG-IF labels: period)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/analyses-data",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:analyses-data (SKG-IF labels: formal analysis)"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/MedicalOrganization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://schema.org/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "schema:MedicalOrganization (SKG-IF labels: healthcare)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/publisher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:publisher (SKG-IF labels: publisher)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/doi",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:doi (SKG-IF labels: doi)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/url",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:url (SKG-IF labels: url)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/pmid",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:pmid (SKG-IF labels: pmid)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#revisionOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Work"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Research products identifiers that are prior versions of a given Research product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frbr:revisionOf (SKG-IF labels: is_new_version_of)"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/audience",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* schema:Audience"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The property defines the target audiences of the users of a Data source."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://schema.org/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "schema:audience (SKG-IF labels: audience)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/co/index",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n* scoro:ContributionSituation\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:positiveInteger"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The rank (i.e., order of appearance) of a Agent with a specific role (e.g., the order of an author in a list) of a Research product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/co/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "co:index (SKG-IF labels: rank)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/processes-data",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:processes-data (SKG-IF labels: data curation)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/dcat#DataService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* dcat:theme -[0..1]-> owl:Thing\n* dcterms:conformsTo -[0..N]-> dcterms:Standard\n* dcterms:coverage -[1]-> owl:Thing\n* dcterms:subject -[0..N]-> owl:Thing\n* foaf:name -[0..1]-> rdfs:Literal\n* odrl:hasPolicy -[0..N]-> odrl:Policy\n* schema:audience -[0..N]-> schema:Audience"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A Data source is a service or platform where a Research product (its metadata and files) is stored, preserved, and made discoverable and accessible. A data source is described by the EOSC Profile for data sources (https://wiki.eoscfuture.eu/display/PUBLIC/D.+v4.00+EOSC+Data+Source+Profile)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/dcat#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcat:DataService (SKG-IF labels: Data source)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasSequenceIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "a number of the manifestation within the Venue (e.g., chapter number)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasSequenceIdentifier (SKG-IF labels: number)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/odrl/2/Policy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* dcterms:description -[0..1]-> xsd:string\n* foaf:page -[0..1]-> foaf:Document\n* odrl:action -[1]-> odrl:Action\n* odrl:target -[0..N]-> owl:Thing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/odrl/2/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "odrl:Policy"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/leads-investigation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:leads-investigation (SKG-IF labels: investigation)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Database",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Scientific Databases intended to store structured information about scientific entities, e.g. PROTDB, ENA, ECRIN Studies Database"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Database (SKG-IF labels: scientific database)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/Grant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* dcterms:abstract -[0..1]-> rdfs:Literal\n* dcterms:temporal -[0..1]-> ti:TimeInterval\n* dcterms:title -[0..1]-> rdfs:Literal\n* foaf:homepage -[0..1]-> foaf:Document\n* frapo:hasAcronym -[0..1]-> rdfs:Literal\n* frapo:hasCallIdentifier -[0..1]-> rdfs:Literal\n* frapo:hasCurrency -[0..1]-> xsd:float\n* frapo:hasCurrencyCode -[0..N]-> xsd:string\n* frapo:hasFundingAgency -[0..1]-> frapo:FundingAgency\n* frapo:hasGrantNumber -[0..1]-> xsd:string\n* frapo:supports -[0..N]-> foaf:Organization\n* prism:keyword -[0..N]-> rdfs:Literal\n* pro:isRelatedToRoleInTime -[0..N]-> pro:RoleInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The entity Grant describes funding awarded to a Agent by a funding body. These bodies, both public and private, can be funders, foundations, governments, agencies or institutions."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:Grant (SKG-IF labels: Grant)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/valid",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Date of validity of a resource."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:valid (SKG-IF labels: validity)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/pmcid",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:pmcid (SKG-IF labels: pmcid)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Catalog",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "services for the aggregation of metadata about research products (and other entities) that are mainly collected (aka harvested) from data sources via APIs and then possibly curated/enriched by end-users, e.g. BASE, NARCIS, GESIS, B2FIND, OpenAIRE Research Graph"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Catalog (SKG-IF labels: aggregator)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/NotForProfitOrganization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:NotForProfitOrganization (SKG-IF labels: nonprofit)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/develops-methodology",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:develops-methodology (SKG-IF labels: methodology)"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/Document",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "foaf:Document"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/ResearchInstitute",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:ResearchInstitute (SKG-IF labels: research)"
+      }
+    ]
+  },
+  {
+    "@id": "http://prismstandard.org/namespaces/basic/2.0/versionIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The version for a software or research data product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://prismstandard.org/namespaces/basic/2.0/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prism:versionIdentifier (SKG-IF labels: version)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/peer-reviewed",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:peer-reviewed (SKG-IF labels: peer reviewed)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#realization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Objects representing multiple manifestations of the same Research product (e.g., a preprint, a postprint, etc.)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frbr:realization (SKG-IF labels: manifestations)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/cito/isDocumentedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Work"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Research products identifiers that documents a given Research product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/cito/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "cito:isDocumentedBy (SKG-IF labels: is_documented_by)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasCorrectionDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which something, for example a document, is corrected."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasCorrectionDate (SKG-IF labels: correction)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/RoleInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* co:index -[0..1]-> xsd:positiveInteger\n* pro:isHeldBy -[1]-> foaf:Agent\n* pro:relatesToOrganization -[0..N]-> foaf:Organization\n* pro:withRole -[0..1]-> pro:Role\n* pro:withRole -[0..1]-> scoro:ProjectRole\n* scoro:withContribution -[0..N]-> scoro:Contribution\n* tvc:atTime -[0..1]-> ti:TimeInterval"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:RoleInTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/open-access",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:open-access (SKG-IF labels: open)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* ti:TimeInterval\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The end datetime (if any) of the Grant. The string should be compliant with the ISO 8601 datetime string."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ti:hasIntervalEndDate (SKG-IF labels: end)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/Contribution",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:Contribution"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/abstract",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The abstracts of a Research product (multiple for multilinguism)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:abstract (SKG-IF labels: abstracts, abstract)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/isDocumentContextFor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:ExpressionCollection\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pro:RoleInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Agents that contributed to a Venue."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:isDocumentContextFor (SKG-IF labels: contributions)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/coverage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n* dcterms:Standard\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* owl:Thing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The Product type to which the persistent identifier is referring to."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:coverage (SKG-IF labels: for, research_product_type)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/hasCurrencyCode",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Currency of the funded amount, following ISO 4217."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:hasCurrencyCode (SKG-IF labels: currency)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/odrl/2/target",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* odrl:Policy\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* owl:Thing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "the types of resources to which the policy applies to. Each item in the list should be compliant with the following terms:"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/odrl/2/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "odrl:target (SKG-IF labels: target)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/IdentifierScheme",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:IdentifierScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/ProjectRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:ProjectRole"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/author",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:author (SKG-IF labels: author)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#embodiment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Manifestation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "the pages where the manifestation in defined (within its Venue)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frbr:embodiment (SKG-IF labels: pages)"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/Agent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* foaf:name -[0..1]-> rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The Agent entity represents an individual (e.g., a person, an organisation, or another kind of entity being able to act) who is involved in the creation, publication, dissemination, etc. of a Research product. An Agent can be an author, a reviewer, an editor, a publisher, a researcher, or any other stakeholder involved in the scholarly communication process."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "foaf:Agent (SKG-IF labels: Agent)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#partOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Expression\n* fabio:Work"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A Venue identifier for the manifestation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frbr:partOf (SKG-IF labels: in, is_part_of)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/University",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:University (SKG-IF labels: education)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/isRelatedToRoleInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pro:RoleInTime\n* scoro:ContributionSituation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Agents that contributed to a Venue."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:isRelatedToRoleInTime (SKG-IF labels: contributions)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* skos:inScheme -[1]-> skos:ConceptScheme\n* skos:prefLabel -[0..1]-> rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "skos:Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/Facility",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:Facility (SKG-IF labels: facility)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/dateAccepted",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date of acceptance of an entity. Examples of entities to which a date accepted may be relevant are a thesis (accepted by a university examination board) or an article (accepted by a journal editor)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:dateAccepted (SKG-IF labels: acceptance)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/orcid",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:orcid (SKG-IF labels: orcid)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/secures-funding",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:secures-funding (SKG-IF labels: funding acquisition)"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/familyName",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* foaf:Person\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The family name of a Person."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "foaf:familyName (SKG-IF labels: family_name)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/FundingAgency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:FundingAgency (SKG-IF labels: funder)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/re3data",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:re3data"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/issn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:issn (SKG-IF labels: issn)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/hasCurrency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:float"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Amount funded for a Grant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:hasCurrency (SKG-IF labels: funded_amount)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/isHeldBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n* scoro:ContributionSituation\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Agent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The identifier of an Agent."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:isHeldBy (SKG-IF labels: by)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/cito/cites",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Work"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Research products identifiers that are cited by a given Research product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/cito/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "cito:cites (SKG-IF labels: cites)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/description",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* odrl:Policy\n* pso:StatusInTime\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "describe the type of policy, if necessary."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:description (SKG-IF labels: description)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/odrl/2/Action",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/odrl/2/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "odrl:Action"
+      }
+    ]
+  },
+  {
+    "@id": "http://prismstandard.org/namespaces/basic/2.0/issueIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Issue number."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://prismstandard.org/namespaces/basic/2.0/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prism:issueIdentifier (SKG-IF labels: issue)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:BibliometricDataInTime\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* prov:Activity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Provenance information tracking the origin of the relation between a Topic and a Research product. Each topic provenance object has the following properties:"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/prov#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prov:wasGeneratedBy (SKG-IF labels: provenance)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/ExpressionCollection",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* dcterms:created -[0..1]-> xsd:dateTime\n* dcterms:title -[0..1]-> rdfs:Literal\n* frapo:hasAcronym -[0..1]-> rdfs:Literal\n* prism:seriesTitle -[0..1]-> rdfs:Literal\n* pro:isDocumentContextFor -[0..N]-> pro:RoleInTime\n* pso:holdsStatusInTime -[1]-> pso:StatusInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:ExpressionCollection (SKG-IF labels: venue)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Journal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Data sources for the deposition (submission), preservation, discovery, and access of scientific journal articles (metadata and files), e.g. publishers sites, journal sites, etc."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Journal (SKG-IF labels: journal, journal archive)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasDateCollected",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which some item has been collected, for example the data gathered by means of questionnaires."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasDateCollected (SKG-IF labels: collected)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/hasFundingAgency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* frapo:FundingAgency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The local identifier of an Organisation funding the Grant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:hasFundingAgency (SKG-IF labels: funding_agency)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/hasGrantNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Unique code identifiying the Grant at the funder."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:hasGrantNumber (SKG-IF labels: grant_number)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/GovernmentOrganization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:GovernmentOrganization (SKG-IF labels: government)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasDistributionDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which something is distributed, for example the date on which a preprint of a document is e-mailed to colleagues and other academics by the author(s), or the date on which a printed announcement of forthcoming theatre events is mailed to those those on the theatre's mailing list."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasDistributionDate (SKG-IF labels: distribution)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/odrl/2/archive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This policy provides a comprehensive framework for the long-term preservation of the research products. Principles aims and responsibilities must be clarified. An important aspect is the description of preservation concepts to ensure the technical and conceptual utility of the content."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/odrl/2/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "odrl:archive (SKG-IF labels: preservation)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#wasAssociatedWith",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* prov:Activity\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Agent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "the `local_identifier` of the Agent responsible for the topic relation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/prov#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prov:wasAssociatedWith (SKG-IF labels: associated_with)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/isbn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:isbn (SKG-IF labels: isbn)"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/Organization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* foaf:homepage -[0..1]-> foaf:Document\n* frapo:hasAcronym -[0..1]-> rdfs:Literal\n* frapo:hasCountry -[0..1]-> rdfs:Literal\n* skos:altLabel -[0..N]-> rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "foaf:Organization"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/project-member",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:project-member (SKG-IF labels: project member)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/isni",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:isni (SKG-IF labels: isni)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/revises-manuscript",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:revises-manuscript"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/restricted-access",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:restricted-access (SKG-IF labels: restricted)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/hasCallIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The funding stream of the Grant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:hasCallIdentifier (SKG-IF labels: funding_stream)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/relatesToOrganization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n* scoro:ContributionSituation\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Organization"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Organisations identifiers that reflect the declared affiliations of a Agent for a Research product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:relatesToOrganization (SKG-IF labels: declared_affiliations, affiliation)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Work",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* bido:holdsBibliometricDataInTime -[0..N]-> fabio:BibliometricDataInTime\n* cito:cites -[0..N]-> fabio:Work\n* cito:isDocumentedBy -[0..N]-> fabio:Work\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* dcterms:abstract -[0..1]-> rdfs:Literal\n* dcterms:relation -[0..N]-> foaf:Organization\n* dcterms:title -[0..1]-> rdfs:Literal\n* frapo:isFundedBy -[0..N]-> frapo:Grant\n* frbr:partOf -[0..1]-> fabio:Work\n* frbr:realization -[0..N]-> fabio:Expression\n* frbr:revisionOf -[0..N]-> fabio:Work\n* frbr:supplement -[0..N]-> fabio:Work\n* pro:isRelatedToRoleInTime -[0..N]-> pro:RoleInTime\n* pro:isRelatedToRoleInTime -[0..N]-> scoro:ContributionSituation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Research products may be of four types: research literature, research data, research software, or other."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Work (SKG-IF labels: Research product, any)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/holdsStatusInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n* fabio:ExpressionCollection\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pso:StatusInTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The access right for the specific journal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:holdsStatusInTime (SKG-IF labels: access_rights)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/Identifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* datacite:usesIdentifierScheme -[1]-> datacite:IdentifierScheme\n* literal:hasLiteralValue -[1]-> rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:Identifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/coar/access_right/c_abf2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This policy provides the possibility of having / handling Data source resources that are immediately and permanently online (from COAR Access Rights 1.0)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/coar/access_right/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "coar:c_abf2 (SKG-IF labels: open access)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/title",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/withRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n* scoro:ContributionSituation\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pro:Role\n* scoro:ProjectRole"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The role that an Agent had in a Research product, to choose among `author`, `editor`, and `publisher`."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:withRole (SKG-IF labels: role)"
+      }
+    ]
+  },
+  {
+    "@id": "http://prismstandard.org/namespaces/basic/2.0/edition",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The edition (for journals and books)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://prismstandard.org/namespaces/basic/2.0/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prism:edition (SKG-IF labels: edition)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/isFundedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* frapo:Grant"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Relevant Grant identifiers associated with a Research product."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:isFundedBy (SKG-IF labels: funding)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/withStatus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* pso:StatusInTime\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pso:PublicationStatus"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "describe if the journal is open access (`open`), closed access (`closed`), or hybrid (`hybrid`)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:withStatus (SKG-IF labels: status)"
+      }
+    ]
+  },
+  {
+    "@id": "http://prismstandard.org/namespaces/basic/2.0/keyword",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Keywords of a Grant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://prismstandard.org/namespaces/basic/2.0/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prism:keyword (SKG-IF labels: keywords)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#Activity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* prov:wasAssociatedWith -[1]-> foaf:Agent\n* rdf:value -[1]-> xsd:float"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/prov#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "prov:Activity"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/modified",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which an entity has been modified."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:modified (SKG-IF labels: modified)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/dcat#accessService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* dcat:DataService"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A Data source identifier for the manifestation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/dcat#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcat:accessService (SKG-IF labels: hosting_data_source)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/lead-applicant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:lead-applicant (SKG-IF labels: lead applicant)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/withContribution",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n* scoro:ContributionSituation\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* scoro:Contribution"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The contributions that an Agent had in a Research product. Each element in the list is a String compliant with the CRediT taxonomy (https://credit.niso.org), i.e.,"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:withContribution (SKG-IF labels: contribution)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasRetractionDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date on which something, for example a claim or a journal article, is retracted."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasRetractionDate (SKG-IF labels: retraction)"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/homepage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* foaf:Organization\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Document"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "An URL poiting to the website of the funded project."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "foaf:homepage (SKG-IF labels: website)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Expression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* dcat:accessService -[0..1]-> dcat:DataService\n* dcterms:created -[0..1]-> xsd:dateTime\n* dcterms:dateAccepted -[0..N]-> xsd:dateTime\n* dcterms:dateCopyrighted -[0..N]-> xsd:dateTime\n* dcterms:issued -[0..N]-> xsd:dateTime\n* dcterms:modified -[0..N]-> xsd:dateTime\n* dcterms:valid -[0..N]-> xsd:dateTime\n* fabio:hasAccessDate -[0..N]-> xsd:dateTime\n* fabio:hasCorrectionDate -[0..N]-> xsd:dateTime\n* fabio:hasDateCollected -[0..N]-> xsd:dateTime\n* fabio:hasDateReceived -[0..N]-> xsd:dateTime\n* fabio:hasDecisionDate -[0..N]-> xsd:dateTime\n* fabio:hasDepositDate -[0..N]-> xsd:dateTime\n* fabio:hasDistributionDate -[0..N]-> xsd:dateTime\n* fabio:hasEmbargoDate -[0..N]-> xsd:dateTime\n* fabio:hasRequestDate -[0..N]-> xsd:dateTime\n* fabio:hasRetractionDate -[0..N]-> xsd:dateTime\n* fabio:hasSequenceIdentifier -[0..1]-> xsd:string\n* frbr:embodiment -[0..1]-> fabio:Manifestation\n* frbr:partOf -[0..1]-> fabio:Expression\n* prism:edition -[0..1]-> xsd:string\n* prism:issueIdentifier -[0..1]-> xsd:string\n* prism:versionIdentifier -[0..1]-> xsd:string\n* prism:volume -[0..1]-> xsd:string\n* pso:holdsStatusInTime -[1]-> pso:StatusInTime\n* rdf:type -[0..1]-> skos:Concept"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/Company",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:Company (SKG-IF labels: company)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/Standard",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* dcterms:coverage -[1]-> owl:Thing\n* dcterms:requires -[1..N]-> datacite:IdentifierScheme"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:Standard"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* ti:hasIntervalEndDate -[0..1]-> xsd:dateTime\n* ti:hasIntervalStartDate -[1]-> xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ti:TimeInterval"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "skos:ConceptScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/opendoar",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:opendoar (SKG-IF labels: opendoar)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/description",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/name",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n* foaf:Agent\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Name of the Data source."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "foaf:name (SKG-IF labels: name)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/ConferenceProceedings",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:ConferenceProceedings (SKG-IF labels: conference)"
+      }
+    ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/givenName",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* foaf:Person\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The given name of a Person."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "foaf:givenName (SKG-IF labels: given_name)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/supervises-colleagues",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:supervises-colleagues (SKG-IF labels: supervision)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/odrl/2/hasPolicy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* odrl:Policy"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The policies followed by a Data source."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/odrl/2/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "odrl:hasPolicy (SKG-IF labels: policy)"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/audienceType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* schema:Audience\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "the type of the audience based on the vocabulary Jurisdiction."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://schema.org/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "schema:audienceType (SKG-IF labels: audience_type)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/ark",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:ark (SKG-IF labels: ark)"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/Audience",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* schema:audienceType -[1]-> xsd:string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://schema.org/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "schema:Audience"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Software",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Software (SKG-IF labels: software)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/coar/access_right/c_f1cf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This policy provides the possibility of having / handling embargoed access refers to the resources in the Data source (from COAR Access Rights 1.0)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/coar/access_right/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "coar:c_f1cf (SKG-IF labels: embargoed access)"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/dcat#theme",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* owl:Thing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The specific type of a Data source, based on the vocabulary Data source Classification."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/ns/dcat#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcat:theme (SKG-IF labels: data_source_classification)"
+      }
+    ]
+  },
+  {
+    "@id": "http://vivoweb.org/ontology/core#Publisher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Scientific literature publisher, e.g. Elsevier, Copernicus, Frontiers, Springer, providing metadata and files of scientific publications relative to journals and conferences"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://vivoweb.org/ontology/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "vivo:Publisher (SKG-IF labels: publisher archive)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/Metadata",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:Metadata (SKG-IF labels: metadata)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/eissn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:eissn (SKG-IF labels: eissn)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/ScholarlyWork",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:ScholarlyWork (SKG-IF labels: literature)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/StatusInTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "The properties that can be used with this class are:\n\n* dcterms:description -[0..1]-> xsd:string\n* pso:withStatus -[1]-> pso:PublicationStatus"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:StatusInTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/ensures-regulatory-compliance",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:ensures-regulatory-compliance (SKG-IF labels: validation)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/arxiv",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:arxiv (SKG-IF labels: arxiv)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/temporal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* ti:TimeInterval"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The duration of the Grant."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:temporal (SKG-IF labels: duration)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pso/closed-access",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pso/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pso:closed-access (SKG-IF labels: closed)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/cerif/frapo/hasAcronym",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:ExpressionCollection\n* foaf:Organization\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Acronym used by a Venue."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/cerif/frapo/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "frapo:hasAcronym (SKG-IF labels: acronym, short_name)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/requires",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* dcterms:Standard\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* datacite:IdentifierScheme"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Persistent identifier schemes used to refer to ProductTypes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:requires (SKG-IF labels: pid_schemes)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/conformsTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* dcterms:Standard"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The persistent identifier systems that are used by a Data source to identify the `ProductType` it supports."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:conformsTo (SKG-IF labels: persistent_identity_systems)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/project-manager",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:project-manager (SKG-IF labels: project manager)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/scoro/project-leader",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/scoro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "scoro:project-leader (SKG-IF labels: project leader)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/lissn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:lissn (SKG-IF labels: lissn)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/fabio/hasEmbargoDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The date before which an entity should not be published, or before which a press release should not be reported on. For open-access journal articles, the embargo date is the date before which availability of the open-access version of the article is restricted by the publisher, following subscription-access availability of the published work."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/fabio/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "fabio:hasEmbargoDate (SKG-IF labels: embargo)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/date",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/pro/Role",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/pro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "pro:Role"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* fabio:SubjectTerm\n* skos:Concept\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The labels describing a Topic (multiple for multilinguism)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "skos:prefLabel (SKG-IF labels: labels)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/ror",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:ror (SKG-IF labels: ror)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/subject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* owl:Thing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The disciplines for which a Data source is dedicated. The disciplines must be specified using the Library of Congress Classification codes, available at https://id.loc.gov/authorities/classification (e.g. `PA3000-PA3049` for classical literature). In case a Data source is discipline agnostic, the string `all` should be specified."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/dc/terms/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "dcterms:subject (SKG-IF labels: disciplines)"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/datacite/hasIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n* fabio:Expression\n* fabio:ExpressionCollection\n* fabio:SubjectTerm\n* fabio:Work\n* foaf:Agent\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* datacite:Identifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Objects representing external identifiers for the entity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/datacite/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datacite:hasIdentifier (SKG-IF labels: identifiers)"
+      }
+    ]
+  }
+]

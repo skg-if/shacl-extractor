@@ -1,0 +1,53 @@
+{
+    "@context": [ 
+        "https://w3id.org/skg-if/context/0.1.0/skg-if.json",
+        { 
+            "@base": "https://w3id.org/skg-if/sandbox/skg-if-wg/",
+            "skg": "https://w3id.org/skg-if/sandbox/skg-if-wg/"
+        }
+    ],
+    "@graph": [
+        {
+            "local identifier": "ven1",
+
+            "identifiers": [
+                {
+                    "scheme": "isbn",
+                    "value": "978-3-031-25049-1"
+                }
+            ],
+
+            "entity type": "venue",
+
+            "title": "The Semantic Web – ISWC 2020: 19th International Semantic Web Conference, Athens, Greece, November 2–6, 2020, Proceedings, Part II",
+
+            "acronym": "ISWC 2020",
+
+            "type": "conference",
+
+            "series": "Lecture Notes in Computer Science (LNCS)",
+
+            "access rights": {
+                "status": "open",
+                "description": "Diamond Open Access journal"
+            },
+
+            "creation date": "1998-03-04T00:00:00Z",
+
+            "contributions": [
+                {
+                    "by": "pub1",
+                    "role": "publisher"
+                },
+                {
+                    "by": "ed1",
+                    "role": "editor"
+                },
+                {
+                    "by": "ed2",
+                    "role": "editor"
+                }
+            ]
+        }
+    ]
+}

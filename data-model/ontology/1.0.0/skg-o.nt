@@ -1,0 +1,790 @@
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/2000/01/rdf-schema#label> "skos:prefLabel (SKG-IF labels: labels)" .
+<http://purl.org/cerif/frapo/hasAcronym> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:hasAcronym (SKG-IF labels: acronym, short_name)" .
+<http://purl.org/spar/fabio/Metadata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vivoweb.org/ontology/core#Publisher> <http://www.w3.org/2000/01/rdf-schema#label> "vivo:Publisher (SKG-IF labels: publisher archive)" .
+<http://purl.org/spar/datacite/ror> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:ror (SKG-IF labels: ror)" .
+<http://purl.org/spar/datacite/issn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://prismstandard.org/namespaces/basic/2.0/versionIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "prism:versionIdentifier (SKG-IF labels: version)" .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/datacite/handle> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/spar/fabio/Manifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/coar/access_right/c_14cb> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/coar/access_right/> .
+<http://xmlns.com/foaf/0.1/familyName> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:familyName (SKG-IF labels: family_name)" .
+<http://purl.org/spar/scoro/analyses-data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/fabio/hasRequestDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which an agent is requested to do something, for example a reviewer is requested to write a review of a paper submitted to a journal for publication, or an author is requested to supply a revised version of the paper in response to the reviews received." .
+<http://www.w3.org/ns/odrl/2/hasPolicy> <http://www.w3.org/2000/01/rdf-schema#comment> "The policies followed by a Data source." .
+<http://prismstandard.org/namespaces/basic/2.0/issueIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "prism:issueIdentifier (SKG-IF labels: issue)" .
+<http://www.w3.org/ns/odrl/2/target> <http://www.w3.org/2000/01/rdf-schema#comment> "the types of resources to which the policy applies to. Each item in the list should be compliant with the following terms:" .
+<http://purl.org/dc/terms/dateCopyrighted> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:dateCopyrighted (SKG-IF labels: copyright)" .
+<http://prismstandard.org/namespaces/basic/2.0/endingPage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://prismstandard.org/namespaces/basic/2.0/> .
+<http://purl.org/vocab/frbr/core#embodiment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/co/index> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/co/> .
+<http://purl.org/cerif/frapo/hasGrantNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "Unique code identifiying the Grant at the funder." .
+<http://purl.org/spar/datacite/eissn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/scoro/ProjectRole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://prismstandard.org/namespaces/basic/2.0/versionIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasGrantNumber> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<http://purl.org/vocab/frbr/core#partOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/vocab/frbr/core#> .
+<http://purl.org/spar/fabio/Work> <http://www.w3.org/2000/01/rdf-schema#comment> "Research products may be of four types: research literature, research data, research software, or other." .
+<http://purl.org/dc/terms/requires> <http://www.w3.org/2000/01/rdf-schema#comment> "Persistent identifier schemes used to refer to ProductTypes." .
+<http://prismstandard.org/namespaces/basic/2.0/keyword> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://purl.org/spar/scoro/provides-tools-equipment-or-facilities> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/dc/terms/dateAccepted> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/spar/datacite/handle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/datacite/fairsharing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://vivoweb.org/ontology/core#Publisher> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vivoweb.org/ontology/core#> .
+<http://purl.org/cerif/frapo/NotForProfitOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/datacite/opendoar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* foaf:Person\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pro:RoleInTime" .
+<https://w3id.org/skg-if/ontology/> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+<http://purl.org/spar/fabio/Book> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Book (SKG-IF labels: book)" .
+<http://purl.org/spar/fabio/Journal> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Journal (SKG-IF labels: journal, journal archive)" .
+<http://purl.org/spar/datacite/orcid> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:orcid (SKG-IF labels: orcid)" .
+<http://purl.org/spar/fabio/hasCorrectionDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/pso/holdsStatusInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The access right for the specific journal." .
+<http://purl.org/spar/fabio/Book> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/datacite/url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/author> <http://www.w3.org/2000/01/rdf-schema#label> "pro:author (SKG-IF labels: author)" .
+<http://purl.org/coar/access_right/c_16ec> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/coar/access_right/> .
+<https://schema.org/Audience> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* schema:audienceType -[1]-> xsd:string" .
+<http://purl.org/spar/pro/publisher> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/spar/cito/isDocumentedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vivoweb.org/ontology/core#Publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/scoro/lead-applicant> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:lead-applicant (SKG-IF labels: lead applicant)" .
+<http://purl.org/dc/terms/requires> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/skg-if/ontology/> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/skg-if/ontology/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/hasCallIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/fabio/hasDistributionDate> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/spar/scoro/revises-manuscript> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://www.w3.org/ns/odrl/2/aggregate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/fabio/Book> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://xmlns.com/foaf/0.1/name> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n* foaf:Agent\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://purl.org/spar/datacite/eissn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/cerif/frapo/hasCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/fabio/ScholarlyWork> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/scoro/leads-investigation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/cerif/frapo/hasCurrency> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:float" .
+<http://purl.org/vocab/frbr/core#supplement> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/vocab/frbr/core#> .
+<http://purl.org/spar/scoro/co-applicant> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/datacite/pmid> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/cerif/frapo/hasFundingAgency> <http://www.w3.org/2000/01/rdf-schema#comment> "The local identifier of an Organisation funding the Grant." .
+<http://purl.org/coar/access_right/c_f1cf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/scoro/ContributionSituation> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:ContributionSituation" .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue> <http://www.w3.org/2000/01/rdf-schema#label> "literal:hasLiteralValue (SKG-IF labels: value)" .
+<http://purl.org/spar/scoro/develops-methodology> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/cerif/frapo/hasCallIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:hasCallIdentifier (SKG-IF labels: funding_stream)" .
+<http://purl.org/spar/fabio/Expression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#label> "pro:isHeldBy (SKG-IF labels: by)" .
+<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/requires> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/spar/datacite/url> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://www.w3.org/ns/dcat#DataService> <http://www.w3.org/2000/01/rdf-schema#label> "dcat:DataService (SKG-IF labels: Data source)" .
+<http://purl.org/spar/fabio/Catalog> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://prismstandard.org/namespaces/basic/2.0/seriesTitle> <http://www.w3.org/2000/01/rdf-schema#label> "prism:seriesTitle (SKG-IF labels: series)" .
+<https://schema.org/MedicalOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "schema:MedicalOrganization (SKG-IF labels: healthcare)" .
+<http://xmlns.com/foaf/0.1/familyName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/fabio/Work> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* bido:holdsBibliometricDataInTime -[0..N]-> fabio:BibliometricDataInTime\n* cito:cites -[0..N]-> fabio:Work\n* cito:isDocumentedBy -[0..N]-> fabio:Work\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* dcterms:abstract -[0..1]-> rdfs:Literal\n* dcterms:relation -[0..N]-> foaf:Organization\n* dcterms:title -[0..1]-> rdfs:Literal\n* frapo:isFundedBy -[0..N]-> frapo:Grant\n* frbr:partOf -[0..1]-> fabio:Work\n* frbr:realization -[0..N]-> fabio:Expression\n* frbr:revisionOf -[0..N]-> fabio:Work\n* frbr:supplement -[0..N]-> fabio:Work\n* pro:isRelatedToRoleInTime -[0..N]-> pro:RoleInTime\n* pro:isRelatedToRoleInTime -[0..N]-> scoro:ContributionSituation" .
+<http://purl.org/spar/datacite/url> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:url (SKG-IF labels: url)" .
+<http://purl.org/spar/fabio/Journal> <http://www.w3.org/2000/01/rdf-schema#comment> "Data sources for the deposition (submission), preservation, discovery, and access of scientific journal articles (metadata and files), e.g. publishers sites, journal sites, etc." .
+<http://www.w3.org/ns/odrl/2/archive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/fabio/hasDepositDate> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasDepositDate (SKG-IF labels: deposit)" .
+<http://purl.org/spar/pso/StatusInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://purl.org/spar/scoro/creates-software> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/cerif/frapo/FundingAgency> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/spar/pro/publisher> <http://www.w3.org/2000/01/rdf-schema#label> "pro:publisher (SKG-IF labels: publisher)" .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#label> "ti:TimeInterval" .
+<http://purl.org/dc/terms/dateCopyrighted> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/dc/terms/issued> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/cerif/frapo/supports> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Organization" .
+<http://purl.org/co/index> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n* scoro:ContributionSituation\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:positiveInteger" .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* ti:TimeInterval\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/spar/scoro/leads-investigation> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:leads-investigation (SKG-IF labels: investigation)" .
+<http://purl.org/spar/pro/Role> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/spar/fabio/SubjectTerm> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* skos:prefLabel -[0..1]-> rdfs:Literal" .
+<http://purl.org/dc/terms/title> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:ExpressionCollection\n* fabio:Work\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* ti:hasIntervalEndDate -[0..1]-> xsd:dateTime\n* ti:hasIntervalStartDate -[1]-> xsd:dateTime" .
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:page (SKG-IF labels: documented_at)" .
+<http://xmlns.com/foaf/0.1/homepage> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* foaf:Organization\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Document" .
+<http://purl.org/spar/fabio/Database> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/vocab/frbr/core#revisionOf> <http://www.w3.org/2000/01/rdf-schema#label> "frbr:revisionOf (SKG-IF labels: is_new_version_of)" .
+<https://schema.org/audienceType> <http://www.w3.org/2000/01/rdf-schema#comment> "the type of the audience based on the vocabulary Jurisdiction." .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "ti:hasIntervalEndDate (SKG-IF labels: end)" .
+<http://purl.org/cerif/frapo/hasCurrency> <http://www.w3.org/2000/01/rdf-schema#comment> "Amount funded for a Grant." .
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://www.w3.org/2000/01/rdf-schema#label> "prov:wasAssociatedWith (SKG-IF labels: associated_with)" .
+<http://purl.org/spar/bido/holdsBibliometricDataInTime> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:BibliometricDataInTime" .
+<http://purl.org/cerif/frapo/ResearchInformationSystem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Agents that contributed to a Venue." .
+<http://purl.org/cerif/frapo/hasAcronym> <http://www.w3.org/2000/01/rdf-schema#comment> "Acronym used by a Venue." .
+<http://purl.org/spar/fabio/hasRetractionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/conformsTo> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* dcterms:Standard" .
+<http://purl.org/spar/fabio/Software> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/vocab/frbr/core#supplement> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Work" .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/cerif/frapo/hasCallIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://www.w3.org/ns/dcat#DataService> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* dcat:theme -[0..1]-> owl:Thing\n* dcterms:conformsTo -[0..N]-> dcterms:Standard\n* dcterms:coverage -[1]-> owl:Thing\n* dcterms:subject -[0..N]-> owl:Thing\n* foaf:name -[0..1]-> rdfs:Literal\n* odrl:hasPolicy -[0..N]-> odrl:Policy\n* schema:audience -[0..N]-> schema:Audience" .
+<http://www.w3.org/ns/dcat#accessService> <http://www.w3.org/2000/01/rdf-schema#label> "dcat:accessService (SKG-IF labels: hosting_data_source)" .
+<http://purl.org/spar/pro/isHeldBy> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n* scoro:ContributionSituation\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Agent" .
+<http://vivoweb.org/ontology/core#Publisher> <http://www.w3.org/2000/01/rdf-schema#comment> "Scientific literature publisher, e.g. Elsevier, Copernicus, Frontiers, Springer, providing metadata and files of scientific publications relative to journals and conferences" .
+<http://purl.org/spar/fabio/hasAccessDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which a particular digital item, such as a PDF or an HTML file, has been accessed by somebody." .
+<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#comment> "The date of creation of a Venue. The string should be compliant with the ISO 8601 datetime string." .
+<http://purl.org/cerif/frapo/hasGrantNumber> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:hasGrantNumber (SKG-IF labels: grant_number)" .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relevant Grant identifiers associated with a Research product." .
+<http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.essepuntato.it/2010/06/literalreification/> .
+<http://purl.org/spar/fabio/hasSequenceIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/Company> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:Company (SKG-IF labels: company)" .
+<http://purl.org/dc/terms/subject> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* owl:Thing" .
+<http://purl.org/dc/terms/created> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n* fabio:ExpressionCollection\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/spar/scoro/writes-manuscript-draft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/prov#> .
+<http://www.w3.org/ns/odrl/2/Action> <http://www.w3.org/2000/01/rdf-schema#label> "odrl:Action" .
+<http://purl.org/dc/terms/dateAccepted> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/coar/access_right/c_14cb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/fabio/hasCorrectionDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which something, for example a document, is corrected." .
+<http://purl.org/spar/fabio/hasDateCollected> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/scoro/ContributionSituation> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* co:index -[0..1]-> xsd:positiveInteger\n* pro:isHeldBy -[1]-> foaf:Agent\n* pro:relatesToOrganization -[0..N]-> foaf:Organization\n* pro:withRole -[0..1]-> pro:Role\n* scoro:withContribution -[0..N]-> scoro:Contribution" .
+<https://w3id.org/skg-if/ontology/> <http://purl.org/dc/elements/1.1/title> "The SKG-IF Ontology" .
+<http://purl.org/dc/terms/Standard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/scoro/workpackage-leader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/ns/odrl/2/aggregate> <http://www.w3.org/2000/01/rdf-schema#label> "odrl:aggregate (SKG-IF labels: submission)" .
+<http://purl.org/dc/terms/Standard> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/vocab/frbr/core#realization> <http://www.w3.org/2000/01/rdf-schema#label> "frbr:realization (SKG-IF labels: manifestations)" .
+<http://purl.org/co/index> <http://www.w3.org/2000/01/rdf-schema#comment> "The rank (i.e., order of appearance) of a Agent with a specific role (e.g., the order of an author in a list) of a Research product." .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "pro:isRelatedToRoleInTime (SKG-IF labels: contributions)" .
+<http://purl.org/spar/cito/cites> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Work" .
+<http://purl.org/spar/fabio/hasDateReceived> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:description (SKG-IF labels: description)" .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:Organization" .
+<http://purl.org/spar/pro/author> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<https://schema.org/audience> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://schema.org/> .
+<http://purl.org/spar/scoro/ensures-regulatory-compliance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/datacite/Identifier> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:Identifier" .
+<http://purl.org/spar/datacite/viaf> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:viaf (SKG-IF labels: viaf)" .
+<http://purl.org/spar/scoro/secures-funding> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:secures-funding (SKG-IF labels: funding acquisition)" .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://purl.org/spar/fabio/hasRetractionDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which something, for example a claim or a journal article, is retracted." .
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/scoro/Contribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/dcat#DataService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://prismstandard.org/namespaces/basic/2.0/startingPage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://prismstandard.org/namespaces/basic/2.0/> .
+<http://prismstandard.org/namespaces/basic/2.0/startingPage> <http://www.w3.org/2000/01/rdf-schema#comment> "The starting page." .
+<http://www.w3.org/ns/odrl/2/action> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/frbr/core#embodiment> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Manifestation" .
+<http://purl.org/spar/bido/withBibliometricData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/scoro/analyses-data> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/fabio/Repository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/hasRetractionDate> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasRetractionDate (SKG-IF labels: retraction)" .
+<http://purl.org/spar/datacite/isbn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/spar/fabio/Journal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/scoro/conceives-project> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/subject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#wasGeneratedBy> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:BibliometricDataInTime\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* prov:Activity" .
+<http://purl.org/spar/pro/Role> <http://www.w3.org/2000/01/rdf-schema#label> "pro:Role" .
+<http://www.w3.org/ns/odrl/2/archive> <http://www.w3.org/2000/01/rdf-schema#label> "odrl:archive (SKG-IF labels: preservation)" .
+<http://www.w3.org/ns/odrl/2/hasPolicy> <http://www.w3.org/2000/01/rdf-schema#label> "odrl:hasPolicy (SKG-IF labels: policy)" .
+<http://purl.org/spar/fabio/hasSequenceIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/coar/access_right/c_16ec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/dc/terms/coverage> <http://www.w3.org/2000/01/rdf-schema#comment> "The Product type to which the persistent identifier is referring to." .
+<http://purl.org/spar/scoro/project-manager> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/scoro/provides-tools-equipment-or-facilities> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#comment> "The role that an Agent had in a Research product, to choose among `author`, `editor`, and `publisher`." .
+<http://prismstandard.org/namespaces/basic/2.0/seriesTitle> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://prismstandard.org/namespaces/basic/2.0/> .
+<http://purl.org/dc/terms/coverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/datacite/doi> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:doi (SKG-IF labels: doi)" .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/audienceType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://schema.org/> .
+<http://purl.org/spar/datacite/ror> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/dc/terms/valid> <http://www.w3.org/2000/01/rdf-schema#comment> "Date of validity of a resource." .
+<http://purl.org/spar/fabio/hasDecisionDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which a particular endeavour, such as a grant application, has been or will be approved or rejected by somebody." .
+<http://purl.org/spar/scoro/ProjectRole> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:ProjectRole" .
+<http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/2000/01/rdf-schema#comment> "An URL poiting to the website of the funded project." .
+<http://purl.org/spar/scoro/project-member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/dc/terms/subject> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/spar/scoro/withContribution> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n* scoro:ContributionSituation\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* scoro:Contribution" .
+<http://purl.org/spar/fabio/ConferenceProceedings> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/fabio/Software> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Software (SKG-IF labels: software)" .
+<http://purl.org/cerif/frapo/NotForProfitOrganization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/hasCurrency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/audienceType> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* schema:Audience\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<http://www.w3.org/ns/dcat#theme> <http://www.w3.org/2000/01/rdf-schema#comment> "The specific type of a Data source, based on the vocabulary Data source Classification." .
+<http://purl.org/spar/datacite/opendoar> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:opendoar (SKG-IF labels: opendoar)" .
+<http://purl.org/spar/scoro/project-manager> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:project-manager (SKG-IF labels: project manager)" .
+<http://purl.org/dc/terms/abstract> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/spar/fabio/Work> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Work (SKG-IF labels: Research product, any)" .
+<http://prismstandard.org/namespaces/basic/2.0/endingPage> <http://www.w3.org/2000/01/rdf-schema#comment> "The ending page." .
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/fabio/Database> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Database (SKG-IF labels: scientific database)" .
+<http://purl.org/spar/scoro/develops-methodology> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:develops-methodology (SKG-IF labels: methodology)" .
+<http://purl.org/spar/pso/unpublished> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/2000/01/rdf-schema#comment> "The labels describing a Topic (multiple for multilinguism)." .
+<http://purl.org/spar/pso/withStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "describe if the journal is open access (`open`), closed access (`closed`), or hybrid (`hybrid`)." .
+<http://xmlns.com/foaf/0.1/Agent> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* foaf:name -[0..1]-> rdfs:Literal" .
+<http://purl.org/cerif/frapo/hasFundingAgency> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/spar/fabio/hasRetractionDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/pso/withStatus> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://purl.org/spar/scoro/workpackage-leader> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:workpackage-leader (SKG-IF labels: workpackage leader)" .
+<http://prismstandard.org/namespaces/basic/2.0/keyword> <http://www.w3.org/2000/01/rdf-schema#comment> "Keywords of a Grant." .
+<http://purl.org/spar/pso/restricted-access> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/scoro/processes-data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.essepuntato.it/2012/04/tvc/> .
+<http://prismstandard.org/namespaces/basic/2.0/versionIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The version for a software or research data product." .
+<http://purl.org/cerif/frapo/Grant> <http://www.w3.org/2000/01/rdf-schema#comment> "The entity Grant describes funding awarded to a Agent by a funding body. These bodies, both public and private, can be funders, foundations, governments, agencies or institutions." .
+<http://purl.org/spar/datacite/isbn> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:isbn (SKG-IF labels: isbn)" .
+<http://purl.org/cerif/frapo/hasCountry> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:hasCountry (SKG-IF labels: country)" .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "Agents that contributed to a Venue." .
+<http://purl.org/spar/fabio/Manifestation> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Manifestation" .
+<https://w3id.org/skg-if/ontology/> <http://www.w3.org/2000/01/rdf-schema#comment> "SKG-O, the SKG-IF Ontology, is not yet another bibliographic ontology. Rather it is just a place where existing and complementary ontological entities from several other ontologies, all employed in the Scientific Knowledge Graph Interoperability Framework (SKG-IF), are grouped together for the purpose of providing descriptive metadata compliant with the SKG-IF Data Model." .
+<http://purl.org/dc/terms/description> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* odrl:Policy\n* pso:StatusInTime\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<http://purl.org/spar/scoro/creates-software> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:creates-software (SKG-IF labels: software)" .
+<http://purl.org/cerif/frapo/NotForProfitOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:NotForProfitOrganization (SKG-IF labels: nonprofit)" .
+<http://www.w3.org/ns/dcat#theme> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/dcat#> .
+<http://purl.org/cerif/frapo/hasGrantNumber> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* ti:TimeInterval\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/spar/scoro/project-leader> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:project-leader (SKG-IF labels: project leader)" .
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/2000/01/rdf-schema#comment> "Other names, perhaps in different languages, identifiying an Organisation." .
+<http://purl.org/spar/datacite/IdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:IdentifierScheme" .
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://purl.org/cerif/frapo/GovernmentOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/hasDateReceived> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasDateReceived (SKG-IF labels: received)" .
+<http://purl.org/spar/scoro/secures-funding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://schema.org/Audience> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/hasDateCollected> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/pso/embargoed> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://www.w3.org/ns/odrl/2/Policy> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* dcterms:description -[0..1]-> xsd:string\n* foaf:page -[0..1]-> foaf:Document\n* odrl:action -[1]-> odrl:Action\n* odrl:target -[0..N]-> owl:Thing" .
+<http://purl.org/spar/datacite/Identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/modified> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which an entity has been modified." .
+<http://purl.org/spar/fabio/Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Dataset (SKG-IF labels: research data)" .
+<http://purl.org/spar/fabio/hasCorrectionDate> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/spar/scoro/lead-applicant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://prismstandard.org/namespaces/basic/2.0/seriesTitle> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the conference or book series." .
+<http://purl.org/spar/datacite/handle> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:handle (SKG-IF labels: handle)" .
+<http://purl.org/spar/fabio/hasDepositDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/scoro/withContribution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/fabio/hasEmbargoDate> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasEmbargoDate (SKG-IF labels: embargo)" .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<http://purl.org/spar/pso/unpublished> <http://www.w3.org/2000/01/rdf-schema#label> "pso:unpublished (SKG-IF labels: unavailable)" .
+<http://purl.org/cerif/frapo/hasCurrency> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/vocab/frbr/core#revisionOf> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Work" .
+<http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/2000/01/rdf-schema#comment> "The given name of a Person." .
+<http://purl.org/cerif/frapo/Facility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/temporal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/relatesToOrganization> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n* scoro:ContributionSituation\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Organization" .
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* foaf:Organization\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/relation> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Organization" .
+<http://www.w3.org/ns/dcat#theme> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* owl:Thing" .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://purl.org/dc/terms/coverage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/spar/pso/open-access> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://purl.org/spar/scoro/manages-project> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:manages-project (SKG-IF labels: project administration)" .
+<http://purl.org/dc/terms/valid> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/spar/fabio/Metadata> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/fabio/BibliometricDataInTime> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* bido:withBibliometricData -[1]-> fabio:SubjectTerm\n* prov:wasGeneratedBy -[0..N]-> prov:Activity" .
+<http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/prov#> .
+<http://purl.org/cerif/frapo/ResearchInstitute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/relation> <http://www.w3.org/2000/01/rdf-schema#comment> "Relevant Organisation identifiers associated with a Research product, in case the individual affiliations of an Agent are not available." .
+<http://purl.org/vocab/frbr/core#realization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/vocab/frbr/core#> .
+<http://purl.org/spar/fabio/ExpressionCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/odrl/2/action> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/odrl/2/> .
+<http://prismstandard.org/namespaces/basic/2.0/keyword> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://prismstandard.org/namespaces/basic/2.0/> .
+<http://purl.org/spar/bido/holdsBibliometricDataInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/modified> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#comment> "Name of the Data source." .
+<http://purl.org/spar/scoro/processes-data> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:processes-data (SKG-IF labels: data curation)" .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/vocab/frbr/core#partOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/ResearchInstitute> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:ResearchInstitute (SKG-IF labels: research)" .
+<http://purl.org/cerif/frapo/Facility> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:Facility (SKG-IF labels: facility)" .
+<http://purl.org/spar/cito/isDocumentedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Research products identifiers that documents a given Research product." .
+<https://schema.org/MedicalOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/SubjectTerm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/Repository> <http://www.w3.org/2000/01/rdf-schema#comment> "services for the deposition, preservation, discovery, and access of research products metadata and files, e.g. PANGAEA, Zenodo, B2SHARE, EGI AppDB, BioTools" .
+<http://purl.org/spar/fabio/hasDistributionDate> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasDistributionDate (SKG-IF labels: distribution)" .
+<http://purl.org/vocab/frbr/core#realization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/fabio/hasEmbargoDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/bido/holdsBibliometricDataInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido/> .
+<http://purl.org/dc/terms/temporal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:Agent (SKG-IF labels: Agent)" .
+<http://purl.org/spar/fabio/Expression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://www.w3.org/ns/odrl/2/aggregate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/odrl/2/> .
+<http://prismstandard.org/namespaces/basic/2.0/startingPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:hasCurrencyCode (SKG-IF labels: currency)" .
+<http://purl.org/spar/scoro/affiliate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/dc/terms/coverage> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:coverage (SKG-IF labels: for, research_product_type)" .
+<http://purl.org/spar/fabio/hasDecisionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/scoro/revises-manuscript> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:revises-manuscript" .
+<http://prismstandard.org/namespaces/basic/2.0/seriesTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/fabio/hasDepositDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/dc/terms/abstract> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:abstract (SKG-IF labels: abstracts, abstract)" .
+<http://www.w3.org/ns/odrl/2/target> <http://www.w3.org/2000/01/rdf-schema#label> "odrl:target (SKG-IF labels: target)" .
+<http://purl.org/coar/access_right/c_16ec> <http://www.w3.org/2000/01/rdf-schema#label> "coar:c_16ec (SKG-IF labels: restricted access)" .
+<http://purl.org/spar/scoro/ContributionSituation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/cerif/frapo/ResearchInformationSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "A current research information system (CRIS) is an information system to store, manage and exchange contextual metadata for the research products funded by a research funder or conducted at a research-performing organisation" .
+<http://purl.org/spar/datacite/doi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/datacite/isni> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/datacite/hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Objects representing external identifiers for the entity." .
+<http://www.w3.org/ns/dcat#theme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://prismstandard.org/namespaces/basic/2.0/versionIdentifier> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<http://prismstandard.org/namespaces/basic/2.0/volume> <http://www.w3.org/2000/01/rdf-schema#label> "prism:volume (SKG-IF labels: volume)" .
+<http://purl.org/spar/pso/StatusInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/coar/access_right/c_16ec> <http://www.w3.org/2000/01/rdf-schema#comment> "This policy provides the possibility of having / handling restricted access to the resources in the Data source (from COAR Access Rights 1.0)." .
+<http://purl.org/spar/scoro/project-member> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<https://schema.org/audience> <http://www.w3.org/2000/01/rdf-schema#comment> "The property defines the target audiences of the users of a Data source." .
+<http://purl.org/spar/cito/cites> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pso/closed-access> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/fabio/Expression> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* dcat:accessService -[0..1]-> dcat:DataService\n* dcterms:created -[0..1]-> xsd:dateTime\n* dcterms:dateAccepted -[0..N]-> xsd:dateTime\n* dcterms:dateCopyrighted -[0..N]-> xsd:dateTime\n* dcterms:issued -[0..N]-> xsd:dateTime\n* dcterms:modified -[0..N]-> xsd:dateTime\n* dcterms:valid -[0..N]-> xsd:dateTime\n* fabio:hasAccessDate -[0..N]-> xsd:dateTime\n* fabio:hasCorrectionDate -[0..N]-> xsd:dateTime\n* fabio:hasDateCollected -[0..N]-> xsd:dateTime\n* fabio:hasDateReceived -[0..N]-> xsd:dateTime\n* fabio:hasDecisionDate -[0..N]-> xsd:dateTime\n* fabio:hasDepositDate -[0..N]-> xsd:dateTime\n* fabio:hasDistributionDate -[0..N]-> xsd:dateTime\n* fabio:hasEmbargoDate -[0..N]-> xsd:dateTime\n* fabio:hasRequestDate -[0..N]-> xsd:dateTime\n* fabio:hasRetractionDate -[0..N]-> xsd:dateTime\n* fabio:hasSequenceIdentifier -[0..1]-> xsd:string\n* frbr:embodiment -[0..1]-> fabio:Manifestation\n* frbr:partOf -[0..1]-> fabio:Expression\n* prism:edition -[0..1]-> xsd:string\n* prism:issueIdentifier -[0..1]-> xsd:string\n* prism:versionIdentifier -[0..1]-> xsd:string\n* prism:volume -[0..1]-> xsd:string\n* pso:holdsStatusInTime -[1]-> pso:StatusInTime\n* rdf:type -[0..1]-> skos:Concept" .
+<http://purl.org/cerif/frapo/Grant> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* dcterms:abstract -[0..1]-> rdfs:Literal\n* dcterms:temporal -[0..1]-> ti:TimeInterval\n* dcterms:title -[0..1]-> rdfs:Literal\n* foaf:homepage -[0..1]-> foaf:Document\n* frapo:hasAcronym -[0..1]-> rdfs:Literal\n* frapo:hasCallIdentifier -[0..1]-> rdfs:Literal\n* frapo:hasCurrency -[0..1]-> xsd:float\n* frapo:hasCurrencyCode -[0..N]-> xsd:string\n* frapo:hasFundingAgency -[0..1]-> frapo:FundingAgency\n* frapo:hasGrantNumber -[0..1]-> xsd:string\n* frapo:supports -[0..N]-> foaf:Organization\n* prism:keyword -[0..N]-> rdfs:Literal\n* pro:isRelatedToRoleInTime -[0..N]-> pro:RoleInTime" .
+<http://purl.org/spar/fabio/Manifestation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://purl.org/spar/datacite/re3data> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/spar/scoro/writes-manuscript-draft> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:writes-manuscript-draft" .
+<http://purl.org/spar/scoro/manages-project> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/vocab/frbr/core#supplement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://prismstandard.org/namespaces/basic/2.0/edition> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://prismstandard.org/namespaces/basic/2.0/> .
+<http://purl.org/spar/scoro/prepares-illustrations> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://prismstandard.org/namespaces/basic/2.0/issueIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://prismstandard.org/namespaces/basic/2.0/> .
+<http://purl.org/spar/pro/editor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://www.w3.org/ns/odrl/2/archive> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/odrl/2/> .
+<http://purl.org/spar/datacite/pmid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/datacite/viaf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:created (SKG-IF labels: creation_date, creation)" .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/coar/access_right/c_abf2> <http://www.w3.org/2000/01/rdf-schema#comment> "This policy provides the possibility of having / handling Data source resources that are immediately and permanently online (from COAR Access Rights 1.0)." .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/2000/01/rdf-schema#label> "pro:isDocumentContextFor (SKG-IF labels: contributions)" .
+<http://purl.org/spar/fabio/hasRequestDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/pso/under-review> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<https://schema.org/audience> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* schema:Audience" .
+<http://purl.org/dc/terms/valid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/conformsTo> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:conformsTo (SKG-IF labels: persistent_identity_systems)" .
+<http://purl.org/spar/datacite/re3data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/datacite/orcid> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/dc/terms/coverage> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n* dcterms:Standard\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* owl:Thing" .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* skos:Concept\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* skos:ConceptScheme" .
+<http://purl.org/spar/fabio/hasDateReceived> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/ResearchInformationSystem> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:ResearchInformationSystem (SKG-IF labels: cris system)" .
+<http://purl.org/dc/terms/requires> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:requires (SKG-IF labels: pid_schemes)" .
+<http://prismstandard.org/namespaces/basic/2.0/volume> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/datacite/doi> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/spar/datacite/isni> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/2000/01/rdf-schema#label> "skos:altLabel (SKG-IF labels: other_names)" .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/hasDecisionDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:name (SKG-IF labels: name)" .
+<http://www.w3.org/ns/dcat#DataService> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/dcat#> .
+<http://purl.org/vocab/frbr/core#supplement> <http://www.w3.org/2000/01/rdf-schema#comment> "Research products identifiers that are supplement of a given Research product." .
+<http://purl.org/spar/fabio/hasDateCollected> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/spar/fabio/hasRequestDate> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasRequestDate (SKG-IF labels: request)" .
+<http://purl.org/cerif/frapo/hasCountry> <http://www.w3.org/2000/01/rdf-schema#comment> "The country code of an Organisation expressed as ISO 3166-1 alpha-2." .
+<http://purl.org/spar/fabio/hasDateReceived> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The external identifier." .
+<http://purl.org/spar/fabio/ConferenceProceedings> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:ConferenceProceedings (SKG-IF labels: conference)" .
+<http://purl.org/vocab/frbr/core#realization> <http://www.w3.org/2000/01/rdf-schema#comment> "Objects representing multiple manifestations of the same Research product (e.g., a preprint, a postprint, etc.)." .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://xmlns.com/foaf/0.1/familyName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://purl.org/coar/access_right/c_f1cf> <http://www.w3.org/2000/01/rdf-schema#label> "coar:c_f1cf (SKG-IF labels: embargoed access)" .
+<http://purl.org/spar/pso/StatusInTime> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* dcterms:description -[0..1]-> xsd:string\n* pso:withStatus -[1]-> pso:PublicationStatus" .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "The Agent entity represents an individual (e.g., a person, an organisation, or another kind of entity being able to act) who is involved in the creation, publication, dissemination, etc. of a Research product. An Agent can be an author, a reviewer, an editor, a publisher, a researcher, or any other stakeholder involved in the scholarly communication process." .
+<http://purl.org/spar/fabio/SubjectTerm> <http://www.w3.org/2000/01/rdf-schema#comment> "A Topic describes the scientific disciplines, subjects and keywords potentially relevant for a Research product." .
+<http://purl.org/spar/fabio/Catalog> <http://www.w3.org/2000/01/rdf-schema#comment> "services for the aggregation of metadata about research products (and other entities) that are mainly collected (aka harvested) from data sources via APIs and then possibly curated/enriched by end-users, e.g. BASE, NARCIS, GESIS, B2FIND, OpenAIRE Research Graph" .
+<http://purl.org/spar/datacite/usesIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:usesIdentifierScheme (SKG-IF labels: scheme)" .
+<http://purl.org/spar/fabio/Work> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/withRole> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n* scoro:ContributionSituation\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pro:Role\n* scoro:ProjectRole" .
+<http://purl.org/spar/pro/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/scoro/project-leader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://prismstandard.org/namespaces/basic/2.0/seriesTitle> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:ExpressionCollection\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pro:RoleInTime\n* scoro:ContributionSituation" .
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:title (SKG-IF labels: titles, title)" .
+<http://purl.org/spar/datacite/pmcid> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:pmcid (SKG-IF labels: pmcid)" .
+<http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/datacite/usesIdentifierScheme> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* datacite:Identifier\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* datacite:IdentifierScheme" .
+<http://purl.org/spar/fabio/hasSequenceIdentifier> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<https://schema.org/Audience> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Audience" .
+<http://purl.org/spar/fabio/ScholarlyWork> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:ScholarlyWork (SKG-IF labels: literature)" .
+<http://purl.org/spar/bido/withBibliometricData> <http://www.w3.org/2000/01/rdf-schema#label> "bido:withBibliometricData (SKG-IF labels: term)" .
+<http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#label> "prov:wasGeneratedBy (SKG-IF labels: provenance)" .
+<http://purl.org/spar/fabio/hasRequestDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<https://schema.org/Audience> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://schema.org/> .
+<http://purl.org/spar/pso/peer-reviewed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/editor> <http://www.w3.org/2000/01/rdf-schema#label> "pro:editor (SKG-IF labels: editor)" .
+<http://purl.org/spar/fabio/Software> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/co/index> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/fabio/Repository> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/pso/StatusInTime> <http://www.w3.org/2000/01/rdf-schema#label> "pso:StatusInTime" .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/hasCallIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The funding stream of the Grant." .
+<http://purl.org/spar/datacite/isbn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/ns/odrl/2/Policy> <http://www.w3.org/2000/01/rdf-schema#label> "odrl:Policy" .
+<http://purl.org/spar/datacite/pmcid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://prismstandard.org/namespaces/basic/2.0/volume> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<http://prismstandard.org/namespaces/basic/2.0/endingPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/pso/PublicationStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/subject> <http://www.w3.org/2000/01/rdf-schema#comment> "The disciplines for which a Data source is dedicated. The disciplines must be specified using the Library of Congress Classification codes, available at https://id.loc.gov/authorities/classification (e.g. `PA3000-PA3049` for classical literature). In case a Data source is discipline agnostic, the string `all` should be specified." .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos/core#> .
+<http://prismstandard.org/namespaces/basic/2.0/keyword> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/fabio/BibliometricDataInTime> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:BibliometricDataInTime" .
+<http://purl.org/dc/terms/dateAccepted> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/spar/fabio/hasEmbargoDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/dc/terms/issued> <http://www.w3.org/2000/01/rdf-schema#comment> "The date of formal issuance of a resource (e.g. a publication or a patent)." .
+<http://purl.org/dc/terms/dateAccepted> <http://www.w3.org/2000/01/rdf-schema#comment> "The date of acceptance of an entity. Examples of entities to which a date accepted may be relevant are a thesis (accepted by a university examination board) or an article (accepted by a journal editor)." .
+<http://purl.org/dc/terms/valid> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:valid (SKG-IF labels: validity)" .
+<http://purl.org/spar/fabio/BibliometricDataInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/skg-if/ontology/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "skg-o" .
+<http://purl.org/dc/terms/subject> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:subject (SKG-IF labels: disciplines)" .
+<http://purl.org/cerif/frapo/Company> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/Repository> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:Repository (SKG-IF labels: archive)" .
+<http://purl.org/dc/terms/requires> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* dcterms:Standard\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* datacite:IdentifierScheme" .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier of an Agent." .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types." .
+<http://www.w3.org/ns/odrl/2/hasPolicy> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* odrl:Policy" .
+<http://www.w3.org/ns/odrl/2/Action> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/odrl/2/> .
+<http://xmlns.com/foaf/0.1/page> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* odrl:Policy\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Document" .
+<http://purl.org/spar/scoro/revises-manuscript> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos/core#> .
+<http://purl.org/spar/fabio/hasDistributionDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/dc/terms/conformsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/datacite/ark> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://www.w3.org/ns/odrl/2/action> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* odrl:Policy\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* odrl:Action" .
+<http://purl.org/spar/datacite/Identifier> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* datacite:usesIdentifierScheme -[1]-> datacite:IdentifierScheme\n* literal:hasLiteralValue -[1]-> rdfs:Literal" .
+<https://schema.org/MedicalOrganization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://schema.org/> .
+<http://purl.org/dc/terms/relation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/scoro/leads-investigation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/ns/dcat#accessService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/temporal> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* ti:TimeInterval" .
+<http://purl.org/spar/bido/withBibliometricData> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier of a Topic relevant for the Research product." .
+<http://purl.org/spar/pso/withStatus> <http://www.w3.org/2000/01/rdf-schema#label> "pso:withStatus (SKG-IF labels: status)" .
+<http://purl.org/vocab/frbr/core#revisionOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/University> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/hasRetractionDate> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/spar/pso/open-access> <http://www.w3.org/2000/01/rdf-schema#label> "pso:open-access (SKG-IF labels: open)" .
+<http://purl.org/spar/datacite/issn> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:issn (SKG-IF labels: issn)" .
+<http://purl.org/spar/fabio/hasAccessDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/datacite/pmcid> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:supports (SKG-IF labels: beneficiaries)" .
+<http://purl.org/vocab/frbr/core#realization> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Expression" .
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "the `local_identifier` of the Agent responsible for the topic relation." .
+<http://purl.org/dc/terms/dateCopyrighted> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/spar/scoro/project-member> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:project-member (SKG-IF labels: project member)" .
+<http://prismstandard.org/namespaces/basic/2.0/edition> <http://www.w3.org/2000/01/rdf-schema#comment> "The edition (for journals and books)." .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+<http://purl.org/cerif/frapo/hasAcronym> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:ExpressionCollection\n* foaf:Organization\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://purl.org/dc/terms/Standard> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:Standard" .
+<http://purl.org/spar/scoro/withContribution> <http://www.w3.org/2000/01/rdf-schema#comment> "The contributions that an Agent had in a Research product. Each element in the list is a String compliant with the CRediT taxonomy (https://credit.niso.org), i.e.," .
+<http://purl.org/cerif/frapo/ResearchInstitute> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://prismstandard.org/namespaces/basic/2.0/keyword> <http://www.w3.org/2000/01/rdf-schema#label> "prism:keyword (SKG-IF labels: keywords)" .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "ti:hasIntervalStartDate (SKG-IF labels: start)" .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "pro:relatesToOrganization (SKG-IF labels: declared_affiliations, affiliation)" .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* skos:inScheme -[1]-> skos:ConceptScheme\n* skos:prefLabel -[0..1]-> rdfs:Literal" .
+<http://purl.org/spar/datacite/hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:hasIdentifier (SKG-IF labels: identifiers)" .
+<http://purl.org/spar/pso/withStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pso/holdsStatusInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://purl.org/spar/scoro/Contribution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/scoro/creates-software> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/scoro/lead-applicant> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2000/01/rdf-schema#label> "skos:Concept" .
+<http://purl.org/cerif/frapo/hasGrantNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/conformsTo> <http://www.w3.org/2000/01/rdf-schema#comment> "The persistent identifier systems that are used by a Data source to identify the `ProductType` it supports." .
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:SubjectTerm\n* skos:Concept\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://purl.org/dc/terms/issued> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/cerif/frapo/hasFundingAgency> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:hasFundingAgency (SKG-IF labels: funding_agency)" .
+<http://purl.org/cerif/frapo/GovernmentOrganization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/spar/fabio/hasDepositDate> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/cerif/frapo/Company> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/coar/access_right/c_abf2> <http://www.w3.org/2000/01/rdf-schema#label> "coar:c_abf2 (SKG-IF labels: open access)" .
+<http://purl.org/spar/datacite/hasIdentifier> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* dcat:DataService\n* fabio:Expression\n* fabio:ExpressionCollection\n* fabio:SubjectTerm\n* fabio:Work\n* foaf:Agent\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* datacite:Identifier" .
+<http://www.w3.org/ns/odrl/2/Action> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Organization> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* foaf:homepage -[0..1]-> foaf:Document\n* frapo:hasAcronym -[0..1]-> rdfs:Literal\n* frapo:hasCountry -[0..1]-> rdfs:Literal\n* skos:altLabel -[0..N]-> rdfs:Literal" .
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos/core#> .
+<http://www.w3.org/ns/odrl/2/action> <http://www.w3.org/2000/01/rdf-schema#label> "odrl:action (SKG-IF labels: about)" .
+<http://purl.org/spar/scoro/provides-tools-equipment-or-facilities> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:provides-tools-equipment-or-facilities (SKG-IF labels: resources)" .
+<http://purl.org/vocab/frbr/core#partOf> <http://www.w3.org/2000/01/rdf-schema#label> "frbr:partOf (SKG-IF labels: in, is_part_of)" .
+<http://purl.org/spar/fabio/Dataset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/fabio/hasAccessDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/bido/holdsBibliometricDataInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "Objects referring to Topic covered by the Research product." .
+<http://purl.org/spar/scoro/ProjectRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/scoro/co-applicant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "pro:RoleInTime" .
+<http://purl.org/spar/pso/peer-reviewed> <http://www.w3.org/2000/01/rdf-schema#label> "pso:peer-reviewed (SKG-IF labels: peer reviewed)" .
+<http://purl.org/spar/pro/author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/fabio/Catalog> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Catalog (SKG-IF labels: aggregator)" .
+<http://purl.org/spar/pso/PublicationStatus> <http://www.w3.org/2000/01/rdf-schema#label> "pso:PublicationStatus" .
+<https://w3id.org/skg-if/ontology/> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/skg-if/ontology/1.0.0/> .
+<http://purl.org/spar/fabio/Manifestation> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* prism:endingPage -[1]-> xsd:string\n* prism:startingPage -[1]-> xsd:string" .
+<http://purl.org/cerif/frapo/Facility> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/spar/scoro/writes-manuscript-draft> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://purl.org/coar/access_right/c_14cb> <http://www.w3.org/2000/01/rdf-schema#label> "coar:c_14cb (SKG-IF labels: metadata only access)" .
+<http://purl.org/spar/datacite/ark> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:ark (SKG-IF labels: ark)" .
+<http://purl.org/coar/access_right/c_abf2> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/coar/access_right/> .
+<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#label> "tvc:atTime (SKG-IF labels: period)" .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#label> "pro:holdsRoleInTime (SKG-IF labels: affiliations)" .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* prov:Activity\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* foaf:Agent" .
+<http://www.w3.org/ns/odrl/2/archive> <http://www.w3.org/2000/01/rdf-schema#comment> "This policy provides a comprehensive framework for the long-term preservation of the research products. Principles aims and responsibilities must be clarified. An important aspect is the description of preservation concepts to ensure the technical and conceptual utility of the content." .
+<http://purl.org/vocab/frbr/core#embodiment> <http://www.w3.org/2000/01/rdf-schema#comment> "the pages where the manifestation in defined (within its Venue)." .
+<http://purl.org/spar/scoro/workpackage-leader> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/scoro/withContribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:isFundedBy (SKG-IF labels: funding)" .
+<http://purl.org/spar/pso/withStatus> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* pso:StatusInTime\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pso:PublicationStatus" .
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/spar/pro/RoleInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/hasSequenceIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasSequenceIdentifier (SKG-IF labels: number)" .
+<http://purl.org/spar/datacite/orcid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://schema.org/audienceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/vocab/frbr/core#revisionOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/vocab/frbr/core#> .
+<http://www.w3.org/ns/odrl/2/target> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/datacite/lissn> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:lissn (SKG-IF labels: lissn)" .
+<http://purl.org/dc/terms/Standard> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* dcterms:coverage -[1]-> owl:Thing\n* dcterms:requires -[1..N]-> datacite:IdentifierScheme" .
+<http://purl.org/spar/fabio/SubjectTerm> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:SubjectTerm (SKG-IF labels: topic, Topic)" .
+<http://purl.org/spar/datacite/isni> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:isni (SKG-IF labels: isni)" .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:ExpressionCollection\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pro:RoleInTime" .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/abstract> <http://www.w3.org/2000/01/rdf-schema#comment> "The abstracts of a Research product (multiple for multilinguism)." .
+<http://purl.org/spar/fabio/hasDecisionDate> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/spar/fabio/ScholarlyWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+<http://purl.org/spar/datacite/usesIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<https://w3id.org/skg-if/ontology/> <http://purl.org/dc/elements/1.1/date> "2024-12-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/spar/pro/isDocumentContextFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/fabio/hasDepositDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which an entity has been deposited, for example in a library, repository, supplementary information archive, database or similar place of document or information storage." .
+<http://xmlns.com/foaf/0.1/familyName> <http://www.w3.org/2000/01/rdf-schema#comment> "The family name of a Person." .
+<http://purl.org/spar/scoro/supervises-colleagues> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "Organisations identifiers that reflect the declared affiliations of a Agent for a Research product." .
+<http://www.w3.org/ns/odrl/2/hasPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/datacite/re3data> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:re3data" .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#comment> "All the affiliations of a Person (à la ORCID)." .
+<http://purl.org/spar/fabio/ExpressionCollection> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:ExpressionCollection (SKG-IF labels: venue)" .
+<http://purl.org/cerif/frapo/Grant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/scoro/affiliate> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:affiliate (SKG-IF labels: affiliate)" .
+<http://purl.org/vocab/frbr/core#revisionOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Research products identifiers that are prior versions of a given Research product." .
+<http://purl.org/dc/terms/dateCopyrighted> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which an entity has been copyrighted." .
+<http://purl.org/dc/terms/conformsTo> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/spar/scoro/project-manager> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/datacite/opendoar> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/cerif/frapo/hasAcronym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://purl.org/spar/cito/cites> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/cito/> .
+<http://purl.org/dc/terms/dateAccepted> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:dateAccepted (SKG-IF labels: acceptance)" .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Currency of the funded amount, following ISO 4217." .
+<http://purl.org/spar/pso/holdsStatusInTime> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n* fabio:ExpressionCollection\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* pso:StatusInTime" .
+<http://purl.org/spar/datacite/fairsharing> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:fairsharing (SKG-IF labels: fairsharing)" .
+<http://purl.org/spar/fabio/ExpressionCollection> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://www.w3.org/ns/odrl/2/Policy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/odrl/2/target> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* odrl:Policy\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* owl:Thing" .
+<http://purl.org/spar/fabio/hasEmbargoDate> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/datacite/issn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/scoro/ensures-regulatory-compliance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://www.w3.org/ns/prov#Activity> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* prov:wasAssociatedWith -[1]-> foaf:Agent\n* rdf:value -[1]-> xsd:float" .
+<http://purl.org/spar/fabio/ExpressionCollection> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* datacite:hasIdentifier -[0..N]-> datacite:Identifier\n* dcterms:created -[0..1]-> xsd:dateTime\n* dcterms:title -[0..1]-> rdfs:Literal\n* frapo:hasAcronym -[0..1]-> rdfs:Literal\n* prism:seriesTitle -[0..1]-> rdfs:Literal\n* pro:isDocumentContextFor -[0..N]-> pro:RoleInTime\n* pso:holdsStatusInTime -[1]-> pso:StatusInTime" .
+<http://purl.org/spar/fabio/hasCorrectionDate> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasCorrectionDate (SKG-IF labels: correction)" .
+<http://xmlns.com/foaf/0.1/givenName> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* foaf:Person\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Provenance information tracking the origin of the relation between a Topic and a Research product. Each topic provenance object has the following properties:" .
+<https://w3id.org/skg-if/ontology/> <http://www.w3.org/2000/01/rdf-schema#label> "SKG-O" .
+<http://purl.org/spar/fabio/SubjectTerm> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://purl.org/spar/cito/cites> <http://www.w3.org/2000/01/rdf-schema#label> "cito:cites (SKG-IF labels: cites)" .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/Database> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/scoro/ContributionSituation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://xmlns.com/foaf/0.1/Person> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* foaf:familyName -[0..1]-> rdfs:Literal\n* foaf:givenName -[0..1]-> rdfs:Literal\n* pro:holdsRoleInTime -[0..N]-> pro:RoleInTime" .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#> .
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/spar/datacite/hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://www.w3.org/ns/prov#wasAssociatedWith> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/prov#> .
+<http://www.essepuntato.it/2012/04/tvc/atTime> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* pro:RoleInTime\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* ti:TimeInterval" .
+<http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#comment> "describe the type of policy, if necessary." .
+<http://www.w3.org/ns/dcat#accessService> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* dcat:DataService" .
+<http://www.w3.org/ns/dcat#DataService> <http://www.w3.org/2000/01/rdf-schema#comment> "A Data source is a service or platform where a Research product (its metadata and files) is stored, preserved, and made discoverable and accessible. A data source is described by the EOSC Profile for data sources (https://wiki.eoscfuture.eu/display/PUBLIC/D.+v4.00+EOSC+Data+Source+Profile)." .
+<https://schema.org/audience> <http://www.w3.org/2000/01/rdf-schema#label> "schema:audience (SKG-IF labels: audience)" .
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://purl.org/vocab/frbr/core#embodiment> <http://www.w3.org/2000/01/rdf-schema#label> "frbr:embodiment (SKG-IF labels: pages)" .
+<http://purl.org/spar/fabio/Catalog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#label> "pro:withRole (SKG-IF labels: role)" .
+<http://purl.org/spar/scoro/conceives-project> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:conceives-project (SKG-IF labels: conceptualization)" .
+<http://purl.org/spar/pso/restricted-access> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://purl.org/spar/scoro/conceives-project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/datacite/eissn> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:eissn (SKG-IF labels: eissn)" .
+<http://www.w3.org/ns/dcat#theme> <http://www.w3.org/2000/01/rdf-schema#label> "dcat:theme (SKG-IF labels: data_source_classification)" .
+<http://purl.org/vocab/frbr/core#embodiment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/vocab/frbr/core#> .
+<http://purl.org/spar/pro/Role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pso/restricted-access> <http://www.w3.org/2000/01/rdf-schema#label> "pso:restricted-access (SKG-IF labels: restricted)" .
+<http://purl.org/spar/datacite/viaf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/fabio/Work> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://prismstandard.org/namespaces/basic/2.0/issueIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Issue number." .
+<http://purl.org/cerif/frapo/hasAcronym> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/cerif/frapo/GovernmentOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:GovernmentOrganization (SKG-IF labels: government)" .
+<http://purl.org/spar/fabio/hasAccessDate> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasAccessDate (SKG-IF labels: access)" .
+<http://purl.org/spar/fabio/hasRequestDate> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/2000/01/rdf-schema#comment> "the URL of the document that describes the policy." .
+<http://purl.org/spar/datacite/arxiv> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:arxiv (SKG-IF labels: arxiv)" .
+<http://purl.org/spar/scoro/analyses-data> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:analyses-data (SKG-IF labels: formal analysis)" .
+<http://purl.org/coar/access_right/c_14cb> <http://www.w3.org/2000/01/rdf-schema#comment> "This policy provides the possibility of having / handling metadata only access refers to the resources in the Data source (from COAR Access Rights 1.0)." .
+<http://purl.org/spar/pso/PublicationStatus> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://purl.org/spar/fabio/hasDistributionDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which something is distributed, for example the date on which a preprint of a document is e-mailed to colleagues and other academics by the author(s), or the date on which a printed announcement of forthcoming theatre events is mailed to those those on the theatre's mailing list." .
+<http://purl.org/spar/scoro/supervises-colleagues> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:supervises-colleagues (SKG-IF labels: supervision)" .
+<http://purl.org/dc/terms/dateCopyrighted> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/fabio/hasDistributionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The time period where the Person was affiliated with an Organisation. It includes the following information:" .
+<http://purl.org/spar/fabio/hasDateCollected> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasDateCollected (SKG-IF labels: collected)" .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/2000/01/rdf-schema#label> "skos:inScheme (SKG-IF labels: defined_in)" .
+<https://schema.org/audienceType> <http://www.w3.org/2000/01/rdf-schema#label> "schema:audienceType (SKG-IF labels: audience_type)" .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos/core#> .
+<http://purl.org/spar/datacite/usesIdentifierScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/ns/odrl/2/target> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/odrl/2/> .
+<http://purl.org/dc/terms/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/fabio/BibliometricDataInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/fabio/> .
+<http://www.w3.org/ns/odrl/2/action> <http://www.w3.org/2000/01/rdf-schema#comment> "the type of policy to consider." .
+<http://www.w3.org/ns/prov#Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:Document" .
+<http://prismstandard.org/namespaces/basic/2.0/startingPage> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Manifestation\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<http://purl.org/cerif/frapo/Repository> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/spar/pso/closed-access> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://www.w3.org/ns/odrl/2/Policy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/odrl/2/> .
+<http://purl.org/spar/scoro/prepares-illustrations> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:prepares-illustrations (SKG-IF labels: visualization)" .
+<http://purl.org/cerif/frapo/FundingAgency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/scoro/processes-data> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/datacite/lissn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/spar/datacite/arxiv> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/cerif/frapo/hasCountry> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/spar/pso/closed-access> <http://www.w3.org/2000/01/rdf-schema#label> "pso:closed-access (SKG-IF labels: closed)" .
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/ns/dcat#accessService> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/dcat#> .
+<http://purl.org/cerif/frapo/hasFundingAgency> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* frapo:FundingAgency" .
+<http://www.w3.org/ns/dcat#accessService> <http://www.w3.org/2000/01/rdf-schema#comment> "A Data source identifier for the manifestation." .
+<http://purl.org/spar/scoro/ensures-regulatory-compliance> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:ensures-regulatory-compliance (SKG-IF labels: validation)" .
+<http://purl.org/spar/cito/isDocumentedBy> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Work" .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:Person" .
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos/core#> .
+<http://purl.org/cerif/frapo/isFundedBy> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* frapo:Grant" .
+<http://purl.org/spar/bido/holdsBibliometricDataInTime> <http://www.w3.org/2000/01/rdf-schema#label> "bido:holdsBibliometricDataInTime (SKG-IF labels: topics)" .
+<http://purl.org/cerif/frapo/hasCallIdentifier> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://purl.org/spar/datacite/lissn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/datacite/Identifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/spar/scoro/secures-funding> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/Repository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/valid> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/cerif/frapo/University> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<https://w3id.org/skg-if/ontology/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The start datetime of the Grant. The string should be compliant with the ISO 8601 datetime string." .
+<http://purl.org/spar/datacite/IdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/spar/datacite/hasIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/fabio/hasDateReceived> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which some item is received, for example a document being received by a publisher." .
+<http://purl.org/spar/scoro/co-applicant> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:co-applicant (SKG-IF labels: co-applicant)" .
+<http://purl.org/spar/pro/relatesToOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/frbr/core#partOf> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n* fabio:Work\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:Expression\n* fabio:Work" .
+<http://purl.org/spar/fabio/hasEmbargoDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date before which an entity should not be published, or before which a press release should not be reported on. For open-access journal articles, the embargo date is the date before which availability of the open-access version of the article is restricted by the publisher, following subscription-access availability of the published work." .
+<http://purl.org/spar/datacite/pmid> <http://www.w3.org/2000/01/rdf-schema#label> "datacite:pmid (SKG-IF labels: pmid)" .
+<http://purl.org/cerif/frapo/hasCurrency> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:hasCurrency (SKG-IF labels: funded_amount)" .
+<http://purl.org/coar/access_right/c_abf2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/datacite/arxiv> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://prismstandard.org/namespaces/basic/2.0/versionIdentifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://prismstandard.org/namespaces/basic/2.0/> .
+<http://purl.org/spar/pro/withRole> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/spar/datacite/ark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/pso/unpublished> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:homepage (SKG-IF labels: website)" .
+<http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#label> "skos:ConceptScheme" .
+<http://purl.org/spar/scoro/supervises-colleagues> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/pro/holdsRoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://purl.org/spar/fabio/Repository> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Repository (SKG-IF labels: repository)" .
+<http://purl.org/spar/scoro/develops-methodology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spar/datacite/usesIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "The scheme for the external identifier (e.g., a DOI)." .
+<http://purl.org/spar/fabio/hasAccessDate> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/vocab/frbr/core#partOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A Venue identifier for the manifestation." .
+<http://purl.org/spar/pso/under-review> <http://www.w3.org/2000/01/rdf-schema#label> "pso:under-review (SKG-IF labels: under review)" .
+<http://purl.org/spar/scoro/affiliate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/pso/holdsStatusInTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/pso/holdsStatusInTime> <http://www.w3.org/2000/01/rdf-schema#label> "pso:holdsStatusInTime (SKG-IF labels: access_rights)" .
+<http://purl.org/spar/pro/isRelatedToRoleInTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pro/> .
+<http://prismstandard.org/namespaces/basic/2.0/volume> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://prismstandard.org/namespaces/basic/2.0/> .
+<http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://www.w3.org/ns/odrl/2/aggregate> <http://www.w3.org/2000/01/rdf-schema#comment> "This policy provides a comprehensive framework for the contribution of research products. Criteria for submitting content to the repository as well as product preparation guidelines can be stated. Concepts for quality assurance may be provided." .
+<http://purl.org/dc/terms/temporal> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:temporal (SKG-IF labels: duration)" .
+<http://prismstandard.org/namespaces/basic/2.0/edition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://prismstandard.org/namespaces/basic/2.0/issueIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/modified> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:dateTime" .
+<http://purl.org/spar/fabio/Expression> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Expression" .
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/fabio/hasCorrectionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/cerif/frapo/ResearchInformationSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pso/embargoed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/cerif/frapo/FundingAgency> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:FundingAgency (SKG-IF labels: funder)" .
+<http://purl.org/dc/terms/abstract> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Work\n* frapo:Grant\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://prismstandard.org/namespaces/basic/2.0/volume> <http://www.w3.org/2000/01/rdf-schema#comment> "Volume number (for journals, books, conferences)." .
+<http://purl.org/spar/cito/cites> <http://www.w3.org/2000/01/rdf-schema#comment> "Research products identifiers that are cited by a given Research product." .
+<https://schema.org/audience> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/Grant> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://xmlns.com/foaf/0.1/familyName> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* foaf:Person\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://purl.org/cerif/frapo/hasCountry> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* foaf:Organization\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://purl.org/spar/cito/isDocumentedBy> <http://www.w3.org/2000/01/rdf-schema#label> "cito:isDocumentedBy (SKG-IF labels: is_documented_by)" .
+<http://purl.org/spar/fabio/hasDateCollected> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which some item has been collected, for example the data gathered by means of questionnaires." .
+<http://purl.org/spar/fabio/hasSequenceIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "a number of the manifestation within the Venue (e.g., chapter number)." .
+<http://purl.org/dc/terms/issued> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:issued (SKG-IF labels: publication)" .
+<http://purl.org/spar/bido/withBibliometricData> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:BibliometricDataInTime\n\nIn SKG-IF, it is used to link to entities belonging to the following classes (range):\n* fabio:SubjectTerm" .
+<http://purl.org/spar/scoro/Contribution> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:Contribution" .
+<http://purl.org/cerif/frapo/University> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:University (SKG-IF labels: education)" .
+<http://purl.org/cerif/frapo/supports> <http://www.w3.org/2000/01/rdf-schema#comment> "Organisations identifiers funded by the Grant." .
+<http://prismstandard.org/namespaces/basic/2.0/endingPage> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Manifestation\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<http://purl.org/spar/fabio/Journal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pso/open-access> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/cerif/frapo/hasFundingAgency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/cerif/frapo/Grant> <http://www.w3.org/2000/01/rdf-schema#label> "frapo:Grant (SKG-IF labels: Grant)" .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/temporal> <http://www.w3.org/2000/01/rdf-schema#comment> "The duration of the Grant." .
+<http://purl.org/spar/scoro/project-leader> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#comment> "The titles of a Research product (multiple for multilinguism)." .
+<http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:givenName (SKG-IF labels: given_name)" .
+<http://www.essepuntato.it/2012/04/tvc/atTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/pro/RoleInTime> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* co:index -[0..1]-> xsd:positiveInteger\n* pro:isHeldBy -[1]-> foaf:Agent\n* pro:relatesToOrganization -[0..N]-> foaf:Organization\n* pro:withRole -[0..1]-> pro:Role\n* pro:withRole -[0..1]-> scoro:ProjectRole\n* scoro:withContribution -[0..N]-> scoro:Contribution\n* tvc:atTime -[0..1]-> ti:TimeInterval" .
+<http://purl.org/spar/scoro/manages-project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/ns/odrl/2/hasPolicy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/odrl/2/> .
+<http://prismstandard.org/namespaces/basic/2.0/endingPage> <http://www.w3.org/2000/01/rdf-schema#label> "prism:endingPage (SKG-IF labels: last)" .
+<http://purl.org/co/index> <http://www.w3.org/2000/01/rdf-schema#label> "co:index (SKG-IF labels: rank)" .
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/datacite/IdentifierScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/pro/isHeldBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/cito/isDocumentedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/cito/> .
+<http://purl.org/spar/scoro/prepares-illustrations> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/scoro/> .
+<http://purl.org/spar/pso/under-review> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://prismstandard.org/namespaces/basic/2.0/edition> <http://www.w3.org/2000/01/rdf-schema#label> "prism:edition (SKG-IF labels: edition)" .
+<http://purl.org/spar/fabio/hasDecisionDate> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:hasDecisionDate (SKG-IF labels: decision)" .
+<http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* datacite:Identifier\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* rdfs:Literal" .
+<http://purl.org/dc/terms/relation> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:relation (SKG-IF labels: relevant_organisations)" .
+<http://purl.org/dc/terms/relation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+<http://prismstandard.org/namespaces/basic/2.0/edition> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<http://purl.org/spar/fabio/Metadata> <http://www.w3.org/2000/01/rdf-schema#label> "fabio:Metadata (SKG-IF labels: metadata)" .
+<http://purl.org/spar/pso/embargoed> <http://www.w3.org/2000/01/rdf-schema#label> "pso:embargoed (SKG-IF labels: embargoed)" .
+<http://purl.org/spar/pso/peer-reviewed> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/pso/> .
+<http://prismstandard.org/namespaces/basic/2.0/issueIdentifier> <http://purl.org/dc/elements/1.1/description> "In SKG-IF, it is used in the following classes (domain):\n* fabio:Expression\n\nIn SKG-IF, it is used to link to entities belonging to the following data types (range):\n* xsd:string" .
+<http://prismstandard.org/namespaces/basic/2.0/startingPage> <http://www.w3.org/2000/01/rdf-schema#label> "prism:startingPage (SKG-IF labels: first)" .
+<http://purl.org/spar/scoro/withContribution> <http://www.w3.org/2000/01/rdf-schema#label> "scoro:withContribution (SKG-IF labels: contribution)" .
+<http://purl.org/spar/fabio/Database> <http://www.w3.org/2000/01/rdf-schema#comment> "Scientific Databases intended to store structured information about scientific entities, e.g. PROTDB, ENA, ECRIN Studies Database" .
+<http://purl.org/dc/terms/modified> <http://www.w3.org/2000/01/rdf-schema#label> "dcterms:modified (SKG-IF labels: modified)" .
+<http://purl.org/cerif/frapo/isFundedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/spar/datacite/ror> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/datacite/> .
+<http://purl.org/spar/fabio/ConferenceProceedings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/coar/access_right/c_f1cf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/coar/access_right/> .
+<http://purl.org/vocab/frbr/core#supplement> <http://www.w3.org/2000/01/rdf-schema#label> "frbr:supplement (SKG-IF labels: is_supplemented_by)" .
+<http://purl.org/coar/access_right/c_f1cf> <http://www.w3.org/2000/01/rdf-schema#comment> "This policy provides the possibility of having / handling embargoed access refers to the resources in the Data source (from COAR Access Rights 1.0)." .
+<http://purl.org/spar/datacite/fairsharing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The end datetime (if any) of the Grant. The string should be compliant with the ISO 8601 datetime string." .
+<http://xmlns.com/foaf/0.1/page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Activity" .
+<http://purl.org/cerif/frapo/hasCurrencyCode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/cerif/frapo/> .
+<http://purl.org/spar/bido/withBibliometricData> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/bido/> .

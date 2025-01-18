@@ -1,0 +1,126 @@
+{
+    "@context": [ 
+        "https://w3id.org/skg-if/context/0.2.0/skg-if.json",
+        { 
+            "@base": "https://w3id.org/skg-if/sandbox/skg-if-wg/",
+            "skg": "https://w3id.org/skg-if/sandbox/skg-if-wg/"
+        }
+    ],
+    "@graph": [
+        {
+            "local_identifier": "product_1",
+
+            "identifiers": [
+                {
+                    "scheme": "doi",
+                    "value": "10.1103/PhysRevE.80.056103"
+                }
+            ],
+
+            "entity_type": "product",
+
+            "titles": {
+                "en": ["Title of the paper", "Title variant"],
+                "it": ["Titolo in italiano"],
+                "none": ["Itletay ofyay ethay aperpay"]
+            },
+
+            "abstracts": {
+                "en": ["Abstract", "Summary"],
+                "es": ["Resumen"],
+                "none": ["Aperpay ummarysay"]
+            },
+
+            "product_type": "literature",
+
+            "topics": [
+                {
+                    "term": "topic_1",
+                    "provenance": [
+                        {
+                            "associated_with": "openaire-infra",
+                            "trust": 0.7
+                        }
+                    ]
+                },
+                {
+                    "term": "topic_2",
+                    "provenance": [
+                        {
+                            "associated_with": "openalex-infra",
+                            "trust": 0.9
+                        }
+                    ]
+                }
+            ],
+
+            "contributions": [
+                {
+                    "by": "person_123",
+                    "declared_affiliations": ["org_1", "org_3"],
+                    "rank": 1,
+                    "contribution": ["writing – original draft", "conceptualization"],
+                    "role": "author"
+                }
+            ],
+
+            "manifestations": [
+                {
+                    "type": {
+                        "class": "http://purl.org/spar/fabio/Preprint",
+                        "labels": {
+                            "en": "preprint"
+                        },
+                        "defined_in": "http://purl.org/spar/fabio"
+                    },
+                    "dates": {
+                        "modified": ["2024-01-15T14:15:43Z", "2024-02-11T11:12:04Z"],
+                        "distribution": "2024-02-12T12:00:00Z"
+                    },
+                    "identifiers": [
+                        {
+                            "scheme": "arxiv",
+                            "value": "2407.13329"
+                        },
+                        {
+                            "scheme": "url",
+                            "value": "https://arxiv.org/abs/2407.13329"
+                        }
+                    ],
+                    "peer_review": {
+                        "status": "peer reviewed",
+                        "description": "single-blind peer review"
+                    },
+                    "access_rights": {
+                        "status": "restricted",
+                        "description": "Only publishers can access the manifestation"
+                    },
+                    "license": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+                    "version": "1.0.0",
+                    "biblio": {
+                        "issue": "1",
+                        "pages": {
+                            "first": "640",
+                            "last": "645"
+                        },
+                        "volume": "17",
+                        "in": "ven1",
+                        "hosting_data_source": "ds1"
+                    }
+                }
+            ],
+
+            "relevant_organisations": ["org_1", "org3"],
+            
+            "funding": ["grant_1", "grant_2"],
+            
+            "related_products": {
+                "cites": ["product_2", "product_3", "product_4"],
+                "is_supplemented_by": ["product_7", "product_8", "product_9"],
+                "is_documented_by": ["product_10", "product_13"],
+                "is_new_version_of": ["product_10", "product_13"],
+                "is_part_of": ["product_11"]
+            }
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "shacl-extractor"
+version = "0.1.0"
+description = "A Python tool to automatically generate SHACL shapes from OWL ontologies"
+authors = ["arcangelo7 <arcangelo.massari@unibo.it>"]
+license = "ISC License"
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+rdflib = "^7.1.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+pytest-cov = "^4.1.0"
+isort = "^5.13.2"
+pyshacl = "^0.29.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+extractor = "src.main:main"

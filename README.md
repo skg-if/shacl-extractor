@@ -1,7 +1,7 @@
 # SKG-IF SHACL Extractor
 
 [![Tests](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml/badge.svg)](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml)
-[![Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/arcangelo7/a6a55f79f68d682f0f8ca7e73c80ce0a/raw/coverage.json)](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml)
+[![Coverage](https://img.shields.io/badge/coverage-94%25-green)](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)

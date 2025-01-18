@@ -46,3 +46,4 @@ jobs:
           STATUS: ${{ env.COVERAGE }}
           COLOR: green
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: main

@@ -35,3 +35,14 @@ jobs:
           poetry run pytest --cov=src --cov-report=term-missing:skip-covered
           echo "=== Coverage Report ==="
           poetry run coverage report
+          echo "COVERAGE=$(poetry run coverage report | grep TOTAL | awk '{print $4}')" >> $GITHUB_ENV
+
+      - name: Generate coverage badge
+        if: github.ref == 'refs/heads/main' && matrix.python-version == '3.9'
+        uses: RubbaBoy/BYOB@v1.3.0
+        with:
+          NAME: coverage
+          LABEL: "Coverage"
+          STATUS: ${{ env.COVERAGE }}
+          COLOR: green
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

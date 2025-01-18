@@ -363,5 +363,55 @@ ex:Venue a owl:Class .
                     f"Validation results:\n{results_text}"
                 )
 
+    def test_get_ontology_path_invalid_version(self):
+        """Test get_ontology_path with an invalid version"""
+        with self.assertRaises(ValueError) as context:
+            get_ontology_path("invalid_version")
+        
+        expected_path = Path("data-model/ontology/invalid_version/skg-o.ttl")
+        self.assertIn(f"Ontology version invalid_version not found at {expected_path}", str(context.exception))
+
+    def test_main_with_invalid_version(self):
+        """Test main function with an invalid version"""
+        output_file = Path(self.temp_dir) / "test_output.ttl"
+        
+        test_args = ['prog_name', '--version', 'invalid_version', str(output_file)]
+        with unittest.mock.patch('sys.argv', test_args):
+            with unittest.mock.patch('argparse.ArgumentParser.error') as mock_error:
+                from src.main import main
+                main()
+                # Verify that error was called with the correct message
+                mock_error.assert_called_once()
+                error_msg = mock_error.call_args[0][0]
+                expected_path = Path("data-model/ontology/invalid_version/skg-o.ttl")
+                self.assertIn(f"Ontology version invalid_version not found at {expected_path}", error_msg)
+
+    def test_empty_property_description(self):
+        """Test handling of empty property descriptions"""
+        # Create test file with empty property in description
+        test_file = Path(self.temp_dir) / "empty_prop.ttl"
+        with open(test_file, 'w', encoding='utf-8') as f:
+            f.write('''
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://example.org/> .
+
+ex:TestClass a owl:Class ;
+    dc:description """The properties are:
+* ex:prop1 -[1]-> ex:Type1
+* 
+* ex:prop2 -[1]-> ex:Type2
+""" .
+''')
+        
+        # This should not raise any exceptions
+        shacl_graph = create_shacl_shapes(test_file)
+        
+        # Verify we got the expected number of property shapes
+        SH = Namespace("http://www.w3.org/ns/shacl#")
+        shape_uri = URIRef("http://example.org/TestClassShape")
+        property_shapes = list(shacl_graph.objects(shape_uri, SH.property))
+        self.assertEqual(len(property_shapes), 2)  # Should have 2 properties, skipping the empty one
+
 if __name__ == '__main__':
     unittest.main()

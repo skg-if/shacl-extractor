@@ -140,13 +140,14 @@ def main():
     args = parser.parse_args()
     
     # If no input file is specified, use the versioned ontology
-    if args.input:
-        input_path = args.input
-    else:
-        try:
+    try:
+        if args.input:
+            input_path = args.input
+        else:
             input_path = get_ontology_path(args.version)
-        except ValueError as e:
-            parser.error(str(e))
+    except ValueError as e:
+        parser.error(str(e))
+        return  # Add this return statement to prevent further execution
     
     shacl_graph = create_shacl_shapes(input_path)
     shacl_graph.serialize(destination=args.output, format="turtle", encoding="utf-8")

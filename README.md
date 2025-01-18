@@ -1,7 +1,6 @@
 # SKG-IF SHACL Extractor
 
 [![Tests](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml/badge.svg)](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml)
-[![codecov](https://codecov.io/gh/skg-if/shacl-extractor/branch/main/graph/badge.svg)](https://codecov.io/gh/skg-if/shacl-extractor)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)

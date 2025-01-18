@@ -6,8 +6,6 @@ from typing import Optional
 from rdflib import BNode, Graph, Literal, Namespace, URIRef
 from rdflib.namespace import OWL, RDF, XSD
 
-DEFAULT_ONTOLOGY_PATH = "data-model/current/skg-o.ttl"
-
 def get_ontology_path(version: Optional[str] = None) -> str:
     """
     Get the path to the ontology file based on version.
@@ -16,17 +14,45 @@ def get_ontology_path(version: Optional[str] = None) -> str:
     base_path = Path("data-model/ontology")
     
     if version is None:
-        return str(base_path / "current" / "skg-o.ttl")
+        version = "current"
+        
+    version_path = base_path / version
     
-    version_path = base_path / version / "skg-o.ttl"
-    if not version_path.exists():
-        raise ValueError(f"Ontology version {version} not found at {version_path}")
+    # For versions 1.0.1 and later, we need to combine module files
+    if version == "1.0.1" or version == "current":
+        return str(version_path)
+    else:
+        # For earlier versions, use the single TTL file
+        ttl_path = version_path / "skg-o.ttl"
+        if not ttl_path.exists():
+            raise ValueError(f"Ontology version {version} not found at {ttl_path}")
+        return str(ttl_path)
+
+def load_ontology(path: str) -> Graph:
+    """
+    Load the ontology from the given path.
+    For 1.0.1+ versions, combines all module TTL files.
+    For earlier versions, loads the single TTL file.
+    """
+    g = Graph()
+    path = Path(path)
     
-    return str(version_path)
+    if path.is_file():
+        # Pre-1.0.1: Single TTL file
+        g.parse(path, format='turtle', encoding='utf-8')
+    else:
+        # 1.0.1+: Multiple module files
+        module_dirs = [d for d in path.iterdir() if d.is_dir() and not d.name == "resources"]
+        
+        for module_dir in module_dirs:
+            ttl_files = list(module_dir.glob("*.ttl"))
+            if ttl_files:
+                g.parse(ttl_files[0], format='turtle', encoding='utf-8')
+                
+    return g
 
 def create_shacl_shapes(input_file: str) -> Graph:
-    g = Graph()
-    g.parse(input_file, format='turtle', encoding='utf-8')
+    g = load_ontology(input_file)
     
     shacl = Graph()
     SH = Namespace("http://www.w3.org/ns/shacl#")
@@ -85,16 +111,16 @@ def create_shacl_shapes(input_file: str) -> Graph:
                                 elif target.startswith("xsd:"):
                                     shacl.add((bnode, SH.datatype, URIRef(f"http://www.w3.org/2001/XMLSchema#{target_local}")))
                                 else:
-                                    # Creiamo un or tra class e nodeKind
+                                    # Create an or between class and nodeKind
                                     or_node = BNode()
                                     shacl.add((bnode, SH['or'], or_node))
                                     
-                                    # Prima alternativa: la classe specifica
+                                    # First alternative: the specific class
                                     class_constraint = BNode()
                                     shacl.add((or_node, RDF.first, class_constraint))
                                     shacl.add((class_constraint, SH['class'], URIRef(target_ns + target_local)))
                                     
-                                    # Seconda alternativa: qualsiasi IRI o blank node
+                                    # Second alternative: any IRI or blank node
                                     rest_node = BNode()
                                     shacl.add((or_node, RDF.rest, rest_node))
                                     

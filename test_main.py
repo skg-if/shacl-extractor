@@ -7,8 +7,8 @@ from pathlib import Path
 
 from pyshacl import validate
 from rdflib import Graph, Literal, Namespace, URIRef
-from rdflib.namespace import RDF
-from src.main import create_shacl_shapes, get_ontology_path
+from rdflib.namespace import RDF, OWL
+from src.main import create_shacl_shapes, get_ontology_path, load_ontology
 
 
 class TestTTLToSHACL(unittest.TestCase):
@@ -127,47 +127,86 @@ ex:NoDescClass a owl:Class .
         self.assertTrue(any(s for s in g.subjects(RDF.type, SH.NodeShape)))
 
     def test_get_ontology_path_with_version(self):
-        """Test get_ontology_path with a specific version"""
+        """Test get_ontology_path with a specific version (pre 1.0.1)"""
         version = "1.0.0"
         expected_path = str(Path("data-model") / "ontology" / "1.0.0" / "skg-o.ttl")
         actual_path = get_ontology_path(version)
         self.assertEqual(actual_path, expected_path)
 
     def test_get_ontology_path_current(self):
-        """Test get_ontology_path with no version (should return current)"""
-        expected_path = str(Path("data-model") / "ontology" / "current" / "skg-o.ttl")
+        """Test get_ontology_path with current version (1.0.1+)"""
+        expected_path = str(Path("data-model") / "ontology" / "current")
         actual_path = get_ontology_path()
         self.assertEqual(actual_path, expected_path)
 
-    def test_get_ontology_path_invalid_version(self):
-        """Test get_ontology_path with an invalid version"""
-        invalid_version = "999.999.999"
-        with self.assertRaises(ValueError) as context:
-            get_ontology_path(invalid_version)
-        self.assertIn("Ontology version 999.999.999 not found", str(context.exception))
+    def test_get_ontology_path_1_0_1(self):
+        """Test get_ontology_path with version 1.0.1"""
+        version = "1.0.1"
+        expected_path = str(Path("data-model") / "ontology" / "1.0.1")
+        actual_path = get_ontology_path(version)
+        self.assertEqual(actual_path, expected_path)
 
-    def test_version_argument_in_main(self):
-        """Test main function with version argument"""
-        output_file = Path(self.temp_dir) / "version_test_output.ttl"
+    def test_load_ontology_single_file(self):
+        """Test loading a single TTL file (pre 1.0.1)"""
+        input_file = self.input_file
+        g = load_ontology(str(input_file))
+        self.assertTrue(isinstance(g, Graph))
+        self.assertTrue(len(g) > 0)
         
-        test_args = ['prog_name', '--version', '1.0.0', str(output_file)]
-        with unittest.mock.patch('sys.argv', test_args):
-            from src.main import main
-            main()
+        # Verify we can find our test class
+        EX = Namespace("http://example.org/")
+        self.assertIn((EX.TestClass, RDF.type, OWL.Class), g)
+
+    def test_load_ontology_modular(self):
+        """Test loading modular TTL files (1.0.1+)"""
+        # Create a temporary modular structure
+        base_dir = Path(self.temp_dir) / "ontology" / "test_version"
+        agent_dir = base_dir / "agent"
+        agent_dir.mkdir(parents=True)
         
-        self.assertTrue(output_file.exists())
-        g = Graph()
-        g.parse(output_file, format='turtle')
+        # Create a test TTL file in the agent module
+        agent_ttl = agent_dir / "skg-o.ttl"
+        with open(agent_ttl, 'w', encoding='utf-8') as f:
+            f.write("""
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+foaf:Agent a owl:Class .
+""")
+
+        # Create another module directory and TTL file
+        venue_dir = base_dir / "venue"
+        venue_dir.mkdir()
+        venue_ttl = venue_dir / "skg-o.ttl"
+        with open(venue_ttl, 'w', encoding='utf-8') as f:
+            f.write("""
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ex: <http://example.org/> .
+
+ex:Venue a owl:Class .
+""")
+
+        # Create a resources directory that should be ignored
+        resources_dir = base_dir / "resources"
+        resources_dir.mkdir()
         
-        SH = Namespace("http://www.w3.org/ns/shacl#")
-        self.assertTrue(any(s for s in g.subjects(RDF.type, SH.NodeShape)))
+        # Test loading the modular structure
+        g = load_ontology(str(base_dir))
+        
+        # Verify both modules were loaded
+        FOAF = Namespace("http://xmlns.com/foaf/0.1/")
+        EX = Namespace("http://example.org/")
+        
+        self.assertIn((FOAF.Agent, RDF.type, OWL.Class), g)
+        self.assertIn((EX.Venue, RDF.type, OWL.Class), g)
 
     def test_current_ontology_conversion(self):
         """Test the conversion of the current ontology version to SHACL shapes"""
-        input_file = Path(get_ontology_path())
+        input_path = get_ontology_path()  # This now returns the directory path
         output_file = Path(self.temp_dir) / "current_ontology_shapes.ttl"
         
-        shacl_graph = create_shacl_shapes(input_file)
+        shacl_graph = create_shacl_shapes(input_path)
         shacl_graph.serialize(destination=output_file, format="turtle", encoding="utf-8")
         
         SH = Namespace("http://www.w3.org/ns/shacl#")

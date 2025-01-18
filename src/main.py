@@ -73,9 +73,6 @@ def create_shacl_shapes(input_file: str) -> Graph:
             properties = [p for p in re.split(r'\n[*-] ', desc_str) if p.strip()]
             
             for prop in properties:
-                if not prop.strip():
-                    continue
-                
                 match = re.match(r'([\w:]+) -\[(\d+|[*N])(\.\.)?(\d+|[*N])?]->\s+([\w:]+)', prop.strip())
                 if match:
                     prop_name, card_min, range_sep, card_max, target = match.groups()

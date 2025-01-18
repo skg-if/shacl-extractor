@@ -387,8 +387,7 @@ ex:Venue a owl:Class .
                 self.assertIn(f"Ontology version invalid_version not found at {expected_path}", error_msg)
 
     def test_empty_property_description(self):
-        """Test handling of empty property descriptions"""
-        # Create test file with empty property in description
+        """Test handling of empty property descriptions and whitespace-only properties"""
         test_file = Path(self.temp_dir) / "empty_prop.ttl"
         with open(test_file, 'w', encoding='utf-8') as f:
             f.write('''
@@ -399,7 +398,9 @@ ex:Venue a owl:Class .
 ex:TestClass a owl:Class ;
     dc:description """The properties are:
 * ex:prop1 -[1]-> ex:Type1
+
 * 
+*    
 * ex:prop2 -[1]-> ex:Type2
 """ .
 ''')
@@ -411,7 +412,19 @@ ex:TestClass a owl:Class ;
         SH = Namespace("http://www.w3.org/ns/shacl#")
         shape_uri = URIRef("http://example.org/TestClassShape")
         property_shapes = list(shacl_graph.objects(shape_uri, SH.property))
-        self.assertEqual(len(property_shapes), 2)  # Should have 2 properties, skipping the empty one
+        
+        # Should have 2 properties, skipping the empty ones
+        self.assertEqual(len(property_shapes), 2)
+        
+        # Verify the properties we expect are present
+        EX = Namespace("http://example.org/")
+        properties_found = set()
+        for prop_shape in property_shapes:
+            path = shacl_graph.value(prop_shape, SH.path)
+            if path in [EX.prop1, EX.prop2]:
+                properties_found.add(path)
+        
+        self.assertEqual(len(properties_found), 2, "Not all expected properties were found")
 
 if __name__ == '__main__':
     unittest.main()

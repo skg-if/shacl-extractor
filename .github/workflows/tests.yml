@@ -41,9 +41,10 @@ jobs:
         if: github.ref == 'refs/heads/main' && matrix.python-version == '3.9'
         uses: RubbaBoy/BYOB@v1.3.0
         with:
-          NAME: coverage
+          NAME: skg-if-shacl-extractor_coverage
           LABEL: "Coverage"
           STATUS: ${{ env.COVERAGE }}
           COLOR: green
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: shields
+          GITHUB_TOKEN: ${{ secrets.GIST_PAT }}
+          REPOSITORY: arcangelo7/badges
+          ACTOR: arcangelo7

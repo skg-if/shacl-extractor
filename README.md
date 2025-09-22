@@ -35,10 +35,16 @@ The cardinality can be specified as:
 
 ## Installation
 
-1. Clone the repository with its submodules:
+1. Clone the repository with its submodules (use `--remote-submodules` to get the latest versions):
 
 ```bash
-git clone --recurse-submodules https://github.com/skg-if/shacl-extractor.git
+git clone --recurse-submodules --remote-submodules https://github.com/skg-if/shacl-extractor.git
+```
+
+If you already cloned the repository, you can update submodules to their latest versions with:
+
+```bash
+git submodule update --init --remote
 ```
 
 2. Install dependencies using [Poetry](https://python-poetry.org/):

@@ -1,10 +1,16 @@
 [submodule "context"]
 	path = context
 	url = https://github.com/skg-if/context
+	branch = main
+	update = rebase
 [submodule "examples"]
 	path = examples
 	url = https://github.com/skg-if/examples
+	branch = main
+	update = rebase
 [submodule "data-model"]
 	path = data-model
 	url = https://github.com/skg-if/data-model
+	branch = main
+	update = rebase
 

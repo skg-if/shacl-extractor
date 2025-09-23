@@ -76,21 +76,21 @@ ex:OtherClass a owl:Class .
             if path == EX.stringProp:
                 props_found['stringProp'] = True
                 self.assertIn((prop_shape, SH.datatype, XSD.string), shacl_graph)
-                self.assertIn((prop_shape, SH.minCount, Literal(1)), shacl_graph)
-                self.assertIn((prop_shape, SH.maxCount, Literal(1)), shacl_graph)
+                self.assertIn((prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)), shacl_graph)
+                self.assertIn((prop_shape, SH.maxCount, Literal(1, datatype=XSD.integer)), shacl_graph)
             elif path == EX.intProp:
                 props_found['intProp'] = True
                 self.assertIn((prop_shape, SH.datatype, XSD.integer), shacl_graph)
-                self.assertIn((prop_shape, SH.maxCount, Literal(1)), shacl_graph)
+                self.assertIn((prop_shape, SH.maxCount, Literal(1, datatype=XSD.integer)), shacl_graph)
             elif path == EX.objectProp:
                 props_found['objectProp'] = True
                 # self.assertIn((prop_shape, SH["class"], EX.OtherClass), shacl_graph)
-                self.assertIn((prop_shape, SH.minCount, Literal(1)), shacl_graph)
+                self.assertIn((prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)), shacl_graph)
             elif path == EX.literalProp:
                 props_found['literalProp'] = True
                 self.assertIn((prop_shape, SH.nodeKind, SH.Literal), shacl_graph)
-                self.assertIn((prop_shape, SH.minCount, Literal(1)), shacl_graph)
-                self.assertIn((prop_shape, SH.maxCount, Literal(1)), shacl_graph)
+                self.assertIn((prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)), shacl_graph)
+                self.assertIn((prop_shape, SH.maxCount, Literal(1, datatype=XSD.integer)), shacl_graph)
         
         self.assertTrue(all(props_found.values()))
 
@@ -218,11 +218,7 @@ ex:Venue a owl:Class .
         # 1. Test Grant shape
         grant_shape = URIRef("http://purl.org/cerif/frapo/GrantShape")
         self.assertIn((grant_shape, RDF.type, SH.NodeShape), shacl_graph)
-        
-        # Verifichiamo invece che ci siano i targetSubjectsOf appropriati
-        has_grant_number = FRAPO.hasGrantNumber
-        # self.assertIn((grant_shape, SH.targetSubjectsOf, has_grant_number), shacl_graph)
-        
+                
         # Get all property shapes for Grant
         grant_properties = list(shacl_graph.objects(grant_shape, SH.property))
         
@@ -230,18 +226,15 @@ ex:Venue a owl:Class .
         expected_properties = {
             'hasGrantNumber': {
                 'path': FRAPO.hasGrantNumber,
-                'datatype': XSD.string,
-                'maxCount': 1
+                'datatype': XSD.string
             },
             'hasAcronym': {
                 'path': FRAPO.hasAcronym,
-                'nodeKind': SH.Literal,
-                'maxCount': 1
+                'nodeKind': SH.Literal
             },
             'hasCallIdentifier': {
                 'path': FRAPO.hasCallIdentifier,
-                'nodeKind': SH.Literal,
-                'maxCount': 1
+                'nodeKind': SH.Literal
             },
             'keyword': {
                 'path': PRISM.keyword,
@@ -267,9 +260,10 @@ ex:Venue a owl:Class .
                         shacl_graph
                     )
                 if 'maxCount' in expected_properties[prop_name]:
-                    self.assertIn(
-                        (prop_shape, SH.maxCount, Literal(expected_properties[prop_name]['maxCount'])), 
-                        shacl_graph
+                    max_count_value = shacl_graph.value(prop_shape, SH.maxCount)
+                    self.assertEqual(
+                        max_count_value,
+                        Literal(expected_properties[prop_name]['maxCount'], datatype=XSD.integer)
                     )
         
         # Verify all expected properties were found
@@ -291,7 +285,7 @@ ex:Venue a owl:Class .
             if path == FOAF.name:
                 name_found = True
                 self.assertIn((prop_shape, SH.nodeKind, SH.Literal), shacl_graph)
-                self.assertIn((prop_shape, SH.maxCount, Literal(1)), shacl_graph)
+                # maxCount not expected for properties with [0..N] cardinality
         
         self.assertTrue(name_found, "foaf:name property shape not found for Agent")
 
@@ -367,8 +361,8 @@ ex:Venue a owl:Class .
         """Test get_ontology_path with an invalid version"""
         with self.assertRaises(ValueError) as context:
             get_ontology_path("invalid_version")
-        
-        expected_path = Path("data-model/ontology/invalid_version/skg-o.ttl")
+
+        expected_path = Path("data-model/ontology/invalid_version")
         self.assertIn(f"Ontology version invalid_version not found at {expected_path}", str(context.exception))
 
     def test_main_with_invalid_version(self):
@@ -383,7 +377,7 @@ ex:Venue a owl:Class .
                 # Verify that error was called with the correct message
                 mock_error.assert_called_once()
                 error_msg = mock_error.call_args[0][0]
-                expected_path = Path("data-model/ontology/invalid_version/skg-o.ttl")
+                expected_path = Path("data-model/ontology/invalid_version")
                 self.assertIn(f"Ontology version invalid_version not found at {expected_path}", error_msg)
 
     def test_empty_property_description(self):

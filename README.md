@@ -85,10 +85,10 @@ Note: If neither `--version` nor `--input` is specified, the tool will use the c
 
 ## Testing
 
-Run the unit tests:
+Run the tests:
 
 ```bash
-python -m unittest
+poetry run pytest
 ```
 
 ## License

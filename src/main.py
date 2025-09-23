@@ -12,14 +12,21 @@ def get_ontology_path(version: Optional[str] = None) -> str:
     If version is None, returns the current version.
     """
     base_path = Path("data-model/ontology")
-    
+
     if version is None:
         version = "current"
-        
+
     version_path = base_path / version
-    
+
+    if not version_path.exists():
+        if version == "1.0.0":
+            ttl_path = version_path / "skg-o.ttl"
+            raise ValueError(f"Ontology version {version} not found at {ttl_path}")
+        else:
+            raise ValueError(f"Ontology version {version} not found at {version_path}")
+
     # For versions 1.0.1 and later, we need to combine module files
-    if version == "1.0.1" or version == "current":
+    if version != "1.0.0":
         return str(version_path)
     else:
         # For earlier versions, use the single TTL file

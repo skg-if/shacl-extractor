@@ -4,7 +4,7 @@
 ![Coverage](https://byob.yarr.is/arcangelo7/badges/skg-if-shacl-extractor_coverage)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-[![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 
 A Python tool to automatically generate SHACL shapes from OWL ontologies that follow the SKG-IF documentation pattern. The SKG-IF data model is documented at https://skg-if.github.io/data-model/.
 
@@ -31,7 +31,7 @@ The cardinality can be specified as:
 ## Requirements
 
 - Python 3.9+
-- Poetry for dependency management
+- [uv](https://github.com/astral-sh/uv) for dependency management
 
 ## Installation
 
@@ -47,10 +47,10 @@ If you already cloned the repository, you can update submodules to their latest 
 git submodule update --init --remote
 ```
 
-2. Install dependencies using [Poetry](https://python-poetry.org/):
+2. Install dependencies using [uv](https://github.com/astral-sh/uv):
 
 ```bash
-poetry install
+uv sync
 ```
 
 ## Usage
@@ -60,19 +60,19 @@ The tool can be used in three ways:
 ### 1. Generate SHACL shapes from current SKG-IF ontology
 
 ```bash
-poetry run extractor shapes.ttl
+uv run extractor shapes.ttl
 ```
 
 ### 2. Generate SHACL shapes from a specific SKG-IF ontology version
 
 ```bash
-poetry run extractor --version 1.0.0 shapes.ttl
+uv run extractor --version 1.0.0 shapes.ttl
 ```
 
 ### 3. Generate SHACL shapes from a custom ontology file
 
 ```bash
-poetry run extractor --input path/to/ontology.ttl shapes.ttl
+uv run extractor --input path/to/ontology.ttl shapes.ttl
 ```
 
 Arguments:
@@ -88,7 +88,7 @@ Note: If neither `--version` nor `--input` is specified, the tool will use the c
 Run the tests:
 
 ```bash
-poetry run pytest
+uv run pytest
 ```
 
 ## License

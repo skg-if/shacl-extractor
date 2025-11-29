@@ -1,25 +1,30 @@
-[tool.poetry]
+[project]
 name = "shacl-extractor"
 version = "0.1.0"
-description = "A Python tool to automatically generate SHACL shapes from OWL ontologies"
-authors = ["arcangelo7 <arcangelo.massari@unibo.it>"]
-license = "ISC License"
+description = "A Python tool to automatically generate SHACL shapes from OWL ontologies that follow the SKG-IF documentation pattern. The SKG-IF data model is documented at https://skg-if.github.io/data-model/."
 readme = "README.md"
-packages = [{include = "src"}]
+requires-python = ">=3.9"
+dependencies = [
+    "rdflib>=7.5.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-rdflib = "^7.1.1"
+[dependency-groups]
+dev = [
+    "isort>=6.1.0",
+    "pyshacl>=0.30.1",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.1.1"
-pytest-cov = "^4.1.0"
-isort = "^5.13.2"
-pyshacl = "^0.29.1"
+[project.scripts]
+extractor = "src.main:main"
+
+[tool.uv]
+package = true
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry.scripts]
-extractor = "src.main:main"
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

@@ -18,24 +18,20 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install Poetry
-        run: |
-          curl -sSL https://install.python-poetry.org | python3 -
-
       - name: Install dependencies
-        run: poetry install
+        run: uv sync
 
       - name: Run tests with coverage
         run: |
-          poetry run pytest --cov=src --cov-report=html --cov-report=term-missing
+          uv run pytest --cov=src --cov-report=html --cov-report=term-missing
           echo "=== Coverage Report ==="
-          poetry run coverage report
-          echo "COVERAGE=$(poetry run coverage report | grep TOTAL | awk '{print $4}')" >> $GITHUB_ENV
+          uv run coverage report
+          echo "COVERAGE=$(uv run coverage report | grep TOTAL | awk '{print $4}')" >> $GITHUB_ENV
 
       - name: Upload coverage report
         if: github.ref == 'refs/heads/main' && matrix.python-version == '3.9'

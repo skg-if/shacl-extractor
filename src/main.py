@@ -6,10 +6,24 @@ from typing import Optional
 from rdflib import BNode, Graph, Literal, Namespace, URIRef
 from rdflib.namespace import OWL, RDF, XSD
 
+SHAPES_BASE = "https://w3id.org/skg-if/shapes/"
+DC_DESCRIPTION = URIRef("http://purl.org/dc/elements/1.1/description")
+
+ROOT_CLASSES = {
+    "agent": "http://xmlns.com/foaf/0.1/Agent",
+    "data-source": "http://www.w3.org/ns/dcat#DataService",
+    "grant": "http://purl.org/cerif/frapo/Grant",
+    "research-product": "http://purl.org/spar/fabio/Work",
+    "topic": "http://purl.org/spar/fabio/SubjectTerm",
+    "venue": "http://purl.org/spar/fabio/ExpressionCollection",
+}
+
+
 def get_ontology_path(version: Optional[str] = None) -> str:
     """
-    Get the path to the ontology file based on version.
+    Get the path to the ontology directory based on version.
     If version is None, returns the current version.
+    Only supports modular ontology structure (1.0.1+).
     """
     base_path = Path("data-model/ontology")
 
@@ -19,131 +33,187 @@ def get_ontology_path(version: Optional[str] = None) -> str:
     version_path = base_path / version
 
     if not version_path.exists():
-        if version == "1.0.0":
-            ttl_path = version_path / "skg-o.ttl"
-            raise ValueError(f"Ontology version {version} not found at {ttl_path}")
-        else:
-            raise ValueError(f"Ontology version {version} not found at {version_path}")
+        raise ValueError(f"Ontology version {version} not found at {version_path}")
 
-    # For versions 1.0.1 and later, we need to combine module files
-    if version != "1.0.0":
-        return str(version_path)
-    else:
-        # For earlier versions, use the single TTL file
-        ttl_path = version_path / "skg-o.ttl"
-        if not ttl_path.exists():
-            raise ValueError(f"Ontology version {version} not found at {ttl_path}")
-        return str(ttl_path)
+    if not version_path.is_dir():
+        raise ValueError(f"Single-file ontologies are not supported. Use version 1.0.1 or later: {version_path}")
+
+    return str(version_path)
+
 
 def load_ontology(path: str) -> Graph:
     """
-    Load the ontology from the given path.
+    Load the ontology from the given path (legacy function for compatibility).
     For 1.0.1+ versions, combines all module TTL files.
     For earlier versions, loads the single TTL file.
     """
     g = Graph()
     path = Path(path)
-    
+
     if path.is_file():
-        # Pre-1.0.1: Single TTL file
         g.parse(path, format='turtle', encoding='utf-8')
     else:
-        # 1.0.1+: Multiple module files
-        module_dirs = [d for d in path.iterdir() if d.is_dir() and not d.name == "resources"]
-        
+        module_dirs = [d for d in path.iterdir() if d.is_dir() and d.name != "resources"]
         for module_dir in module_dirs:
             ttl_files = list(module_dir.glob("*.ttl"))
             if ttl_files:
                 g.parse(ttl_files[0], format='turtle', encoding='utf-8')
-                
+
     return g
 
+
+def load_ontology_by_module(path: str) -> dict[str, Graph]:
+    """
+    Load the ontology returning separate graphs per module.
+    Returns {module_name: Graph}.
+    Only supports modular ontology structure (1.0.1+).
+    """
+    modules = {}
+    path = Path(path)
+
+    if path.is_file():
+        raise ValueError(f"Single-file ontologies are not supported. Use a modular ontology directory: {path}")
+
+    module_dirs = [d for d in path.iterdir() if d.is_dir() and d.name != "resources"]
+    for module_dir in sorted(module_dirs):
+        ttl_files = list(module_dir.glob("*.ttl"))
+        if ttl_files:
+            g = Graph()
+            g.parse(ttl_files[0], format='turtle', encoding='utf-8')
+            modules[module_dir.name] = g
+
+    return modules
+
+
+def get_class_local_name(class_uri: str) -> str:
+    """Extract local name from a class URI."""
+    if '#' in class_uri:
+        return class_uri.split('#')[-1]
+    return class_uri.split('/')[-1]
+
+
 def create_shacl_shapes(input_file: str) -> Graph:
-    g = load_ontology(input_file)
-    
+    """
+    Create SHACL shapes from ontology modules.
+    Each module gets its own namespace for shapes.
+    """
+    modules = load_ontology_by_module(input_file)
+
     shacl = Graph()
     SH = Namespace("http://www.w3.org/ns/shacl#")
     shacl.bind('sh', SH)
-    
-    for prefix, namespace in g.namespaces():
-        shacl.bind(prefix, namespace)
-    
-    for cls in g.subjects(RDF.type, OWL.Class, unique=True):
-        desc = g.value(cls, URIRef("http://purl.org/dc/elements/1.1/description"))
-        if desc:
-            shape_uri = URIRef(str(cls) + 'Shape')
-            shacl.add((shape_uri, RDF.type, SH.NodeShape))
-            shacl.add((shape_uri, SH.targetClass, cls))
-            
+
+    for module_name, g in modules.items():
+        for prefix, namespace in g.namespaces():
+            shacl.bind(prefix, namespace)
+
+
+    class_to_modules = {}
+    for module_name, g in modules.items():
+        for cls in g.subjects(RDF.type, OWL.Class, unique=True):
+            desc = g.value(cls, DC_DESCRIPTION)
+            if desc and "The properties that can be used" in str(desc):
+                class_uri = str(cls)
+                if class_uri not in class_to_modules:
+                    class_to_modules[class_uri] = []
+                class_to_modules[class_uri].append(module_name)
+
+    for module_name in modules.keys():
+        shape_ns = SHAPES_BASE + module_name + "/"
+        prefix = f"skg-sh-{module_name}".replace("-", "_")
+        shacl.bind(prefix, Namespace(shape_ns))
+
+    for module_name, g in modules.items():
+        shape_ns = Namespace(SHAPES_BASE + module_name + "/")
+        root_class = ROOT_CLASSES[module_name]
+
+        for cls in g.subjects(RDF.type, OWL.Class, unique=True):
+            desc = g.value(cls, DC_DESCRIPTION)
+            if not desc:
+                continue
+
             desc_str = str(desc)
-            # Split on either '* ' or '- ' at the start of lines
-            properties = [p for p in re.split(r'\n[*-] ', desc_str) if p.strip()]
-            
+            if "The properties that can be used" not in desc_str:
+                continue
+
+            class_uri = str(cls)
+            class_local = get_class_local_name(class_uri)
+            shape_uri = URIRef(str(shape_ns) + class_local + "Shape")
+
+            shacl.add((shape_uri, RDF.type, SH.NodeShape))
+
+            if class_uri == root_class:
+                shacl.add((shape_uri, SH.targetClass, cls))
+
+            # Skip first element (header text before first property)
+            properties = [p for p in re.split(r'\n[*-] ', desc_str) if p.strip()][1:]
+
             for prop in properties:
-                match = re.match(r'([\w:]+) -\[(\d+|[*N])(\.\.)?(\d+|[*N])?]->\s+([\w:]+)', prop.strip())
-                if match:
-                    prop_name, card_min, range_sep, card_max, target = match.groups()
-                    
-                    prefix, local = prop_name.split(':')
-                    ns = str(g.store.namespace(prefix))
-                    if ns:
-                        prop_uri = URIRef(ns + local)
-                        
-                        # Create property shape
-                        bnode = BNode()
-                        shacl.add((shape_uri, SH.property, bnode))
-                        shacl.add((bnode, SH.path, prop_uri))
-                        
-                        # Handle cardinality
-                        if range_sep is None and card_min not in ['*', 'N']:
-                            exact_card = int(card_min)
-                            shacl.add((bnode, SH.minCount, Literal(exact_card, datatype=XSD.integer)))
-                            shacl.add((bnode, SH.maxCount, Literal(exact_card, datatype=XSD.integer)))
+                prop_text = prop.strip()
+                match = re.match(r'([\w:]+) -\[(\d+|[*N])(\.\.)?(\d+|[*N])?]->\s+([\w:]+)', prop_text)
+                if not match:
+                    raise ValueError(f"Invalid property format in {class_uri}: {prop_text}")
+
+                prop_name, card_min, range_sep, card_max, target = match.groups()
+
+                prop_prefix, prop_local = prop_name.split(':')
+                prop_ns = g.store.namespace(prop_prefix)
+                if not prop_ns:
+                    raise ValueError(f"Unknown prefix '{prop_prefix}' in {class_uri}: {prop_text}")
+
+                prop_uri = URIRef(str(prop_ns) + prop_local)
+
+                bnode = BNode()
+                shacl.add((shape_uri, SH.property, bnode))
+                shacl.add((bnode, SH.path, prop_uri))
+
+                if range_sep is None and card_min not in ['*', 'N']:
+                    exact_card = int(card_min)
+                    shacl.add((bnode, SH.minCount, Literal(exact_card, datatype=XSD.integer)))
+                    shacl.add((bnode, SH.maxCount, Literal(exact_card, datatype=XSD.integer)))
+                else:
+                    if card_min and card_min not in ['*', 'N']:
+                        shacl.add((bnode, SH.minCount, Literal(int(card_min), datatype=XSD.integer)))
+                    if card_max and card_max not in ['*', 'N']:
+                        shacl.add((bnode, SH.maxCount, Literal(int(card_max), datatype=XSD.integer)))
+
+                target_prefix, target_local = target.split(':')
+                target_ns = g.store.namespace(target_prefix)
+                if not target_ns:
+                    raise ValueError(f"Unknown prefix '{target_prefix}' in {class_uri}: {prop_text}")
+
+                if target == "rdfs:Literal":
+                    shacl.add((bnode, SH.nodeKind, SH.Literal))
+                elif target.startswith("xsd:"):
+                    shacl.add((bnode, SH.datatype, URIRef(f"http://www.w3.org/2001/XMLSchema#{target_local}")))
+                else:
+                    target_uri = URIRef(str(target_ns) + target_local)
+                    target_class_uri = str(target_uri)
+
+                    if target_class_uri in class_to_modules:
+                        target_modules = class_to_modules[target_class_uri]
+                        if module_name in target_modules:
+                            target_module = module_name
                         else:
-                            if card_min and card_min not in ['*', 'N']:
-                                shacl.add((bnode, SH.minCount, Literal(int(card_min), datatype=XSD.integer)))
-                            if card_max and card_max not in ['*', 'N']:
-                                shacl.add((bnode, SH.maxCount, Literal(int(card_max), datatype=XSD.integer)))
-                        
-                        # Handle target type
-                        if target:
-                            target_prefix, target_local = target.split(':')
-                            target_ns = str(g.store.namespace(target_prefix))
-                            if target_ns:
-                                if target == "rdfs:Literal":
-                                    shacl.add((bnode, SH.nodeKind, SH.Literal))
-                                elif target.startswith("xsd:"):
-                                    shacl.add((bnode, SH.datatype, URIRef(f"http://www.w3.org/2001/XMLSchema#{target_local}")))
-                                else:
-                                    # Create an or between class and nodeKind
-                                    or_node = BNode()
-                                    shacl.add((bnode, SH['or'], or_node))
-                                    
-                                    # First alternative: the specific class
-                                    class_constraint = BNode()
-                                    shacl.add((or_node, RDF.first, class_constraint))
-                                    shacl.add((class_constraint, SH['class'], URIRef(target_ns + target_local)))
-                                    
-                                    # Second alternative: any IRI or blank node
-                                    rest_node = BNode()
-                                    shacl.add((or_node, RDF.rest, rest_node))
-                                    
-                                    nodekind_constraint = BNode()
-                                    shacl.add((rest_node, RDF.first, nodekind_constraint))
-                                    shacl.add((nodekind_constraint, SH.nodeKind, SH.BlankNodeOrIRI))
-                                    shacl.add((rest_node, RDF.rest, RDF.nil))
-    
+                            target_module = sorted(target_modules)[0]
+
+                        target_shape_ns = SHAPES_BASE + target_module + "/"
+                        target_shape_uri = URIRef(target_shape_ns + target_local + "Shape")
+                        shacl.add((bnode, SH.node, target_shape_uri))
+                    else:
+                        shacl.add((bnode, SH.nodeKind, SH.BlankNodeOrIRI))
+
     return shacl
+
 
 def main():
     parser = argparse.ArgumentParser(description='Convert SKG ontology to SHACL shapes')
     parser.add_argument('--input', help='Input TTL file path (optional)')
     parser.add_argument('--version', help='Ontology version (e.g., "1.0.0", "current")')
     parser.add_argument('output', help='Output SHACL file path')
-    
+
     args = parser.parse_args()
-    
-    # If no input file is specified, use the versioned ontology
+
     try:
         if args.input:
             input_path = args.input
@@ -151,10 +221,11 @@ def main():
             input_path = get_ontology_path(args.version)
     except ValueError as e:
         parser.error(str(e))
-        return  # Add this return statement to prevent further execution
-    
+        return
+
     shacl_graph = create_shacl_shapes(input_path)
     shacl_graph.serialize(destination=args.output, format="turtle", encoding="utf-8")
 
-if __name__ == "__main__": # pragma: no cover
+
+if __name__ == "__main__":  # pragma: no cover
     main()

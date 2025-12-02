@@ -32,6 +32,7 @@ The cardinality can be specified as:
 
 - Python 3.9+
 - [uv](https://github.com/astral-sh/uv) for dependency management
+- SKG-IF ontology version 1.0.1 or later (modular structure required)
 
 ## Installation
 
@@ -66,22 +67,22 @@ uv run extractor shapes.ttl
 ### 2. Generate SHACL shapes from a specific SKG-IF ontology version
 
 ```bash
-uv run extractor --version 1.0.0 shapes.ttl
+uv run extractor --version 1.1.0 shapes.ttl
 ```
 
-### 3. Generate SHACL shapes from a custom ontology file
+### 3. Generate SHACL shapes from a custom ontology directory
 
 ```bash
-uv run extractor --input path/to/ontology.ttl shapes.ttl
+uv run extractor --input path/to/ontology/ shapes.ttl
 ```
 
 Arguments:
 
-- `--version`: (Optional) Specific version of the SKG-IF ontology to use (e.g., "1.0.0", "current")
-- `--input`: (Optional) Path to a custom input OWL ontology file in Turtle (.ttl) format
+- `--version`: (Optional) Specific version of the SKG-IF ontology to use (e.g., "1.1.0", "current")
+- `--input`: (Optional) Path to a modular ontology directory (must contain subdirectories with .ttl files)
 - `output_file`: Path where the generated SHACL shapes will be saved (in Turtle format)
 
-Note: If neither `--version` nor `--input` is specified, the tool will use the current version of the SKG-IF ontology.
+Note: If neither `--version` nor `--input` is specified, the tool will use the current version of the SKG-IF ontology. Only modular ontology structures (version 1.0.1+) are supported.
 
 ## Testing
 

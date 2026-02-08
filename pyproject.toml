@@ -3,7 +3,7 @@ name = "shacl-extractor"
 version = "0.1.0"
 description = "A Python tool to automatically generate SHACL shapes from OWL ontologies that follow the SKG-IF documentation pattern. The SKG-IF data model is documented at https://skg-if.github.io/data-model/."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "rdflib>=7.5.0",
 ]

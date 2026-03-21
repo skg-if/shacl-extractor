@@ -72,7 +72,7 @@ uv run extractor <input> <output> [--shapes-base URL]
 
 Arguments:
 
-- `input`: Input ontology source. Can be a file path, a directory (for modular ontologies), or a URL
+- `input`: Input ontology source. Can be a file path (`.ttl`, `.rdf`, `.owl`, `.n3`, `.nt`, `.jsonld`), a directory (for modular ontologies), or a URL
 - `output`: Path where the generated SHACL shapes will be saved (in Turtle format)
 - `--shapes-base`: (Optional) Custom base URL for the shapes namespace
 
@@ -81,7 +81,7 @@ Arguments:
 Generate shapes from a single ontology file:
 
 ```bash
-uv run extractor my-ontology.ttl shapes.ttl
+uv run extractor my-ontology.owl shapes.ttl
 ```
 
 Generate shapes from a modular ontology directory (expects subdirectories, each containing an RDF file — currently tailored to the SKG-IF core structure):
@@ -99,7 +99,7 @@ uv run extractor https://example.org/ontology.ttl shapes.ttl
 Use a custom shapes namespace:
 
 ```bash
-uv run extractor my-ontology.ttl shapes.ttl --shapes-base https://example.org/shapes/
+uv run extractor my-ontology.owl shapes.ttl --shapes-base https://example.org/shapes/
 ```
 ## Testing
 

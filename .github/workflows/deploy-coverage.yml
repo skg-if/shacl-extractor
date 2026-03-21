@@ -1,0 +1,74 @@
+# SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
+#
+# SPDX-License-Identifier: ISC
+
+name: Deploy coverage to GitHub Pages
+
+on:
+  workflow_run:
+    workflows: ["Tests"]
+    types:
+      - completed
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Find latest successful test run
+        id: find-run
+        run: |
+          RUN_ID=$(gh run list --workflow "Tests" --branch main --status success --limit 1 --json databaseId --jq '.[0].databaseId')
+          echo "run-id=$RUN_ID" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Create site directory
+        run: mkdir -p site/coverage
+
+      - name: Download coverage report
+        if: steps.find-run.outputs.run-id != ''
+        uses: actions/download-artifact@v8
+        with:
+          name: coverage-report
+          path: site/coverage
+          run-id: ${{ steps.find-run.outputs.run-id }}
+          github-token: ${{ github.token }}
+        continue-on-error: true
+
+      - name: Download coverage badge
+        if: steps.find-run.outputs.run-id != ''
+        uses: actions/download-artifact@v8
+        with:
+          name: coverage-badge
+          path: site/coverage
+          run-id: ${{ steps.find-run.outputs.run-id }}
+          github-token: ${{ github.token }}
+        continue-on-error: true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

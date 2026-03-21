@@ -1,9 +1,17 @@
+<!--
+SPDX-FileCopyrightText: 2025 Silvio Peroni <essepuntato@gmail.com>
+SPDX-FileCopyrightText: 2025-2026 Arcangelo Massari <arcangelomas@gmail.com>
+
+SPDX-License-Identifier: ISC
+-->
+
 # SHACL Extractor
 
 [![Tests](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml/badge.svg)](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml)
 ![Coverage](https://byob.yarr.is/arcangelo7/badges/skg-if-shacl-extractor_coverage)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![REUSE](https://github.com/skg-if/shacl-extractor/actions/workflows/reuse.yml/badge.svg)](https://github.com/skg-if/shacl-extractor/actions/workflows/reuse.yml)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 
 A Python tool to generate SHACL shapes from OWL ontologies that document class properties using `dc:description` annotations.

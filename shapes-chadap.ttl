@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
+#
+# SPDX-License-Identifier: ISC
+
 @prefix chad_ap_sh: <https://w3id.org/dharc/ontology/chad-ap/shapes/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .

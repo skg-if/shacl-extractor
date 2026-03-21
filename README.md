@@ -84,7 +84,7 @@ Generate shapes from a single ontology file:
 uv run extractor my-ontology.ttl shapes.ttl
 ```
 
-Generate shapes from a modular ontology directory:
+Generate shapes from a modular ontology directory (expects subdirectories, each containing an RDF file — currently tailored to the SKG-IF core structure):
 
 ```bash
 uv run extractor path/to/ontology/ shapes.ttl

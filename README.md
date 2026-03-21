@@ -8,8 +8,8 @@ SPDX-License-Identifier: ISC
 # SHACL Extractor
 
 [![Tests](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml/badge.svg)](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml)
-![Coverage](https://byob.yarr.is/arcangelo7/badges/skg-if-shacl-extractor_coverage)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Coverage](https://skg-if.github.io/shacl-extractor/coverage/coverage-badge.svg)](https://skg-if.github.io/shacl-extractor/coverage/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![REUSE](https://github.com/skg-if/shacl-extractor/actions/workflows/reuse.yml/badge.svg)](https://github.com/skg-if/shacl-extractor/actions/workflows/reuse.yml)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
@@ -41,7 +41,7 @@ The cardinality can be specified as:
 
 ## Requirements
 
-- Python 3.9+
+- Python 3.10+
 - [uv](https://github.com/astral-sh/uv) for dependency management
 
 ## Installation

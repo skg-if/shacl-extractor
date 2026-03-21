@@ -10,6 +10,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "genbadge[coverage]>=1.1.3",
     "isort>=6.1.0",
     "pyshacl>=0.30.1",
     "pytest>=8.4.2",

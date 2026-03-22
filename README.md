@@ -101,6 +101,24 @@ Use a custom shapes namespace:
 ```bash
 uv run extractor my-ontology.owl shapes.ttl --shapes-base https://example.org/shapes/
 ```
+
+### SKG-IF Extension ontologies following the `ext-<name>` convention
+
+SKG-IF extension ontologies (e.g. `ext-srv`, `ext-foo`) are typically stored in a repository whose top-level directory is named `ext-<name>`. When the input is a local file inside such a directory hierarchy, the tool automatically uses `<name>` as the identifier for the generated shapes namespace prefix (e.g. `srv_sh:`). This overrides the default behaviour of deriving the identifier from the ontology IRI, which for extensions typically ends in a generic segment like `ontology/` and would produce an unhelpful prefix such as `ontology_sh:`.
+
+The `--shapes-base` option is also needed for extension ontologies. Without it, the shapes namespace is auto-derived from the ontology IRI (e.g. `https://w3id.org/skg-if/extension/srv/ontology/shapes/`), which is usually not the intended namespace. Supply the correct shapes base explicitly.
+
+The extension repository must be available locally, cloned using its `ext-<name>` directory name.
+
+For example, for the ext-srv extension checked out as `ext-srv/`:
+
+```bash
+uv run extractor path/to/ext-srv/data-model/ontology/current/srv.ttl shapes.ttl \
+  --shapes-base https://w3id.org/skg-if/shapes/srv/
+```
+
+This produces shapes in the `https://w3id.org/skg-if/shapes/srv/` namespace with prefix `srv_sh:`.
+
 ## Testing
 
 Run the tests:

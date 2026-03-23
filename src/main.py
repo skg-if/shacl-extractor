@@ -35,15 +35,18 @@ def _get_ontology_iri(g: Graph) -> Optional[str]:
     return None
 
 
+def _get_ext_module_name(source: str) -> Optional[str]:
+    for part in Path(source).resolve().parts:
+        if part.startswith("ext-") and len(part) > 4:
+            return part[4:]
+    return None
+
+
 def _derive_module_name(source: str, g: Graph) -> str:
-    # For local paths inside an ext-*** directory hierarchy, that name takes
-    # priority — it is more meaningful than the last IRI path segment, which
-    # for extensions is typically the generic "ontology".
     if not _is_url(source):
-        try:
-            return get_ext_module_name(source)
-        except ValueError:
-            pass
+        ext_name = _get_ext_module_name(source)
+        if ext_name:
+            return ext_name
     iri = _get_ontology_iri(g)
     if iri:
         parsed = urlparse(iri)

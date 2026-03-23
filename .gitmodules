@@ -14,3 +14,6 @@
 	branch = main
 	update = rebase
 
+[submodule "ext-srv"]
+	path = ext-srv
+	url = https://github.com/skg-if/ext-srv.git

@@ -18,6 +18,7 @@ from src.main import (
     _derive_shapes_base,
     _detect_root_classes,
     _extract_prefixes_from_literals,
+    _get_ext_module_name,
     _get_ontology_iri,
     _is_url,
     _load_source,
@@ -489,6 +490,32 @@ class TestSKGIFIntegration(unittest.TestCase):
                 )
 
 
+class TestExtensionOntology(unittest.TestCase):
+    def setUp(self):
+        self.ext_srv_path = Path("ext-srv/data-model/ontology/current/srv.ttl")
+        if not self.ext_srv_path.exists():
+            self.skipTest("ext-srv submodule not available")
+
+    def test_ext_srv_module_name(self):
+        modules, is_modular = _load_source(str(self.ext_srv_path))
+        self.assertFalse(is_modular)
+        self.assertEqual(list(modules.keys()), ["srv"])
+
+    def test_ext_srv_shapes(self):
+        shacl_graph = create_shacl_shapes(
+            str(self.ext_srv_path),
+            shapes_base="https://w3id.org/skg-if/shapes/srv/",
+        )
+        SH = Namespace("http://www.w3.org/ns/shacl#")
+        shapes_base = "https://w3id.org/skg-if/shapes/srv/"
+        standard_shape = URIRef(shapes_base + "StandardShape")
+        self.assertIn((standard_shape, RDF.type, SH.NodeShape), shacl_graph)
+        subject_term_shape = URIRef(shapes_base + "SubjectTermShape")
+        self.assertIn((subject_term_shape, RDF.type, SH.NodeShape), shacl_graph)
+        bibliometric_shape = URIRef(shapes_base + "BibliometricDataInTimeShape")
+        self.assertIn((bibliometric_shape, RDF.type, SH.NodeShape), shacl_graph)
+
+
 class TestSingleFileOntology(unittest.TestCase):
     def setUp(self):
         self.temp_dir = tempfile.mkdtemp(dir=".")
@@ -862,6 +889,11 @@ class TestHelperFunctions(unittest.TestCase):
 ex:Thing a owl:Class .
 ''', format='turtle')
         self.assertIsNone(_get_ontology_iri(g))
+
+    def test_get_ext_module_name(self):
+        self.assertEqual(_get_ext_module_name("/path/to/ext-srv/data-model/ontology/current/srv.ttl"), "srv")
+        self.assertEqual(_get_ext_module_name("/path/to/ext-foo/some/file.ttl"), "foo")
+        self.assertIsNone(_get_ext_module_name("/path/to/regular/ontology.ttl"))
 
     def test_derive_module_name_from_iri(self):
         g = Graph()

@@ -280,7 +280,7 @@ def _process_property(prop_text: str, class_uri: str, g: Graph, shape_uri: URIRe
         if not target_ns:
             raise ValueError(f"Cannot resolve unqualified name '{target}' in {class_uri}: {prop_text}")
 
-    if target == "rdfs:Literal":
+    if target in ("rdfs:Literal", "rdfs:langString"):
         shacl.add((bnode, SH.nodeKind, SH.Literal))
     elif target.startswith("xsd:"):
         shacl.add((bnode, SH.datatype, URIRef(f"http://www.w3.org/2001/XMLSchema#{target_local}")))

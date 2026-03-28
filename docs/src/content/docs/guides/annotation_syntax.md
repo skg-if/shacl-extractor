@@ -85,7 +85,9 @@ Prefixes in the annotations need to be resolved to full URIs. The extractor trie
 
 ## Root classes
 
-A root class gets `sh:targetClass` in its shape, meaning SHACL validators will check all instances of that class against the shape. Non-root classes only get `sh:NodeShape` without a target -- they are validated indirectly when referenced via `sh:node` from another shape.
+Not all data consistently declares `rdf:type` on every resource. A SHACL shape with `sh:targetClass` forces validation on all instances of that class, which means the data *must* include `rdf:type` for the validator to find them. Root classes are the classes where this requirement is enforced.
+
+A root class gets `sh:targetClass` in its shape, so validators check all its instances against the shape. Non-root classes only get `sh:NodeShape` without a target -- they are validated indirectly when referenced via `sh:node` from another shape. This way, a reference to a non-root class does not fail just because the data omits `rdf:type` on that resource.
 
 By default, the extractor detects root classes automatically: a class is root if no other described class points to it as a target. This works well for ontologies with a clear hierarchy, where top-level classes are never referenced as the range of another class's property.
 

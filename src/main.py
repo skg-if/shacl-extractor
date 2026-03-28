@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: ISC
 
 import argparse
+import json
 import re
 from pathlib import Path
 from typing import Optional
@@ -14,15 +15,6 @@ from rdflib.namespace import OWL, RDF, XSD
 SHAPES_BASE = "https://w3id.org/skg-if/shapes/"
 DC_DESCRIPTION = URIRef("http://purl.org/dc/elements/1.1/description")
 PROPERTY_PATTERN = r'([\w:-]+) -\[(\d+|[*N])(\.\.)?(\d+|[*N])?]->\s+([\w:-]+)'
-
-ROOT_CLASSES = {
-    "agent": "http://xmlns.com/foaf/0.1/Agent",
-    "data-source": "http://www.w3.org/ns/dcat#DataService",
-    "grant": "http://purl.org/cerif/frapo/Grant",
-    "research-product": "http://purl.org/spar/fabio/Work",
-    "topic": "http://purl.org/spar/fabio/SubjectTerm",
-    "venue": "http://purl.org/spar/fabio/ExpressionCollection",
-}
 
 
 def _is_url(source: str) -> bool:
@@ -206,9 +198,9 @@ def _build_class_to_modules(modules: dict[str, Graph]) -> dict[str, list[str]]:
     return class_to_modules
 
 
-def _resolve_root_class_uris(modules: dict[str, Graph], class_to_modules: dict[str, list[str]], is_modular: bool) -> set[str]:
-    if is_modular:
-        return set(ROOT_CLASSES.values())
+def _resolve_root_class_uris(modules: dict[str, Graph], class_to_modules: dict[str, list[str]], root_classes: Optional[dict[str, str]] = None) -> set[str]:
+    if root_classes is not None:
+        return set(root_classes.values())
     all_graphs = Graph()
     for g in modules.values():
         for triple in g:
@@ -302,7 +294,7 @@ def _process_property(prop_text: str, class_uri: str, g: Graph, shape_uri: URIRe
             shacl.add((bnode, SH.nodeKind, SH.BlankNodeOrIRI))
 
 
-def create_shacl_shapes(input_source: str | Path, shapes_base: Optional[str] = None) -> Graph:
+def create_shacl_shapes(input_source: str | Path, shapes_base: Optional[str] = None, root_classes: Optional[dict[str, str]] = None) -> Graph:
     input_source = str(input_source)
     modules, is_modular = _load_source(input_source)
     shapes_base = _resolve_shapes_base(input_source, modules, is_modular, shapes_base)
@@ -314,7 +306,7 @@ def create_shacl_shapes(input_source: str | Path, shapes_base: Optional[str] = N
     _bind_namespaces(shacl, modules)
 
     class_to_modules = _build_class_to_modules(modules)
-    root_class_uris = _resolve_root_class_uris(modules, class_to_modules, is_modular)
+    root_class_uris = _resolve_root_class_uris(modules, class_to_modules, root_classes)
 
     _bind_shape_namespaces(shacl, modules, shapes_base, is_modular)
 
@@ -358,10 +350,16 @@ def main():
     parser.add_argument('input', help='Input ontology (file path, directory, or URL)')
     parser.add_argument('output', help='Output SHACL file path')
     parser.add_argument('--shapes-base', help='Base URL for shapes namespace')
+    parser.add_argument('--root-classes', help='JSON file mapping module names to root class URIs')
 
     args = parser.parse_args()
 
-    shacl_graph = create_shacl_shapes(args.input, shapes_base=args.shapes_base)
+    root_classes = None
+    if args.root_classes:
+        with open(args.root_classes, encoding='utf-8') as f:
+            root_classes = json.load(f)
+
+    shacl_graph = create_shacl_shapes(args.input, shapes_base=args.shapes_base, root_classes=root_classes)
     shacl_graph.serialize(destination=args.output, format="turtle", encoding="utf-8")
 
 

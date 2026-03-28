@@ -5,14 +5,23 @@ path = [
     ".gitignore",
     ".gitmodules",
     "LICENSE",
+    "pyproject.toml",
+    "uv.lock",
+    "shapes.ttl",
+    "shapes-chadap.ttl",
+    "presets/*.json",
+    "docs/.gitignore",
+    "docs/package.json",
+    "docs/package-lock.json",
+    "docs/public/favicon.svg",
+    "docs/tsconfig.json",
 ]
-SPDX-FileCopyrightText = "2025 Arcangelo Massari <arcangelomas@gmail.com>"
-SPDX-License-Identifier = "ISC"
+SPDX-FileCopyrightText = "2025-2026 Arcangelo Massari <arcangelomas@gmail.com>"
+SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
 path = [
-    "pyproject.toml",
-    "uv.lock",
+    "docs/README.md",
 ]
-SPDX-FileCopyrightText = "2025-2026 Arcangelo Massari <arcangelomas@gmail.com>"
-SPDX-License-Identifier = "ISC"
+SPDX-FileCopyrightText = "2026 Arcangelo Massari <arcangelomas@gmail.com>"
+SPDX-License-Identifier = "CC-BY-4.0"

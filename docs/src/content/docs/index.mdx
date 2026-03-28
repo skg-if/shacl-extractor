@@ -1,0 +1,36 @@
+---
+# SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
+#
+# SPDX-License-Identifier: CC-BY-4.0
+
+title: SHACL Extractor
+description: Generate SHACL shapes from OWL ontologies that use dc:description annotations.
+template: splash
+hero:
+  title: SHACL Extractor
+  tagline: Generates SHACL shapes from OWL ontologies that document class properties in dc:description annotations.
+  actions:
+    - text: Get started
+      link: /shacl-extractor/guides/getting_started/
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/skg-if/shacl-extractor
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="Annotation-driven" icon="pencil">
+    Reads property descriptions written directly in `dc:description` annotations on OWL classes. No separate mapping files needed.
+  </Card>
+  <Card title="Multiple input modes" icon="document">
+    Accepts a single ontology file, a modular ontology directory, or a remote URL. Detects the format automatically.
+  </Card>
+  <Card title="Cardinality to SHACL" icon="list-format">
+    Translates cardinality notation like `[1..N]` or `[0..1]` into `sh:minCount` and `sh:maxCount` constraints.
+  </Card>
+  <Card title="Cross-module references" icon="random">
+    When a property points to a class defined in another module, the generated shape references the correct target shape across namespaces.
+  </Card>
+</CardGrid>

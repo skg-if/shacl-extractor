@@ -1,0 +1,8 @@
+{
+    "agent": "http://xmlns.com/foaf/0.1/Agent",
+    "data-source": "http://www.w3.org/ns/dcat#DataService",
+    "grant": "http://purl.org/cerif/frapo/Grant",
+    "research-product": "http://purl.org/spar/fabio/Work",
+    "topic": "http://purl.org/spar/fabio/SubjectTerm",
+    "venue": "http://purl.org/spar/fabio/ExpressionCollection"
+}

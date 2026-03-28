@@ -794,6 +794,39 @@ ex:D a owl:Class ;
 
         self.assertEqual(target_classes, {str(EX.A), str(EX.D)})
 
+    def test_explicit_root_classes(self):
+        ttl_file = Path(self.temp_dir) / "root-explicit.ttl"
+        with open(ttl_file, 'w', encoding='utf-8') as f:
+            f.write('''
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:A a owl:Class ;
+    dc:description """The properties that can be used with this class are:
+
+* ex:hasB -[1]-> ex:B""" .
+
+ex:B a owl:Class ;
+    dc:description """The properties that can be used with this class are:
+
+* ex:label -[1]-> rdfs:Literal""" .
+''')
+
+        root_classes = {"test": "http://example.org/B"}
+        shacl_graph = create_shacl_shapes(str(ttl_file), root_classes=root_classes)
+
+        SH = Namespace("http://www.w3.org/ns/shacl#")
+        EX = Namespace("http://example.org/")
+
+        for shape in shacl_graph.subjects(RDF.type, SH.NodeShape):
+            tc = shacl_graph.value(shape, SH.targetClass)
+            if tc:
+                self.assertEqual(tc, EX.B)
+            else:
+                self.assertNotIn((shape, SH.targetClass, EX.A), shacl_graph)
+
     def test_single_file_no_ontology_iri(self):
         ttl_file = Path(self.temp_dir) / "no-iri.ttl"
         with open(ttl_file, 'w', encoding='utf-8') as f:

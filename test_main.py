@@ -61,11 +61,28 @@ datacite:IdentifierScheme a owl:Class .
         with open(agent_ttl, 'w', encoding='utf-8') as f:
             f.write(self.test_data)
 
+        rp_dir = self.modular_dir / "research-product"
+        rp_dir.mkdir(parents=True)
+        with open(rp_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
+            f.write('''
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+fabio:Work a owl:Class ;
+    dc:description """The properties that can be used with this class are:
+
+* fabio:hasAuthor -[1..N]-> foaf:Agent""" .
+''')
+
+        self.root_classes = {"agent": "http://xmlns.com/foaf/0.1/Agent"}
+
     def tearDown(self):
         shutil.rmtree(self.temp_dir)
 
     def test_basic_shape_creation(self):
-        shacl_graph = create_shacl_shapes(self.modular_dir)
+        shacl_graph = create_shacl_shapes(self.modular_dir, root_classes=self.root_classes)
 
         SH = Namespace("http://www.w3.org/ns/shacl#")
         FOAF = Namespace("http://xmlns.com/foaf/0.1/")
@@ -75,7 +92,7 @@ datacite:IdentifierScheme a owl:Class .
         self.assertIn((shape_uri, SH.targetClass, FOAF.Agent), shacl_graph)
 
     def test_property_constraints(self):
-        shacl_graph = create_shacl_shapes(self.modular_dir)
+        shacl_graph = create_shacl_shapes(self.modular_dir, root_classes=self.root_classes)
 
         SH = Namespace("http://www.w3.org/ns/shacl#")
         FOAF = Namespace("http://xmlns.com/foaf/0.1/")

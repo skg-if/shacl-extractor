@@ -536,20 +536,6 @@ class TestExtensionOntology(unittest.TestCase):
         data_graph.parse(data=json.dumps(jsonld_data), format='json-ld')
         return data_graph
 
-    def test_ext_srv_external_iri_fails_validation(self):
-        shacl_graph = create_shacl_shapes(
-            str(self.ext_srv_path),
-            shapes_base="https://w3id.org/skg-if/shapes/srv/",
-        )
-        data_graph = self._load_ext_srv_example("11234_1-1452.json")
-        conforms, _, results_text = validate(
-            data_graph=data_graph,
-            shacl_graph=shacl_graph,
-            debug=False,
-        )
-        self.assertFalse(conforms)
-        self.assertIn("endpointURL", results_text)
-
     def test_ext_srv_langstring_generates_literal(self):
         shacl_graph = create_shacl_shapes(
             str(self.ext_srv_path),

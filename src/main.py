@@ -10,6 +10,7 @@ from typing import Optional
 from urllib.parse import urlparse
 
 from rdflib import BNode, Graph, Literal, Namespace, URIRef
+from rdflib.collection import Collection
 from rdflib.namespace import OWL, RDF, XSD
 
 SHAPES_BASE = "https://w3id.org/skg-if/shapes/"
@@ -229,11 +230,9 @@ def _bind_shape_namespaces(shacl: Graph, modules: dict[str, Graph], shapes_base:
         shacl.bind(prefix, Namespace(shapes_base))
 
 
-def _process_property(prop_text: str, class_uri: str, g: Graph, shape_uri: URIRef,
-                      class_to_modules: dict[str, list[str]], module_name: str,
-                      shapes_base: str, is_modular: bool, shacl: Graph, SH: Namespace,
-                      uri_ns_map: dict[str, str],
-                      literal_prefix_map: dict[str, str]) -> None:
+def _parse_property(prop_text: str, class_uri: str, g: Graph,
+                    uri_ns_map: dict[str, str],
+                    literal_prefix_map: dict[str, str]) -> tuple[URIRef, str, str | None, str | None, str, str]:
     match = re.match(PROPERTY_PATTERN, prop_text)
     if not match:
         raise ValueError(f"Invalid property format in {class_uri}: {prop_text}")
@@ -246,21 +245,14 @@ def _process_property(prop_text: str, class_uri: str, g: Graph, shape_uri: URIRe
         raise ValueError(f"Unknown prefix '{prop_prefix}' in {class_uri}: {prop_text}")
 
     prop_uri = URIRef(prop_ns + prop_local)
+    return prop_uri, card_min, range_sep, card_max, target, prop_text
 
-    bnode = BNode()
-    shacl.add((shape_uri, SH.property, bnode))
-    shacl.add((bnode, SH.path, prop_uri))
 
-    if range_sep is None and card_min not in ['*', 'N']:
-        exact_card = int(card_min)
-        shacl.add((bnode, SH.minCount, Literal(exact_card, datatype=XSD.integer)))
-        shacl.add((bnode, SH.maxCount, Literal(exact_card, datatype=XSD.integer)))
-    else:
-        if card_min and card_min not in ['*', 'N']:
-            shacl.add((bnode, SH.minCount, Literal(int(card_min), datatype=XSD.integer)))
-        if card_max and card_max not in ['*', 'N']:
-            shacl.add((bnode, SH.maxCount, Literal(int(card_max), datatype=XSD.integer)))
-
+def _resolve_target(target: str, class_uri: str, prop_text: str, g: Graph,
+                    class_to_modules: dict[str, list[str]], module_name: str,
+                    shapes_base: str, is_modular: bool, SH: Namespace,
+                    uri_ns_map: dict[str, str],
+                    literal_prefix_map: dict[str, str]) -> tuple[str, URIRef]:
     if ':' in target:
         target_prefix, target_local = target.split(':')
         target_ns = _resolve_namespace(target_prefix, target_local, g, uri_ns_map, literal_prefix_map)
@@ -273,25 +265,70 @@ def _process_property(prop_text: str, class_uri: str, g: Graph, shape_uri: URIRe
             raise ValueError(f"Cannot resolve unqualified name '{target}' in {class_uri}: {prop_text}")
 
     if target in ("rdfs:Literal", "rdfs:langString"):
-        shacl.add((bnode, SH.nodeKind, SH.Literal))
-    elif target.startswith("xsd:"):
-        shacl.add((bnode, SH.datatype, URIRef(f"http://www.w3.org/2001/XMLSchema#{target_local}")))
+        return 'nodeKind', SH.Literal
+    if target.startswith("xsd:"):
+        return 'datatype', URIRef(f"http://www.w3.org/2001/XMLSchema#{target_local}")
+
+    target_uri = URIRef(target_ns + target_local)
+    target_class_uri = str(target_uri)
+
+    if target_class_uri in class_to_modules:
+        target_modules = class_to_modules[target_class_uri]
+        target_module = module_name if module_name in target_modules else sorted(target_modules)[0]
+        target_shape_ns = shapes_base + target_module + "/" if is_modular else shapes_base
+        return 'node', URIRef(target_shape_ns + target_local + "Shape")
+    return 'nodeKind', SH.BlankNodeOrIRI
+
+
+def _emit_cardinality(bnode: BNode, card_min: str, range_sep: str | None,
+                      card_max: str | None, shacl: Graph, SH: Namespace) -> None:
+    if range_sep is None and card_min not in ['*', 'N']:
+        exact_card = int(card_min)
+        shacl.add((bnode, SH.minCount, Literal(exact_card, datatype=XSD.integer)))
+        shacl.add((bnode, SH.maxCount, Literal(exact_card, datatype=XSD.integer)))
     else:
-        target_uri = URIRef(target_ns + target_local)
-        target_class_uri = str(target_uri)
+        if card_min and card_min not in ['*', 'N']:
+            shacl.add((bnode, SH.minCount, Literal(int(card_min), datatype=XSD.integer)))
+        if card_max and card_max not in ['*', 'N']:
+            shacl.add((bnode, SH.maxCount, Literal(int(card_max), datatype=XSD.integer)))
 
-        if target_class_uri in class_to_modules:
-            target_modules = class_to_modules[target_class_uri]
-            if module_name in target_modules:
-                target_module = module_name
-            else:
-                target_module = sorted(target_modules)[0]
 
-            target_shape_ns = shapes_base + target_module + "/" if is_modular else shapes_base
-            target_shape_uri = URIRef(target_shape_ns + target_local + "Shape")
-            shacl.add((bnode, SH.node, target_shape_uri))
+def _emit_properties(parsed: list[tuple[URIRef, str, str | None, str | None, str, str]],
+                     class_uri: str, g: Graph, shape_uri: URIRef,
+                     class_to_modules: dict[str, list[str]], module_name: str,
+                     shapes_base: str, is_modular: bool, shacl: Graph, SH: Namespace,
+                     uri_ns_map: dict[str, str],
+                     literal_prefix_map: dict[str, str]) -> None:
+    grouped: dict[URIRef, list[tuple[str, str | None, str | None, str, str]]] = {}
+    for prop_uri, card_min, range_sep, card_max, target, prop_text in parsed:
+        grouped.setdefault(prop_uri, []).append((card_min, range_sep, card_max, target, prop_text))
+
+    for prop_uri, entries in grouped.items():
+        bnode = BNode()
+        shacl.add((shape_uri, SH.property, bnode))
+        shacl.add((bnode, SH.path, prop_uri))
+
+        card_min, range_sep, card_max, _, _ = entries[0]
+        _emit_cardinality(bnode, card_min, range_sep, card_max, shacl, SH)
+
+        if len(entries) == 1:
+            target, prop_text = entries[0][3], entries[0][4]
+            constraint_type, constraint_value = _resolve_target(
+                target, class_uri, prop_text, g, class_to_modules, module_name,
+                shapes_base, is_modular, SH, uri_ns_map, literal_prefix_map)
+            shacl.add((bnode, SH[constraint_type], constraint_value))
         else:
-            shacl.add((bnode, SH.nodeKind, SH.BlankNodeOrIRI))
+            or_members = []
+            for _, _, _, target, prop_text in entries:
+                constraint_type, constraint_value = _resolve_target(
+                    target, class_uri, prop_text, g, class_to_modules, module_name,
+                    shapes_base, is_modular, SH, uri_ns_map, literal_prefix_map)
+                member = BNode()
+                shacl.add((member, SH[constraint_type], constraint_value))
+                or_members.append(member)
+            list_node = BNode()
+            Collection(shacl, list_node, or_members)
+            shacl.add((bnode, SH['or'], list_node))
 
 
 def create_shacl_shapes(input_source: str | Path, shapes_base: Optional[str] = None, root_classes: Optional[dict[str, str]] = None) -> Graph:
@@ -335,12 +372,15 @@ def create_shacl_shapes(input_source: str | Path, shapes_base: Optional[str] = N
 
             properties = [p for p in re.split(r'\n[*-] ', desc_str) if p.strip()][1:]
 
+            parsed = []
             for prop in properties:
                 prop_text = prop.strip()
-                _process_property(prop_text, class_uri, g, shape_uri,
-                                  class_to_modules, module_name,
-                                  shapes_base, is_modular, shacl, SH,
-                                  uri_ns_map, literal_prefix_map)
+                parsed.append(_parse_property(prop_text, class_uri, g, uri_ns_map, literal_prefix_map))
+
+            _emit_properties(parsed, class_uri, g, shape_uri,
+                             class_to_modules, module_name,
+                             shapes_base, is_modular, shacl, SH,
+                             uri_ns_map, literal_prefix_map)
 
     return shacl
 

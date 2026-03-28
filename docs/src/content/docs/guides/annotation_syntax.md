@@ -52,6 +52,29 @@ What the extractor generates depends on the target type:
 
 **Classes without a shape.** If the target class has no property annotations (and therefore no generated shape), the extractor falls back to `sh:nodeKind sh:BlankNodeOrIRI`.
 
+## Union ranges
+
+When the same property path appears multiple times with different target classes, the extractor treats it as a union range and generates a single `sh:property` with `sh:or`.
+
+Consider this annotation, where `srv:isDeploymentOf` can point to three different classes:
+
+```
+* srv:isDeploymentOf -[0..N]-> fabio:Software
+* srv:isDeploymentOf -[0..N]-> schema:SoftwareSourceCode
+```
+
+Suppose `schema:SoftwareSourceCode` has its own `dc:description` block (so the extractor generates a `SoftwareSourceCodeShape` for it), while `fabio:Software` do not. The result is:
+
+```turtle
+sh:property [
+    sh:path srv:isDeploymentOf ;
+    sh:or (
+        [ sh:nodeKind sh:BlankNodeOrIRI ]
+        [ sh:node srv_sh:SoftwareSourceCodeShape ]
+    ) ;
+] ;
+```
+
 ## Namespace resolution
 
 Prefixes in the annotations need to be resolved to full URIs. The extractor tries three strategies in order:

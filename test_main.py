@@ -548,7 +548,7 @@ class TestExtensionOntology(unittest.TestCase):
             debug=False,
         )
         self.assertFalse(conforms)
-        self.assertIn("codeRepository", results_text)
+        self.assertIn("endpointURL", results_text)
 
     def test_ext_srv_langstring_generates_literal(self):
         shacl_graph = create_shacl_shapes(
@@ -1114,6 +1114,85 @@ ex:Standalone a owl:Class ;
             self.assertEqual(len(prop_shapes), 1)
             path = shacl_graph.value(prop_shapes[0], SH.path)
             self.assertEqual(str(path), "http://iflastandards.info/ns/lrm/lrmoo/R3_is_realized_in")
+        finally:
+            shutil.rmtree(ttl_file.parent)
+
+    def test_union_range_generates_sh_or(self):
+        ttl_file = Path(tempfile.mkdtemp(dir=".")) / "union-range.ttl"
+        try:
+            with open(ttl_file, 'w', encoding='utf-8') as f:
+                f.write('''
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/test> a owl:Ontology .
+
+ex:Container a owl:Class ;
+    dc:description """The properties that can be used with this class are:
+
+* ex:hasItem -[0..N]-> ex:Alpha
+* ex:hasItem -[0..N]-> ex:Beta""" .
+
+ex:Alpha a owl:Class ;
+    dc:description """The properties that can be used with this class are:
+
+* ex:alphaName -[1]-> rdfs:Literal""" .
+
+ex:Beta a owl:Class ;
+    dc:description """The properties that can be used with this class are:
+
+* ex:betaValue -[1]-> rdfs:Literal""" .
+''')
+
+            shacl_graph = create_shacl_shapes(str(ttl_file))
+
+            SH = Namespace("http://www.w3.org/ns/shacl#")
+            EX = Namespace("http://example.org/")
+            shapes_base = "http://example.org/test/shapes/"
+
+            container_shape = URIRef(shapes_base + "ContainerShape")
+            alpha_shape = URIRef(shapes_base + "AlphaShape")
+            beta_shape = URIRef(shapes_base + "BetaShape")
+
+            prop_shapes = list(shacl_graph.objects(container_shape, SH.property))
+            hasitem_shapes = [
+                ps for ps in prop_shapes
+                if shacl_graph.value(ps, SH.path) == EX.hasItem
+            ]
+            self.assertEqual(len(hasitem_shapes), 1)
+
+            or_list = list(shacl_graph.objects(hasitem_shapes[0], SH['or']))
+            self.assertEqual(len(or_list), 1)
+
+            or_members = list(shacl_graph.items(or_list[0]))
+            self.assertEqual(len(or_members), 2)
+
+            node_values = set()
+            for member in or_members:
+                node_val = shacl_graph.value(member, SH.node)
+                if node_val:
+                    node_values.add(node_val)
+            self.assertEqual(node_values, {alpha_shape, beta_shape})
+
+            data = Graph()
+            data.parse(data='''
+@prefix ex: <http://example.org/> .
+
+ex:c1 a ex:Container ;
+    ex:hasItem ex:a1 .
+
+ex:a1 a ex:Alpha ;
+    ex:alphaName "test" .
+''', format='turtle')
+
+            conforms, _, results_text = validate(
+                data_graph=data,
+                shacl_graph=shacl_graph,
+                debug=False,
+            )
+            self.assertTrue(conforms, f"Union range validation failed:\n{results_text}")
         finally:
             shutil.rmtree(ttl_file.parent)
 

@@ -2,9 +2,11 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-name: Deploy coverage to GitHub Pages
+name: Deploy documentation
 
 on:
+  push:
+    branches: [main]
   workflow_run:
     workflows: ["Tests"]
     types:
@@ -22,14 +24,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.conclusion == 'success'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
+      - uses: actions/checkout@v6
+
       - name: Find latest successful test run
         id: find-run
         run: |
@@ -38,15 +37,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: Create site directory
-        run: mkdir -p site/coverage
-
       - name: Download coverage report
         if: steps.find-run.outputs.run-id != ''
         uses: actions/download-artifact@v8
         with:
           name: coverage-report
-          path: site/coverage
+          path: docs/public/coverage
           run-id: ${{ steps.find-run.outputs.run-id }}
           github-token: ${{ github.token }}
         continue-on-error: true
@@ -56,19 +52,22 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: coverage-badge
-          path: site/coverage
+          path: docs/public/coverage
           run-id: ${{ steps.find-run.outputs.run-id }}
           github-token: ${{ github.token }}
         continue-on-error: true
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+      - uses: withastro/action@v6
         with:
-          path: site
+          path: ./docs
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

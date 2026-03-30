@@ -9,6 +9,7 @@ path = [
     "uv.lock",
     "shapes.ttl",
     "shapes-chadap.ttl",
+    ".releaserc.json",
     "presets/*.json",
     "docs/.gitignore",
     "docs/package.json",

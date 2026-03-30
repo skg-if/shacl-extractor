@@ -4,12 +4,12 @@
 
 import shutil
 import tempfile
-import unittest
+
+import pytest
 
 
-class TempDirTestCase(unittest.TestCase):
-    def setUp(self):
-        self.temp_dir = tempfile.mkdtemp(dir=".")
-
-    def tearDown(self):
-        shutil.rmtree(self.temp_dir)
+@pytest.fixture
+def temp_dir():
+    d = tempfile.mkdtemp(dir=".")
+    yield d
+    shutil.rmtree(d)

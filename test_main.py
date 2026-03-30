@@ -11,6 +11,7 @@ from pathlib import Path
 
 from pyshacl import validate
 from rdflib import Graph, Literal, Namespace, URIRef
+from rdflib.collection import Collection
 from rdflib.namespace import RDF, OWL
 from src.main import (
     SHAPES_BASE,
@@ -954,6 +955,88 @@ ex:Thing a owl:Class ;
         SH = Namespace("http://www.w3.org/ns/shacl#")
         shape_uri = URIRef(custom_base + "ThingShape")
         self.assertIn((shape_uri, RDF.type, SH.NodeShape), g)
+
+    def test_controlled_vocabulary_prefixed(self):
+        ttl_file = Path(self.temp_dir) / "cv-prefixed.ttl"
+        with open(ttl_file, 'w', encoding='utf-8') as f:
+            f.write('''
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/onto> a owl:Ontology .
+
+datacite:Identifier a owl:Class ;
+    dc:description """The properties that can be used with this class are:
+
+* datacite:usesIdentifierScheme -[1]-> {datacite:doi datacite:isbn datacite:orcid}
+* literal:hasLiteralValue -[1]-> rdfs:Literal""" .
+''')
+
+        shacl_graph = create_shacl_shapes(ttl_file)
+
+        SH = Namespace("http://www.w3.org/ns/shacl#")
+        DATACITE = Namespace("http://purl.org/spar/datacite/")
+        XSD = Namespace("http://www.w3.org/2001/XMLSchema#")
+
+        shapes_base = "http://example.org/onto/shapes/"
+        identifier_shape = URIRef(shapes_base + "IdentifierShape")
+        self.assertIn((identifier_shape, RDF.type, SH.NodeShape), shacl_graph)
+
+        for prop_shape in shacl_graph.objects(identifier_shape, SH.property):
+            path = shacl_graph.value(prop_shape, SH.path)
+            if path == DATACITE.usesIdentifierScheme:
+                self.assertIn((prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)), shacl_graph)
+                self.assertIn((prop_shape, SH.maxCount, Literal(1, datatype=XSD.integer)), shacl_graph)
+                in_list = shacl_graph.value(prop_shape, SH['in'])
+                assert in_list is not None
+                items = list(Collection(shacl_graph, in_list))
+                self.assertEqual(items, [DATACITE.doi, DATACITE.isbn, DATACITE.orcid])
+                self.assertIsNone(shacl_graph.value(prop_shape, SH.nodeKind))
+                self.assertIsNone(shacl_graph.value(prop_shape, SH.node))
+
+    def test_controlled_vocabulary_absolute_uris(self):
+        ttl_file = Path(self.temp_dir) / "cv-absolute.ttl"
+        with open(ttl_file, 'w', encoding='utf-8') as f:
+            f.write('''
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/onto> a owl:Ontology .
+
+datacite:Identifier a owl:Class ;
+    dc:description """The properties that can be used with this class are:
+
+* datacite:usesIdentifierScheme -[1]-> {http://purl.org/spar/datacite/doi http://purl.org/spar/datacite/isbn http://purl.org/spar/datacite/orcid}
+* literal:hasLiteralValue -[1]-> rdfs:Literal""" .
+''')
+
+        shacl_graph = create_shacl_shapes(ttl_file)
+
+        SH = Namespace("http://www.w3.org/ns/shacl#")
+        DATACITE = Namespace("http://purl.org/spar/datacite/")
+        XSD = Namespace("http://www.w3.org/2001/XMLSchema#")
+
+        shapes_base = "http://example.org/onto/shapes/"
+        identifier_shape = URIRef(shapes_base + "IdentifierShape")
+        self.assertIn((identifier_shape, RDF.type, SH.NodeShape), shacl_graph)
+
+        for prop_shape in shacl_graph.objects(identifier_shape, SH.property):
+            path = shacl_graph.value(prop_shape, SH.path)
+            if path == DATACITE.usesIdentifierScheme:
+                self.assertIn((prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)), shacl_graph)
+                self.assertIn((prop_shape, SH.maxCount, Literal(1, datatype=XSD.integer)), shacl_graph)
+                in_list = shacl_graph.value(prop_shape, SH['in'])
+                assert in_list is not None
+                items = list(Collection(shacl_graph, in_list))
+                self.assertEqual(items, [DATACITE.doi, DATACITE.isbn, DATACITE.orcid])
+                self.assertIsNone(shacl_graph.value(prop_shape, SH.nodeKind))
+                self.assertIsNone(shacl_graph.value(prop_shape, SH.node))
 
 
 class TestHelperFunctions(unittest.TestCase):

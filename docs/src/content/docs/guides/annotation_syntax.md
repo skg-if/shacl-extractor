@@ -75,6 +75,27 @@ sh:property [
 ] ;
 ```
 
+## Controlled vocabularies
+
+When a property range is a fixed set of named individuals rather than a class, list the allowed values inside curly braces:
+
+```
+* datacite:usesIdentifierScheme -[1]-> {datacite:doi datacite:isbn datacite:orcid}
+```
+
+The extractor generates `sh:in` with the list of URIs:
+
+```turtle
+sh:property [
+    sh:path datacite:usesIdentifierScheme ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:in ( datacite:doi datacite:isbn datacite:orcid ) ;
+] ;
+```
+
+Values inside the braces can be prefixed names (`datacite:doi`) or absolute IRIs (`http://purl.org/spar/datacite/doi`). Only IRIs are supported; string literals are not.
+
 ## Namespace resolution
 
 Prefixes in the annotations need to be resolved to full URIs. The extractor tries three strategies in order:

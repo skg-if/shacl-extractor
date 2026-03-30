@@ -10,12 +10,13 @@ from typing import Optional
 from urllib.parse import urlparse
 
 from rdflib import BNode, Graph, Literal, Namespace, URIRef
+from rdflib.term import Node
 from rdflib.collection import Collection
 from rdflib.namespace import OWL, RDF, XSD
 
 SHAPES_BASE = "https://w3id.org/skg-if/shapes/"
 DC_DESCRIPTION = URIRef("http://purl.org/dc/elements/1.1/description")
-PROPERTY_PATTERN = r'([\w:-]+) -\[(\d+|[*N])(\.\.)?(\d+|[*N])?]->\s+([\w:-]+)'
+PROPERTY_PATTERN = r'([\w:-]+) -\[(\d+|[*N])(\.\.)?(\d+|[*N])?]->\s+([\w:-]+|\{[^}]+\})'
 
 
 def _is_url(source: str) -> bool:
@@ -126,6 +127,8 @@ def _detect_root_classes(g: Graph, described_classes: set[str]) -> set[str]:
             if not match:
                 continue
             target = match.group(5)
+            if target.startswith('{'):
+                continue
             if ':' in target:
                 target_prefix, target_local = target.split(':')
                 if target_prefix in ('rdfs', 'xsd'):
@@ -280,6 +283,28 @@ def _resolve_target(target: str, class_uri: str, prop_text: str, g: Graph,
     return 'nodeKind', SH.BlankNodeOrIRI
 
 
+def _resolve_controlled_vocabulary(target: str, class_uri: str, prop_text: str,
+                                    g: Graph, uri_ns_map: dict[str, str],
+                                    literal_prefix_map: dict[str, str]) -> list[Node]:
+    values = target.strip('{}').split()
+    uris: list[Node] = []
+    for val in values:
+        if val.startswith('http://') or val.startswith('https://'):
+            uris.append(URIRef(val))
+        elif ':' not in val:
+            ns = uri_ns_map.get(val)
+            if not ns:
+                raise ValueError(f"Cannot resolve unqualified name '{val}' in {class_uri}: {prop_text}")
+            uris.append(URIRef(ns + val))
+        else:
+            prefix, local = val.split(':', 1)
+            ns = _resolve_namespace(prefix, local, g, uri_ns_map, literal_prefix_map)
+            if not ns:
+                raise ValueError(f"Unknown prefix '{prefix}' in {class_uri}: {prop_text}")
+            uris.append(URIRef(ns + local))
+    return uris
+
+
 def _emit_cardinality(bnode: BNode, card_min: str, range_sep: str | None,
                       card_max: str | None, shacl: Graph, SH: Namespace) -> None:
     if range_sep is None and card_min not in ['*', 'N']:
@@ -313,10 +338,17 @@ def _emit_properties(parsed: list[tuple[URIRef, str, str | None, str | None, str
 
         if len(entries) == 1:
             target, prop_text = entries[0][3], entries[0][4]
-            constraint_type, constraint_value = _resolve_target(
-                target, class_uri, prop_text, g, class_to_modules, module_name,
-                shapes_base, is_modular, SH, uri_ns_map, literal_prefix_map)
-            shacl.add((bnode, SH[constraint_type], constraint_value))
+            if target.startswith('{'):
+                vocab_uris = _resolve_controlled_vocabulary(
+                    target, class_uri, prop_text, g, uri_ns_map, literal_prefix_map)
+                list_node = BNode()
+                Collection(shacl, list_node, vocab_uris)
+                shacl.add((bnode, SH['in'], list_node))
+            else:
+                constraint_type, constraint_value = _resolve_target(
+                    target, class_uri, prop_text, g, class_to_modules, module_name,
+                    shapes_base, is_modular, SH, uri_ns_map, literal_prefix_map)
+                shacl.add((bnode, SH[constraint_type], constraint_value))
         else:
             or_members = []
             for _, _, _, target, prop_text in entries:

@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
+SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelo.massari@unibo.it>
 
 SPDX-License-Identifier: CC-BY-4.0
 -->

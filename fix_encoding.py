@@ -31,7 +31,7 @@ def fix_file_encoding(filepath):
                 continue
         
         if decoded_content is None:
-            raise UnicodeDecodeError("Could not decode file with any known encoding")
+            raise ValueError("Could not decode file with any known encoding")
             
         # Write back in UTF-8 without BOM
         with open(filepath, 'w', encoding='utf-8', newline='\n') as f:

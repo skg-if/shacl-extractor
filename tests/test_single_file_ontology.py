@@ -10,7 +10,6 @@ from rdflib.collection import Collection
 from rdflib.namespace import RDF, OWL
 
 from src.main import (
-    SHAPES_BASE,
     _load_source,
     create_shacl_shapes,
 )
@@ -18,7 +17,7 @@ from src.main import (
 
 def test_single_file_shapes(temp_dir):
     ttl_file = Path(temp_dir) / "test-ontology.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -65,7 +64,7 @@ ex:Address a owl:Class ;
 
 def test_single_file_shapes_base_from_ontology_iri(temp_dir):
     ttl_file = Path(temp_dir) / "onto.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -89,7 +88,7 @@ ex:Thing a owl:Class ;
 
 def test_custom_shapes_base(temp_dir):
     ttl_file = Path(temp_dir) / "onto.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -112,7 +111,7 @@ ex:Thing a owl:Class ;
 
 def test_hyphenated_property_and_class_names(temp_dir):
     ttl_file = Path(temp_dir) / "hyphen-test.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -146,13 +145,13 @@ crm:E7_Activity a owl:Class ;
     assert (activity_shape, RDF.type, SH.NodeShape) in shacl_graph
     assert (timespan_shape, RDF.type, SH.NodeShape) in shacl_graph
 
-    assert (activity_shape, SH.targetClass, CRM['E7_Activity']) in shacl_graph
+    assert (activity_shape, SH.targetClass, CRM["E7_Activity"]) in shacl_graph
     assert shacl_graph.value(timespan_shape, SH.targetClass) is None
 
     activity_props = list(shacl_graph.objects(activity_shape, SH.property))
     assert len(activity_props) == 1
     prop_shape = activity_props[0]
-    assert (prop_shape, SH.path, CRM['P4_has_time-span']) in shacl_graph
+    assert (prop_shape, SH.path, CRM["P4_has_time-span"]) in shacl_graph
     assert (prop_shape, SH.node, timespan_shape) in shacl_graph
 
     timespan_props = list(shacl_graph.objects(timespan_shape, SH.property))
@@ -163,7 +162,7 @@ crm:E7_Activity a owl:Class ;
 
 def test_undeclared_prefix_resolution(temp_dir):
     ttl_file = Path(temp_dir) / "undeclared-prefix.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -193,7 +192,7 @@ def test_undeclared_prefix_resolution(temp_dir):
 
 def test_root_class_detection(temp_dir):
     ttl_file = Path(temp_dir) / "root-test.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -241,7 +240,7 @@ ex:D a owl:Class ;
 
 def test_explicit_root_classes(temp_dir):
     ttl_file = Path(temp_dir) / "root-explicit.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -275,7 +274,7 @@ ex:B a owl:Class ;
 
 def test_single_file_no_ontology_iri(temp_dir):
     ttl_file = Path(temp_dir) / "no-iri.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -297,15 +296,15 @@ ex:Thing a owl:Class ;
 
 def test_load_source_single_file(temp_dir):
     ttl_file = Path(temp_dir) / "single.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
-        f.write('''
+    with open(ttl_file, "w", encoding="utf-8") as f:
+        f.write("""
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix ex: <http://example.org/> .
 
 <http://example.org/my-onto> a owl:Ontology .
 
 ex:TestClass a owl:Class .
-''')
+""")
 
     modules, is_modular = _load_source(str(ttl_file))
     assert not is_modular
@@ -317,7 +316,7 @@ ex:TestClass a owl:Class .
 
 def test_url_loading(temp_dir):
     ttl_file = Path(temp_dir) / "url-sim.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -334,11 +333,11 @@ ex:Item a owl:Class ;
     original_parse = Graph.parse
 
     def patched_parse(self_graph, source=None, **kwargs):
-        if isinstance(source, str) and source.startswith('https://example.org/'):
-            return original_parse(self_graph, str(ttl_file), format='turtle')
+        if isinstance(source, str) and source.startswith("https://example.org/"):
+            return original_parse(self_graph, str(ttl_file), format="turtle")
         return original_parse(self_graph, source, **kwargs)
 
-    with patch.object(Graph, 'parse', patched_parse):
+    with patch.object(Graph, "parse", patched_parse):
         modules, is_modular = _load_source("https://example.org/ontology.ttl")
         assert not is_modular
         assert list(modules.keys()) == ["test-onto"]
@@ -348,7 +347,7 @@ ex:Item a owl:Class ;
 
 def test_main_with_single_file(temp_dir):
     ttl_file = Path(temp_dir) / "url-test.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -362,21 +361,22 @@ ex:Thing a owl:Class ;
 ''')
 
     output_file = Path(temp_dir) / "url_output.ttl"
-    test_args = ['prog_name', str(ttl_file), str(output_file)]
-    with patch('sys.argv', test_args):
+    test_args = ["prog_name", str(ttl_file), str(output_file)]
+    with patch("sys.argv", test_args):
         from src.main import main
+
         main()
 
     assert output_file.exists()
     g = Graph()
-    g.parse(output_file, format='turtle')
+    g.parse(output_file, format="turtle")
     SH = Namespace("http://www.w3.org/ns/shacl#")
     assert any(s for s in g.subjects(RDF.type, SH.NodeShape))
 
 
 def test_main_with_shapes_base(temp_dir):
     ttl_file = Path(temp_dir) / "shapes-base-test.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -391,13 +391,20 @@ ex:Thing a owl:Class ;
 
     output_file = Path(temp_dir) / "shapes_base_output.ttl"
     custom_base = "https://custom.example.org/my-shapes/"
-    test_args = ['prog_name', str(ttl_file), str(output_file), '--shapes-base', custom_base]
-    with patch('sys.argv', test_args):
+    test_args = [
+        "prog_name",
+        str(ttl_file),
+        str(output_file),
+        "--shapes-base",
+        custom_base,
+    ]
+    with patch("sys.argv", test_args):
         from src.main import main
+
         main()
 
     g = Graph()
-    g.parse(output_file, format='turtle')
+    g.parse(output_file, format="turtle")
     SH = Namespace("http://www.w3.org/ns/shacl#")
     shape_uri = URIRef(custom_base + "ThingShape")
     assert (shape_uri, RDF.type, SH.NodeShape) in g
@@ -405,7 +412,7 @@ ex:Thing a owl:Class ;
 
 def test_controlled_vocabulary_prefixed(temp_dir):
     ttl_file = Path(temp_dir) / "cv-prefixed.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -435,9 +442,17 @@ datacite:Identifier a owl:Class ;
     for prop_shape in shacl_graph.objects(identifier_shape, SH.property):
         path = shacl_graph.value(prop_shape, SH.path)
         if path == DATACITE.usesIdentifierScheme:
-            assert (prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)) in shacl_graph
-            assert (prop_shape, SH.maxCount, Literal(1, datatype=XSD.integer)) in shacl_graph
-            in_list = shacl_graph.value(prop_shape, SH['in'])
+            assert (
+                prop_shape,
+                SH.minCount,
+                Literal(1, datatype=XSD.integer),
+            ) in shacl_graph
+            assert (
+                prop_shape,
+                SH.maxCount,
+                Literal(1, datatype=XSD.integer),
+            ) in shacl_graph
+            in_list = shacl_graph.value(prop_shape, SH["in"])
             assert in_list is not None
             items = list(Collection(shacl_graph, in_list))
             assert items == [DATACITE.doi, DATACITE.isbn, DATACITE.orcid]
@@ -447,7 +462,7 @@ datacite:Identifier a owl:Class ;
 
 def test_controlled_vocabulary_absolute_uris(temp_dir):
     ttl_file = Path(temp_dir) / "cv-absolute.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -477,9 +492,17 @@ datacite:Identifier a owl:Class ;
     for prop_shape in shacl_graph.objects(identifier_shape, SH.property):
         path = shacl_graph.value(prop_shape, SH.path)
         if path == DATACITE.usesIdentifierScheme:
-            assert (prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)) in shacl_graph
-            assert (prop_shape, SH.maxCount, Literal(1, datatype=XSD.integer)) in shacl_graph
-            in_list = shacl_graph.value(prop_shape, SH['in'])
+            assert (
+                prop_shape,
+                SH.minCount,
+                Literal(1, datatype=XSD.integer),
+            ) in shacl_graph
+            assert (
+                prop_shape,
+                SH.maxCount,
+                Literal(1, datatype=XSD.integer),
+            ) in shacl_graph
+            in_list = shacl_graph.value(prop_shape, SH["in"])
             assert in_list is not None
             items = list(Collection(shacl_graph, in_list))
             assert items == [DATACITE.doi, DATACITE.isbn, DATACITE.orcid]

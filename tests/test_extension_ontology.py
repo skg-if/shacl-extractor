@@ -24,10 +24,10 @@ def _load_ext_srv_example(example_name: str) -> Graph:
     example_path = Path(f"ext-srv/examples/{example_name}")
     if not example_path.exists():
         pytest.skip("ext-srv examples not available")
-    with open(example_path, 'r', encoding='utf-8') as f:
+    with open(example_path, "r", encoding="utf-8") as f:
         jsonld_data = json.load(f)
     ext_ctx_path = Path("ext-srv/context/ver/current/skg-if.json")
-    with open(ext_ctx_path, 'r', encoding='utf-8') as f:
+    with open(ext_ctx_path, "r", encoding="utf-8") as f:
         ext_ctx = json.load(f)["@context"]
     ext_ctx = {k: v for k, v in ext_ctx.items() if " " not in k}
     jsonld_data["@context"] = [
@@ -35,7 +35,7 @@ def _load_ext_srv_example(example_name: str) -> Graph:
         ext_ctx,
     ]
     data_graph = Graph()
-    data_graph.parse(data=json.dumps(jsonld_data), format='json-ld')
+    data_graph.parse(data=json.dumps(jsonld_data), format="json-ld")
     return data_graph
 
 
@@ -61,7 +61,8 @@ def test_ext_srv_langstring_generates_literal():
     DCTERMS = Namespace("http://purl.org/dc/terms/")
     service_shape = URIRef("https://w3id.org/skg-if/shapes/srv/ServiceShape")
     desc_shapes = [
-        ps for ps in shacl_graph.objects(service_shape, SH.property)
+        ps
+        for ps in shacl_graph.objects(service_shape, SH.property)
         if shacl_graph.value(ps, SH.path) == DCTERMS.description
     ]
     assert len(desc_shapes) == 1

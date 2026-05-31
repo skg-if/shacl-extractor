@@ -29,68 +29,87 @@ def test_is_url():
 
 def test_get_ontology_iri():
     g = Graph()
-    g.parse(data='''
+    g.parse(
+        data="""
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 <http://example.org/my-onto> a owl:Ontology .
-''', format='turtle')
+""",
+        format="turtle",
+    )
     assert _get_ontology_iri(g) == "http://example.org/my-onto"
 
 
 def test_get_ontology_iri_missing():
     g = Graph()
-    g.parse(data='''
+    g.parse(
+        data="""
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix ex: <http://example.org/> .
 ex:Thing a owl:Class .
-''', format='turtle')
+""",
+        format="turtle",
+    )
     assert _get_ontology_iri(g) is None
 
 
 def test_get_ext_module_name():
-    assert _get_ext_module_name("/path/to/ext-srv/data-model/ontology/current/srv.ttl") == "srv"
+    assert (
+        _get_ext_module_name("/path/to/ext-srv/data-model/ontology/current/srv.ttl")
+        == "srv"
+    )
     assert _get_ext_module_name("/path/to/ext-foo/some/file.ttl") == "foo"
     assert _get_ext_module_name("/path/to/regular/ontology.ttl") is None
 
 
 def test_derive_module_name_from_iri():
     g = Graph()
-    g.parse(data='''
+    g.parse(
+        data="""
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 <https://w3id.org/dharc/ontology/chad-ap> a owl:Ontology .
-''', format='turtle')
+""",
+        format="turtle",
+    )
     assert _derive_module_name("irrelevant", g) == "chad-ap"
 
 
 def test_derive_module_name_from_file():
     g = Graph()
-    g.parse(data='@prefix owl: <http://www.w3.org/2002/07/owl#> .', format='turtle')
+    g.parse(data="@prefix owl: <http://www.w3.org/2002/07/owl#> .", format="turtle")
     assert _derive_module_name("/path/to/my-ontology.ttl", g) == "my-ontology"
 
 
 def test_derive_module_name_from_url():
     g = Graph()
-    g.parse(data='@prefix owl: <http://www.w3.org/2002/07/owl#> .', format='turtle')
+    g.parse(data="@prefix owl: <http://www.w3.org/2002/07/owl#> .", format="turtle")
     assert _derive_module_name("https://example.org/path/onto.ttl", g) == "onto"
 
 
 def test_derive_shapes_base_from_iri():
     g = Graph()
-    g.parse(data='''
+    g.parse(
+        data="""
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 <https://w3id.org/dharc/ontology/chad-ap> a owl:Ontology .
-''', format='turtle')
-    assert _derive_shapes_base("irrelevant", g) == "https://w3id.org/dharc/ontology/chad-ap/shapes/"
+""",
+        format="turtle",
+    )
+    assert (
+        _derive_shapes_base("irrelevant", g)
+        == "https://w3id.org/dharc/ontology/chad-ap/shapes/"
+    )
 
 
 def test_derive_shapes_base_fallback():
     g = Graph()
-    g.parse(data='@prefix owl: <http://www.w3.org/2002/07/owl#> .', format='turtle')
+    g.parse(data="@prefix owl: <http://www.w3.org/2002/07/owl#> .", format="turtle")
     assert _derive_shapes_base("irrelevant", g) == "http://example.org/shapes/"
 
 
 def test_detect_root_classes():
     g = Graph()
-    g.parse(data='''
+    g.parse(
+        data='''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ex: <http://example.org/> .
@@ -110,7 +129,9 @@ ex:Standalone a owl:Class ;
     dc:description """The properties that can be used with this class are:
 
 * ex:value -[1]-> rdfs:Literal""" .
-''', format='turtle')
+''',
+        format="turtle",
+    )
 
     described = {
         "http://example.org/Parent",
@@ -123,7 +144,8 @@ ex:Standalone a owl:Class ;
 
 def test_extract_prefixes_from_literals():
     g = Graph()
-    g.parse(data='''
+    g.parse(
+        data='''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
@@ -133,7 +155,9 @@ def test_extract_prefixes_from_literals():
     @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
     @prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> .
 """ .
-''', format='turtle')
+''',
+        format="turtle",
+    )
 
     prefixes = _extract_prefixes_from_literals(g)
     assert prefixes == {
@@ -144,7 +168,7 @@ def test_extract_prefixes_from_literals():
 
 def test_literal_prefix_resolution_in_shapes(temp_dir):
     ttl_file = Path(temp_dir) / "literal-prefix.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -177,7 +201,7 @@ def test_literal_prefix_resolution_in_shapes(temp_dir):
 
 def test_union_range_generates_sh_or(temp_dir):
     ttl_file = Path(temp_dir) / "union-range.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -215,12 +239,11 @@ ex:Beta a owl:Class ;
 
     prop_shapes = list(shacl_graph.objects(container_shape, SH.property))
     hasitem_shapes = [
-        ps for ps in prop_shapes
-        if shacl_graph.value(ps, SH.path) == EX.hasItem
+        ps for ps in prop_shapes if shacl_graph.value(ps, SH.path) == EX.hasItem
     ]
     assert len(hasitem_shapes) == 1
 
-    or_list = list(shacl_graph.objects(hasitem_shapes[0], SH['or']))
+    or_list = list(shacl_graph.objects(hasitem_shapes[0], SH["or"]))
     assert len(or_list) == 1
 
     or_members = list(shacl_graph.items(or_list[0]))
@@ -234,7 +257,8 @@ ex:Beta a owl:Class ;
     assert node_values == {alpha_shape, beta_shape}
 
     data = Graph()
-    data.parse(data='''
+    data.parse(
+        data="""
 @prefix ex: <http://example.org/> .
 
 ex:c1 a ex:Container ;
@@ -242,7 +266,9 @@ ex:c1 a ex:Container ;
 
 ex:a1 a ex:Alpha ;
     ex:alphaName "test" .
-''', format='turtle')
+""",
+        format="turtle",
+    )
 
     conforms, _, results_text = validate(
         data_graph=data,
@@ -254,7 +280,7 @@ ex:a1 a ex:Alpha ;
 
 def test_unqualified_target_name(temp_dir):
     ttl_file = Path(temp_dir) / "unqualified.ttl"
-    with open(ttl_file, 'w', encoding='utf-8') as f:
+    with open(ttl_file, "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .

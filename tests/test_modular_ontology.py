@@ -44,12 +44,12 @@ datacite:Identifier a owl:Class ;
 
 datacite:IdentifierScheme a owl:Class .
 '''
-    with open(agent_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
+    with open(agent_dir / "skg-o.ttl", "w", encoding="utf-8") as f:
         f.write(test_data)
 
     rp_dir = modular / "research-product"
     rp_dir.mkdir(parents=True)
-    with open(rp_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
+    with open(rp_dir / "skg-o.ttl", "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -101,9 +101,15 @@ def test_property_constraints(modular_dir):
             assert (prop_shape, SH.node, identifier_shape) in shacl_graph
         elif path == FOAF.name:
             assert (prop_shape, SH.nodeKind, SH.Literal) in shacl_graph
-            assert (prop_shape, SH.maxCount, Literal(1, datatype=XSD.integer)) in shacl_graph
+            assert (
+                prop_shape,
+                SH.maxCount,
+                Literal(1, datatype=XSD.integer),
+            ) in shacl_graph
 
-    identifier_props = list(shacl_graph.objects(identifier_shape, SH.property, unique=True))
+    identifier_props = list(
+        shacl_graph.objects(identifier_shape, SH.property, unique=True)
+    )
     assert len(identifier_props) == 2
 
     LITERAL = Namespace("http://www.essepuntato.it/2010/06/literalreification/")
@@ -111,12 +117,28 @@ def test_property_constraints(modular_dir):
         path = shacl_graph.value(prop_shape, SH.path)
         if path == DATACITE.usesIdentifierScheme:
             assert (prop_shape, SH.nodeKind, SH.BlankNodeOrIRI) in shacl_graph
-            assert (prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)) in shacl_graph
-            assert (prop_shape, SH.maxCount, Literal(1, datatype=XSD.integer)) in shacl_graph
+            assert (
+                prop_shape,
+                SH.minCount,
+                Literal(1, datatype=XSD.integer),
+            ) in shacl_graph
+            assert (
+                prop_shape,
+                SH.maxCount,
+                Literal(1, datatype=XSD.integer),
+            ) in shacl_graph
         elif path == LITERAL.hasLiteralValue:
             assert (prop_shape, SH.nodeKind, SH.Literal) in shacl_graph
-            assert (prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)) in shacl_graph
-            assert (prop_shape, SH.maxCount, Literal(1, datatype=XSD.integer)) in shacl_graph
+            assert (
+                prop_shape,
+                SH.minCount,
+                Literal(1, datatype=XSD.integer),
+            ) in shacl_graph
+            assert (
+                prop_shape,
+                SH.maxCount,
+                Literal(1, datatype=XSD.integer),
+            ) in shacl_graph
 
     scheme_shape = URIRef(SHAPES_BASE + "agent/IdentifierSchemeShape")
     assert (scheme_shape, RDF.type, SH.NodeShape) not in shacl_graph
@@ -127,7 +149,7 @@ def test_no_description(temp_dir):
     agent_dir = no_desc_dir / "agent"
     agent_dir.mkdir(parents=True)
 
-    with open(agent_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
+    with open(agent_dir / "skg-o.ttl", "w", encoding="utf-8") as f:
         f.write("""
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -137,21 +159,32 @@ foaf:Agent a owl:Class .
 
     shacl_graph = create_shacl_shapes(no_desc_dir)
 
-    assert len(list(shacl_graph.subjects(RDF.type, URIRef("http://www.w3.org/ns/shacl#NodeShape")))) == 0
+    assert (
+        len(
+            list(
+                shacl_graph.subjects(
+                    RDF.type, URIRef("http://www.w3.org/ns/shacl#NodeShape")
+                )
+            )
+        )
+        == 0
+    )
 
 
 def test_main_function(modular_dir, temp_dir):
     output_file = Path(temp_dir) / "test_main_output.ttl"
 
-    test_args = ['prog_name', str(modular_dir), str(output_file)]
-    with patch('sys.argv', test_args):
+    test_args = ["prog_name", str(modular_dir), str(output_file)]
+    with patch("sys.argv", test_args):
         from src.main import main
+
         main()
 
     assert output_file.exists()
     from rdflib import Graph
+
     g = Graph()
-    g.parse(output_file, format='turtle')
+    g.parse(output_file, format="turtle")
 
     SH = Namespace("http://www.w3.org/ns/shacl#")
     assert any(s for s in g.subjects(RDF.type, SH.NodeShape))
@@ -162,7 +195,7 @@ def test_load_ontology_by_module(temp_dir):
     agent_dir = base_dir / "agent"
     agent_dir.mkdir(parents=True)
 
-    with open(agent_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
+    with open(agent_dir / "skg-o.ttl", "w", encoding="utf-8") as f:
         f.write("""
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -172,7 +205,7 @@ foaf:Agent a owl:Class .
 
     venue_dir = base_dir / "venue"
     venue_dir.mkdir()
-    with open(venue_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
+    with open(venue_dir / "skg-o.ttl", "w", encoding="utf-8") as f:
         f.write("""
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix ex: <http://example.org/> .
@@ -202,7 +235,7 @@ def test_modular_shapes_include_all_modules(temp_dir):
     mod_a.mkdir(parents=True)
     mod_b.mkdir(parents=True)
 
-    with open(mod_a / "onto.ttl", 'w', encoding='utf-8') as f:
+    with open(mod_a / "onto.ttl", "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -215,7 +248,7 @@ ex:Alpha a owl:Class ;
 * ex:name -[1]-> rdfs:Literal""" .
 ''')
 
-    with open(mod_b / "onto.ttl", 'w', encoding='utf-8') as f:
+    with open(mod_b / "onto.ttl", "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -243,7 +276,7 @@ def test_empty_property_description(temp_dir):
     agent_dir = test_dir / "agent"
     agent_dir.mkdir(parents=True)
 
-    with open(agent_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
+    with open(agent_dir / "skg-o.ttl", "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -283,15 +316,15 @@ def test_class_with_non_property_description(temp_dir):
     agent_dir = test_dir / "agent"
     agent_dir.mkdir(parents=True)
 
-    with open(agent_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
-        f.write('''
+    with open(agent_dir / "skg-o.ttl", "w", encoding="utf-8") as f:
+        f.write("""
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 foaf:Agent a owl:Class ;
     dc:description "This is just a general description without property info." .
-''')
+""")
 
     shacl_graph = create_shacl_shapes(test_dir)
 
@@ -305,7 +338,7 @@ def test_invalid_property_format(temp_dir):
     agent_dir = test_dir / "agent"
     agent_dir.mkdir(parents=True)
 
-    with open(agent_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
+    with open(agent_dir / "skg-o.ttl", "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -326,7 +359,7 @@ def test_unknown_property_prefix(temp_dir):
     agent_dir = test_dir / "agent"
     agent_dir.mkdir(parents=True)
 
-    with open(agent_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
+    with open(agent_dir / "skg-o.ttl", "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -348,7 +381,7 @@ def test_unknown_target_prefix(temp_dir):
     agent_dir = test_dir / "agent"
     agent_dir.mkdir(parents=True)
 
-    with open(agent_dir / "skg-o.ttl", 'w', encoding='utf-8') as f:
+    with open(agent_dir / "skg-o.ttl", "w", encoding="utf-8") as f:
         f.write('''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .

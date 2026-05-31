@@ -38,35 +38,33 @@ def test_current_ontology_conversion(temp_dir):
     grant_properties = list(shacl_graph.objects(grant_shape, SH.property))
 
     expected_properties = {
-        'hasGrantNumber': {
-            'path': FRAPO.hasGrantNumber,
-            'datatype': XSD.string
-        },
-        'hasAcronym': {
-            'path': FRAPO.hasAcronym,
-            'nodeKind': SH.Literal
-        },
-        'hasCallIdentifier': {
-            'path': FRAPO.hasCallIdentifier,
-            'nodeKind': SH.Literal
-        },
-        'keyword': {
-            'path': PRISM.keyword,
-            'nodeKind': SH.Literal
-        }
+        "hasGrantNumber": {"path": FRAPO.hasGrantNumber, "datatype": XSD.string},
+        "hasAcronym": {"path": FRAPO.hasAcronym, "nodeKind": SH.Literal},
+        "hasCallIdentifier": {"path": FRAPO.hasCallIdentifier, "nodeKind": SH.Literal},
+        "keyword": {"path": PRISM.keyword, "nodeKind": SH.Literal},
     }
 
     found_properties = set()
     for prop_shape in grant_properties:
         path = shacl_graph.value(prop_shape, SH.path)
-        if path in [p['path'] for p in expected_properties.values()]:
-            prop_name = [k for k, v in expected_properties.items() if v['path'] == path][0]
+        if path in [p["path"] for p in expected_properties.values()]:
+            prop_name = [
+                k for k, v in expected_properties.items() if v["path"] == path
+            ][0]
             found_properties.add(prop_name)
 
-            if 'datatype' in expected_properties[prop_name]:
-                assert (prop_shape, SH.datatype, expected_properties[prop_name]['datatype']) in shacl_graph
-            if 'nodeKind' in expected_properties[prop_name]:
-                assert (prop_shape, SH.nodeKind, expected_properties[prop_name]['nodeKind']) in shacl_graph
+            if "datatype" in expected_properties[prop_name]:
+                assert (
+                    prop_shape,
+                    SH.datatype,
+                    expected_properties[prop_name]["datatype"],
+                ) in shacl_graph
+            if "nodeKind" in expected_properties[prop_name]:
+                assert (
+                    prop_shape,
+                    SH.nodeKind,
+                    expected_properties[prop_name]["nodeKind"],
+                ) in shacl_graph
 
     assert found_properties == set(expected_properties.keys())
 
@@ -86,17 +84,17 @@ def test_current_ontology_conversion(temp_dir):
 
 
 def test_opencitations_example_validation():
-    examples_path = Path('examples/OpenCitations/oc_1.jsonld')
+    examples_path = Path("examples/OpenCitations/oc_1.jsonld")
     if not examples_path.exists():
         pytest.skip("OpenCitations examples not available")
 
     shapes_graph = create_shacl_shapes(str(SKGIF_PATH))
 
     data_graph = Graph()
-    with open(examples_path, 'r', encoding='utf-8') as f:
+    with open(examples_path, "r", encoding="utf-8") as f:
         jsonld_data = json.load(f)
 
-    data_graph.parse(data=json.dumps(jsonld_data), format='json-ld')
+    data_graph.parse(data=json.dumps(jsonld_data), format="json-ld")
 
     conforms, results_graph, results_text = validate(
         data_graph=data_graph,
@@ -111,19 +109,19 @@ def test_opencitations_example_validation():
 
 
 def test_all_current_examples_validation():
-    examples_path = Path('context/ver/current/samples')
+    examples_path = Path("context/ver/current/samples")
     if not examples_path.exists():
         pytest.skip("Context submodule not available")
 
     shapes_graph = create_shacl_shapes(str(SKGIF_PATH))
-    example_files = list(examples_path.glob('example-*.json'))
+    example_files = list(examples_path.glob("example-*.json"))
 
     for example_file in example_files:
         data_graph = Graph()
-        with open(example_file, 'r', encoding='utf-8') as f:
+        with open(example_file, "r", encoding="utf-8") as f:
             jsonld_data = json.load(f)
 
-        data_graph.parse(data=json.dumps(jsonld_data), format='json-ld')
+        data_graph.parse(data=json.dumps(jsonld_data), format="json-ld")
 
         conforms, results_graph, results_text = validate(
             data_graph=data_graph,

@@ -17,6 +17,7 @@ dev = [
     "pytest>=9.0.3",
     "pytest-cov>=7.0.0",
     "reuse>=6.2.0",
+    "ruff>=0.15.15",
 ]
 
 [project.scripts]
@@ -27,6 +28,9 @@ package = true
 
 [tool.pyright]
 include = ["src", "tests"]
+
+[tool.ruff]
+include = ["src/**/*.py", "tests/**/*.py"]
 
 [build-system]
 requires = ["hatchling"]

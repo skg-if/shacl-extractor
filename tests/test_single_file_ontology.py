@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.collection import Collection
-from rdflib.namespace import RDF, OWL
+from rdflib.namespace import OWL, RDF
 
 from src.main import (
     _load_source,
@@ -461,9 +461,12 @@ datacite:Identifier a owl:Class ;
 
 
 def test_controlled_vocabulary_absolute_uris(temp_dir):
+    doi = "http://purl.org/spar/datacite/doi"
+    isbn = "http://purl.org/spar/datacite/isbn"
+    orcid = "http://purl.org/spar/datacite/orcid"
     ttl_file = Path(temp_dir) / "cv-absolute.ttl"
     with open(ttl_file, "w", encoding="utf-8") as f:
-        f.write('''
+        f.write(f'''
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix datacite: <http://purl.org/spar/datacite/> .
@@ -475,7 +478,7 @@ def test_controlled_vocabulary_absolute_uris(temp_dir):
 datacite:Identifier a owl:Class ;
     dc:description """The properties that can be used with this class are:
 
-* datacite:usesIdentifierScheme -[1]-> {http://purl.org/spar/datacite/doi http://purl.org/spar/datacite/isbn http://purl.org/spar/datacite/orcid}
+* datacite:usesIdentifierScheme -[1]-> {{{doi} {isbn} {orcid}}}
 * literal:hasLiteralValue -[1]-> rdfs:Literal""" .
 ''')
 

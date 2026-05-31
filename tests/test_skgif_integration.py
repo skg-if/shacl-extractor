@@ -91,7 +91,7 @@ def test_opencitations_example_validation():
     shapes_graph = create_shacl_shapes(str(SKGIF_PATH))
 
     data_graph = Graph()
-    with open(examples_path, "r", encoding="utf-8") as f:
+    with open(examples_path, encoding="utf-8") as f:
         jsonld_data = json.load(f)
 
     data_graph.parse(data=json.dumps(jsonld_data), format="json-ld")
@@ -118,7 +118,7 @@ def test_all_current_examples_validation():
 
     for example_file in example_files:
         data_graph = Graph()
-        with open(example_file, "r", encoding="utf-8") as f:
+        with open(example_file, encoding="utf-8") as f:
             jsonld_data = json.load(f)
 
         data_graph.parse(data=json.dumps(jsonld_data), format="json-ld")

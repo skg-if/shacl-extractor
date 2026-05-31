@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 import pytest
 from rdflib import Literal, Namespace, URIRef
-from rdflib.namespace import RDF, OWL
+from rdflib.namespace import OWL, RDF
 
 from src.main import (
     SHAPES_BASE,

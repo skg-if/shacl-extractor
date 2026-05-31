@@ -34,6 +34,9 @@ include = ["src", "tests"]
 [tool.ruff]
 include = ["src/**/*.py", "tests/**/*.py"]
 
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

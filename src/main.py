@@ -6,13 +6,12 @@ import argparse
 import json
 import re
 from pathlib import Path
-from typing import Optional
 from urllib.parse import urlparse
 
 from rdflib import BNode, Graph, Literal, Namespace, URIRef
-from rdflib.term import Node
 from rdflib.collection import Collection
 from rdflib.namespace import OWL, RDF, XSD
+from rdflib.term import Node
 
 SHAPES_BASE = "https://w3id.org/skg-if/shapes/"
 DC_DESCRIPTION = URIRef("http://purl.org/dc/elements/1.1/description")
@@ -23,13 +22,13 @@ def _is_url(source: str) -> bool:
     return source.startswith("http://") or source.startswith("https://")
 
 
-def _get_ontology_iri(g: Graph) -> Optional[str]:
+def _get_ontology_iri(g: Graph) -> str | None:
     for s in g.subjects(RDF.type, OWL.Ontology, unique=True):
         return str(s)
     return None
 
 
-def _get_ext_module_name(source: str) -> Optional[str]:
+def _get_ext_module_name(source: str) -> str | None:
     for part in Path(source).resolve().parts:
         if part.startswith("ext-") and len(part) > 4:
             return part[4:]
@@ -106,7 +105,7 @@ def _resolve_namespace(
     g: Graph,
     uri_ns_map: dict[str, str],
     literal_prefix_map: dict[str, str],
-) -> Optional[str]:
+) -> str | None:
     ns = g.store.namespace(prefix)
     if ns:
         return str(ns)
@@ -199,7 +198,7 @@ def _resolve_shapes_base(
     input_source: str,
     modules: dict[str, Graph],
     is_modular: bool,
-    shapes_base: Optional[str],
+    shapes_base: str | None,
 ) -> str:
     if shapes_base:
         return shapes_base
@@ -225,7 +224,7 @@ def _build_class_to_modules(modules: dict[str, Graph]) -> dict[str, list[str]]:
 def _resolve_root_class_uris(
     modules: dict[str, Graph],
     class_to_modules: dict[str, list[str]],
-    root_classes: Optional[dict[str, str]] = None,
+    root_classes: dict[str, str] | None = None,
 ) -> set[str]:
     if root_classes is not None:
         return set(root_classes.values())
@@ -310,7 +309,8 @@ def _resolve_target(
         target_ns = uri_ns_map.get(target)
         if not target_ns:
             raise ValueError(
-                f"Cannot resolve unqualified name '{target}' in {class_uri}: {prop_text}"
+                f"Cannot resolve unqualified name '{target}' "
+                f"in {class_uri}: {prop_text}"
             )
 
     if target in ("rdfs:Literal", "rdfs:langString"):
@@ -350,7 +350,8 @@ def _resolve_controlled_vocabulary(
             ns = uri_ns_map.get(val)
             if not ns:
                 raise ValueError(
-                    f"Cannot resolve unqualified name '{val}' in {class_uri}: {prop_text}"
+                    f"Cannot resolve unqualified name '{val}' "
+                    f"in {class_uri}: {prop_text}"
                 )
             uris.append(URIRef(ns + val))
         else:
@@ -465,8 +466,8 @@ def _emit_properties(
 
 def create_shacl_shapes(
     input_source: str | Path,
-    shapes_base: Optional[str] = None,
-    root_classes: Optional[dict[str, str]] = None,
+    shapes_base: str | None = None,
+    root_classes: dict[str, str] | None = None,
 ) -> Graph:
     input_source = str(input_source)
     modules, is_modular = _load_source(input_source)

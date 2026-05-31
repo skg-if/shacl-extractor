@@ -1,5 +1,6 @@
 title: "SHACL Extractor"
 author: Arcangelo Massari
+copyright: "2026"
 
 exclude_patterns:
   - _build

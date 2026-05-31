@@ -1,0 +1,30 @@
+title: "SHACL Extractor"
+author: Arcangelo Massari
+
+exclude_patterns:
+  - _build
+  - node_modules
+
+execute:
+  execute_notebooks: "off"
+
+repository:
+  url: https://github.com/skg-if/shacl-extractor
+  branch: main
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+  baseurl: https://skg-if.github.io/shacl-extractor
+  extra_footer: |
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var links = document.querySelectorAll('a[href^="http"]');
+        links.forEach(function(link) {
+          if (link.hostname !== window.location.hostname) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+          }
+        });
+      });
+    </script>

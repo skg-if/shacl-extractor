@@ -13,17 +13,9 @@ path = [
     "CHANGELOG.md",
     "presets/*.json",
     "docs/.gitignore",
-    "docs/package.json",
-    "docs/package-lock.json",
-    "docs/public/favicon.svg",
-    "docs/tsconfig.json",
+    "docs/_config.yml",
+    "docs/_toc.yml",
 ]
 SPDX-FileCopyrightText = "2025-2026 Arcangelo Massari <arcangelomas@gmail.com>"
 SPDX-License-Identifier = "CC0-1.0"
 
-[[annotations]]
-path = [
-    "docs/README.md",
-]
-SPDX-FileCopyrightText = "2026 Arcangelo Massari <arcangelomas@gmail.com>"
-SPDX-License-Identifier = "CC-BY-4.0"

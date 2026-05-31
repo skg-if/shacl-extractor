@@ -1,0 +1,13 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Guides
+    numbered: false
+    chapters:
+    - file: 01-getting-started
+    - file: 02-annotation-syntax
+    - file: 03-input-modes
+  - caption: Reference
+    numbered: false
+    chapters:
+    - file: 04-cli

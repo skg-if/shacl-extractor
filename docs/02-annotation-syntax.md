@@ -1,11 +1,10 @@
----
-# SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
-#
-# SPDX-License-Identifier: CC-BY-4.0
+<!--
+SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
 
-title: Annotation syntax
-description: How the extractor reads dc:description annotations and translates them to SHACL.
----
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+# Annotation syntax
 
 The extractor looks for `owl:Class` definitions that carry a `dc:description` annotation containing the phrase "The properties that can be used". Everything after that line is parsed as a list of property declarations.
 

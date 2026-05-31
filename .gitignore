@@ -8,6 +8,4 @@ dist/
 .venv/
 .coverage
 .python-version
-docs/node_modules/
-docs/dist/
-docs/.astro/
+docs/_build/

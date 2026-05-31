@@ -1,11 +1,10 @@
----
-# SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
-#
-# SPDX-License-Identifier: CC-BY-4.0
+<!--
+SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
 
-title: CLI reference
-description: Command-line interface for the SHACL Extractor.
----
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+# CLI reference
 
 ## Synopsis
 

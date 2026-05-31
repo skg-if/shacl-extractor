@@ -1,11 +1,10 @@
----
-# SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
-#
-# SPDX-License-Identifier: CC-BY-4.0
+<!--
+SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
 
-title: Input modes
-description: Single file, modular directory, URL, and extension ontology inputs.
----
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+# Input modes
 
 The extractor accepts three kinds of input. It figures out which one you mean from the argument you pass.
 

@@ -1,11 +1,10 @@
----
-# SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
-#
-# SPDX-License-Identifier: CC-BY-4.0
+<!--
+SPDX-FileCopyrightText: 2026 Arcangelo Massari <arcangelomas@gmail.com>
 
-title: Getting started
-description: Install SHACL Extractor and generate your first shapes file.
----
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+# Getting started
 
 ## Requirements
 
@@ -46,4 +45,4 @@ uv run extractor my-ontology.owl shapes.ttl
 
 The tool parses every `owl:Class` in the input whose `dc:description` contains property annotations, then writes a SHACL shapes graph in Turtle format.
 
-For a full breakdown of what the annotations look like and how they map to SHACL, see [Annotation syntax](/shacl-extractor/guides/annotation_syntax/).
+For a full breakdown of what the annotations look like and how they map to SHACL, see [Annotation syntax](02-annotation-syntax.md).

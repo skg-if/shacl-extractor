@@ -7,11 +7,11 @@ SPDX-License-Identifier: CC-BY-4.0
 
 # SHACL Extractor
 
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml/badge.svg)](https://github.com/skg-if/shacl-extractor/actions/workflows/tests.yml)
+[![Coverage](https://skg-if.github.io/shacl-extractor/coverage/coverage-badge.svg)](https://skg-if.github.io/shacl-extractor/coverage/)
 [![Pyright](https://github.com/skg-if/shacl-extractor/actions/workflows/pyright.yml/badge.svg)](https://github.com/skg-if/shacl-extractor/actions/workflows/pyright.yml)
 [![Ruff](https://github.com/skg-if/shacl-extractor/actions/workflows/ruff.yml/badge.svg)](https://github.com/skg-if/shacl-extractor/actions/workflows/ruff.yml)
-[![Coverage](https://skg-if.github.io/shacl-extractor/coverage/coverage-badge.svg)](https://skg-if.github.io/shacl-extractor/coverage/)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![REUSE](https://api.reuse.software/badge/github.com/skg-if/shacl-extractor)](https://api.reuse.software/info/github.com/skg-if/shacl-extractor)
 
